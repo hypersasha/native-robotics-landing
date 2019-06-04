@@ -11,7 +11,7 @@ class Footer extends Component {
                 <div className={"footer-container"}>
                     <Logo/>
                     <div className="contacts">
-                        <p className="email">hello@nativerobotics.org</p>
+                        <p className="email"><a href="mailto:hello@nativerobotics.org" target={'_blank'}>hello@nativerobotics.org</a></p>
                         <div className="discord">
                             <svg width="24px" height="27px" viewBox="0 0 24 27" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
