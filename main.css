@@ -43,6 +43,7 @@ code {
   --hyper-blue: #4875E8;
   --hyper-red: #FF3347;
   --mustard-text-color: #6F3705;
+  --apple-blue: #007AFF
 }
 
 /* Font Faces */
@@ -1008,6 +1009,15 @@ p > b, strong {
   font-family: var(--font-noto);
   color: #FFFFFF;
   /* Portrait and Landscape */
+}
+.footer-container .contacts .email a {
+  color: #FFFFFF;
+  text-decoration: none;
+  border-bottom: 1px solid #666666;
+  padding-bottom: 2px;
+}
+.footer-container .contacts .email a:hover {
+  border-bottom-color: #FFFFFF;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .footer-container .contacts .email {
