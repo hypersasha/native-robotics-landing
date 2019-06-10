@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {platform, IOS, iPhone} from './lib/platform';
 
+import device from 'current-device';
+
 import Header from './components/Header/Header';
 
 // Import your styles after all components!
@@ -16,12 +18,15 @@ const oFit = require('./assets/imgs/o-fit-icon.png');
 const oPack = require('./assets/imgs/o-pack-icon.png');
 const oDev = require('./assets/imgs/o-dev.png');
 const arVideo = require('./assets/imgs/ar-video.gif');
+const arVideoPreview = require('./assets/imgs/ar-video-preview.png');
 const opackVideo = require('./assets/imgs/pack-video.gif');
+const opackVideoPreview = require('./assets/imgs/pack-video-preview.png');
 
 import './main-styles.less';
 import SectionCaption from "./components/SectionCaption/SectionCaption";
 import Footer from "./components/Footer/Footer";
 import Touch from "./components/Touch/Touch";
+import Gif from "./components/Gif/Gif";
 
 
 class App extends Component {
@@ -31,11 +36,16 @@ class App extends Component {
 
         this.state = {
             darkTheme: false,
-            packPlaying: false
+            packPlaying: false,
+            playingAr: false,
+            playingPack: false
         };
 
         this.changeTheme = this.changeTheme.bind(this);
         this.playPack = this.playPack.bind(this);
+
+        this.arRef = React.createRef();
+        this.packRef = React.createRef();
     }
 
     changeTheme() {
@@ -57,6 +67,18 @@ class App extends Component {
             } else {
                 document.body.style.background = '#000000';
             }
+
+            if (device.desktop()) {
+                const arTop = this.arRef.current.Ref.current.getBoundingClientRect();
+                const packTop = this.packRef.current.Ref.current.getBoundingClientRect();
+                if (arTop.top <= 50 || packTop.top <= 50) {
+                    this.setState({
+                        playingAr: arTop.top <= 50,
+                        playingPack: packTop.top <= 50
+                    })
+                }
+
+            }
         });
     }
 
@@ -70,17 +92,15 @@ class App extends Component {
                     <Section id={'omnikit'}>
                         <SectionHeader>OmniKit</SectionHeader>
                         <SectionDescription>
-                            Programming an industrial robot is as «easy» as&nbsp;controlling a spaceship. That leads to delay or
-                            rejections in integrations of robots. OmniKit provides
-                            a new way of programming industrial robots.
+                            Programming an industrial robot is as «easy» as controlling a spaceship. OmniKit provides a new and native way of programming industrial robots.
                         </SectionDescription>
                         <SectionCaption>Available on Android and iOS platforms.</SectionCaption>
                         <div id="robo-white"/>
                     </Section>
-                    <Section id={'principles'} background={"GreyWhite"}>
+                    <Section id={'principles'} ref={this.arRef} background={"GreyWhite"}>
                         <SectionHeader>How does it work?</SectionHeader>
                         <SectionDescription>
-                            You can setup industrial robots in a few easy steps with OmniKit. Every step represents a special functionality, integrated in OmniKit App.
+                            You can setup industrial robots in a few easy steps with OmniKit. Every step represents a special functionality, available in OmniKit App.
                         </SectionDescription>
                         <SectionCaption>STEP ONE</SectionCaption>
                         <SectionHeader id={"omnifit"} icon={oFit}>Fit</SectionHeader>
@@ -88,7 +108,7 @@ class App extends Component {
                             OmniFit allows you to perform the showcase of future robot executing real task within an actual environment of the customer in AR.
                         </SectionDescription>
                         <SectionCaption>Based on AR Kit and AR Core frameworks.</SectionCaption>
-                        <div className={"ofit-demo"}>
+                        <div className={"ofit-demo"} >
                             <div className="demo-content">
                                 <div className="demo-content-left">
                                     <div className="poly star-green"/>
@@ -96,7 +116,9 @@ class App extends Component {
                                     <div className="poly six-orange"/>
                                 </div>
                                 <div className="demo-player">
-                                    <img src={arVideo} width={'100%'}/>
+                                    <Gif gifUrl={arVideo} isPlaying={this.state.playingAr} previewUrl={arVideoPreview} />
+                                    {/*<img src={arVideo} width={'100%'}/>*/}
+                                    {/*<Gif gifUrl={arVideo} alt={"AR video preview."} />*/}
                                 </div>
                                 <div className="demo-content-right">
                                     <div className="poly triangle-orange"/>
@@ -107,7 +129,7 @@ class App extends Component {
                             <div className="grid-ar"/>
                         </div>
                     </Section>
-                    <Section id={'omnipack'}>
+                    <Section id={'omnipack'} ref={this.packRef}>
                         <SectionCaption>STEP TWO</SectionCaption>
                         <SectionHeader icon={oPack}>Pack</SectionHeader>
                         <SectionDescription>
@@ -119,24 +141,25 @@ class App extends Component {
                         <div className="opack-demo">
                             <div className="demo-ipad">
                                 <div className="screen">
-                                    { this.state.packPlaying ?
-                                        <img src={opackVideo} width={'100%'} alt={'oPack demonstration video.'}/>
-                                        :
-                                        <div className={'play-control'} onClick={this.playPack}>
-                                            <div className="play-icon">
-                                                <svg width="17px" height="21px" viewBox="0 0 17 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                                                        <g id="Native-Robotics" transform="translate(-706.000000, -2104.000000)" fill="#FFFFFF" fillRule="nonzero">
-                                                            <g id="oPack" transform="translate(-8.000000, 1609.000000)">
-                                                                <path d="M724.06204,498.186584 L731.824252,510.70628 C732.406293,511.645057 732.117102,512.877923 731.178326,513.459965 C730.861831,513.656192 730.496836,513.760159 730.124446,513.760159 L714.600023,513.760159 C713.495454,513.760159 712.600023,512.864729 712.600023,511.760159 C712.600023,511.387769 712.703991,511.022775 712.900218,510.70628 L720.662429,498.186584 C721.244471,497.247807 722.477338,496.958616 723.416114,497.540658 C723.678368,497.703255 723.899443,497.92433 724.06204,498.186584 Z" id="Triangle" transform="translate(722.362372, 505.500174) rotate(90.000000) translate(-722.362372, -505.500174) "></path>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <p>Запустить</p>
-                                        </div>
-                                    }
+                                    <Gif gifUrl={opackVideo} isPlaying={this.state.playingAr} previewUrl={opackVideoPreview} />
+                                    {/*{ this.state.packPlaying || device.desktop() ?*/}
+                                    {/*    <img src={opackVideo} width={'100%'} alt={'oPack demonstration video.'}/>*/}
+                                    {/*    :*/}
+                                    {/*    <div className={'play-control'} onClick={this.playPack}>*/}
+                                    {/*        <div className="play-icon">*/}
+                                    {/*            <svg width="17px" height="21px" viewBox="0 0 17 21" version="1.1" xmlns="http://www.w3.org/2000/svg">*/}
+                                    {/*                <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">*/}
+                                    {/*                    <g id="Native-Robotics" transform="translate(-706.000000, -2104.000000)" fill="#FFFFFF" fillRule="nonzero">*/}
+                                    {/*                        <g id="oPack" transform="translate(-8.000000, 1609.000000)">*/}
+                                    {/*                            <path d="M724.06204,498.186584 L731.824252,510.70628 C732.406293,511.645057 732.117102,512.877923 731.178326,513.459965 C730.861831,513.656192 730.496836,513.760159 730.124446,513.760159 L714.600023,513.760159 C713.495454,513.760159 712.600023,512.864729 712.600023,511.760159 C712.600023,511.387769 712.703991,511.022775 712.900218,510.70628 L720.662429,498.186584 C721.244471,497.247807 722.477338,496.958616 723.416114,497.540658 C723.678368,497.703255 723.899443,497.92433 724.06204,498.186584 Z" id="Triangle" transform="translate(722.362372, 505.500174) rotate(90.000000) translate(-722.362372, -505.500174) "></path>*/}
+                                    {/*                        </g>*/}
+                                    {/*                    </g>*/}
+                                    {/*                </g>*/}
+                                    {/*            </svg>*/}
+                                    {/*        </div>*/}
+                                    {/*        <p>Watch</p>*/}
+                                    {/*    </div>*/}
+                                    {/*}*/}
                                 </div>
                             </div>
                         </div>
@@ -144,7 +167,7 @@ class App extends Component {
                     <Section id={'codegain'} background={"GreyWhite"}>
                         <SectionHeader>CodeGain</SectionHeader>
                         <SectionDescription>
-                            Solution for automatic generation of the program for robots in common applications. CodeGain is a base part of all OmniPack solutions.
+                            Solution for automatic generation of the program for robots in common applications. CodeGain is a base part of all OmniKit solutions.
                         </SectionDescription>
                         <SectionCaption>How does it work?</SectionCaption>
                         <div className="codegain-steps">
@@ -172,11 +195,11 @@ class App extends Component {
                             </div>
                             <div className="tab">
                                 <h3>oTend</h3>
-                                <p>Machine Tending application.</p>
+                                <p>Code generation for machine tending.</p>
                             </div>
                             <div className="tab">
                                 <h3>oWeld</h3>
-                                <p>Welding machines support.</p>
+                                <p>Support of the welding applications.</p>
                             </div>
                         </div>
                     </Section>

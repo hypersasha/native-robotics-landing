@@ -12,7 +12,7 @@ class Footer extends Component {
                     <Logo/>
                     <div className="contacts">
                         <p className="email"><a href="mailto:hello@nativerobotics.org" target={'_blank'}>hello@nativerobotics.org</a></p>
-                        <div className="discord">
+                        <div className="discord" style={{display: 'none'}}>
                             <svg width="24px" height="27px" viewBox="0 0 24 27" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                                     <g id="Desktop-HD" transform="translate(-1209.000000, -12.000000)" fill="#FFFFFF" fillRule="nonzero">

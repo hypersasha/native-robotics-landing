@@ -25,7 +25,7 @@ class HeaderMenu extends Component {
                         <a href={"#codegain"}>CodeGain</a>
                     </div>
                 </div>
-                <div className="header-menu--right">
+                <div className="header-menu--right" style={{opacity: 0}}>
                     <svg width="24px" height="27px" viewBox="0 0 24 27" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="Desktop-HD" transform="translate(-1209.000000, -12.000000)" fill="#FFFFFF" fillRule="nonzero">

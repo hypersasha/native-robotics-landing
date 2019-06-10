@@ -34,6 +34,7 @@
     "babel-loader": "^8.0.4",
     "busboy": "^0.2.14",
     "css-loader": "^1.0.1",
+    "current-device": "^0.8.0",
     "express": "^4.16.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^2.0.0",
