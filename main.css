@@ -733,10 +733,14 @@ p > b, strong {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-image: url(assets/images/ar-video-preview.png);
+  justify-content: center;
+  background: #000000;
   background-size: cover;
   background-position: center;
   /* Portrait and Landscape */
+}
+.ofit-demo .demo-content .demo-player img {
+  height: 100%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .ofit-demo .demo-content .demo-player {
@@ -781,43 +785,13 @@ p > b, strong {
   height: 336px;
   overflow: hidden;
   margin-top: 30px;
-  background-image: url(assets/images/pack-video-preview.png);
-  background-size: cover;
-  background-position: bottom center;
+  background: #D1D2D6;
   position: relative;
   /* Portrait and Landscape */
 }
-.opack-demo .demo-ipad .screen .play-control {
-  box-sizing: border-box;
-  white-space: nowrap;
-  padding: 10px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.5);
-  margin-top: 20px;
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 1;
-}
-.opack-demo .demo-ipad .screen .play-control:hover {
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-  opacity: 0.5;
-}
-.opack-demo .demo-ipad .screen .play-control p {
-  font-size: 16px;
-  color: #FFFFFF;
-  font-family: var(--font-noto);
-  padding: 0 0 0 10px;
-  margin: 0;
-}
-.opack-demo .demo-ipad .screen .play-control .play-icon {
-  width: 17px;
-  height: 21px;
+.opack-demo .demo-ipad .screen .gif-controller {
+  background-size: cover;
+  background-position: bottom center;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .opack-demo .demo-ipad .screen {
@@ -896,7 +870,7 @@ p > b, strong {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 680px;
+  max-width: 710px;
   margin: 0 auto;
   /* Portrait and Landscape */
 }
@@ -1055,6 +1029,114 @@ p > b, strong {
   }
   100% {
     opacity: 0.8;
+  }
+}
+
+.gif-controller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.play-control {
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding: 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 1;
+}
+.play-control:hover {
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  opacity: 0.5;
+}
+.play-control.solid {
+  width: 50px;
+  height: 20px;
+}
+.play-control.solid:hover {
+  opacity: 1 !important;
+  cursor: default;
+}
+.play-control p {
+  font-size: 16px;
+  color: #FFFFFF;
+  font-family: var(--font-noto);
+  padding: 0 0 0 10px;
+  margin: 0;
+}
+.play-control .play-icon {
+  width: 17px;
+  height: 21px;
+}
+
+.wave-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wave {
+  position: relative;
+  margin-top: -5px;
+}
+.wave .dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 3px;
+  background: #ffffff;
+  animation: wave 2s linear infinite;
+  opacity: 0;
+}
+.wave .dot.dark {
+  background: #000000;
+}
+.wave .dot:first-child {
+  margin-left: 3px;
+}
+.wave .dot:nth-child(even) {
+  margin-left: 5px;
+  margin-right: 8px;
+}
+.wave .dot:nth-child(2) {
+  animation-delay: -1.8s;
+}
+.wave .dot:nth-child(3) {
+  animation-delay: -1.5s;
+}
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    opacity: 0.4;
+  }
+  30% {
+    opacity: 1;
   }
 }
 
