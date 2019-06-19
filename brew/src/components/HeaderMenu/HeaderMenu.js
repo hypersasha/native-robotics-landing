@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 import './header-menu.less';
 import Logo from "../Logo/Logo";
@@ -9,15 +11,19 @@ class HeaderMenu extends Component {
         return(
             <div className="header-menu">
                 <div className="header-menu--left">
-                    <Logo/>
+                    <Link to={'/'} style={{textDecoration: 'none', border: 'none', outline: 'none'}}><Logo/></Link>
                 </div>
                 <div className="header-menu--content">
+                    {!this.props.packOnly &&
                     <div className={"menu-link"}>
                         <a href={"#omnikit"}>OmniKit</a>
                     </div>
+                    }
+                    {!this.props.packOnly &&
                     <div className={"menu-link"}>
                         <a href={"#principles"}>oFit</a>
                     </div>
+                    }
                     <div className={"menu-link"}>
                         <a href={"#omnipack"}>oPack</a>
                     </div>
@@ -45,5 +51,13 @@ class HeaderMenu extends Component {
         )
     }
 }
+
+HeaderMenu.propTypes = {
+    packOnly: PropTypes.bool
+};
+
+HeaderMenu.defaultProps = {
+    packOnly: false
+};
 
 export default HeaderMenu;
