@@ -814,7 +814,7 @@ p > b, strong {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   flex-wrap: wrap;
   max-width: 680px;
   margin: 10px auto 40px;
@@ -891,11 +891,13 @@ p > b, strong {
   border-radius: 18px;
   padding: 0 20px;
   margin-bottom: 20px;
+  max-width: 305px;
   /* Portrait and Landscape */
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .soon-tabs .tab {
     margin: 0 12px 20px;
+    max-width: none;
   }
 }
 .soon-tabs .tab:nth-child(even) {
@@ -922,7 +924,7 @@ p > b, strong {
   margin-left: 20px;
 }
 .download-offer {
-  width: 220px;
+  width: 240px;
   font-weight: 700;
   display: flex;
   flex-direction: row;
