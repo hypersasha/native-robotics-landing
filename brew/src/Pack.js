@@ -61,25 +61,6 @@ class Pack extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', (e) => {
-            if (window.pageYOffset <= 500) {
-                document.body.style.background = "#FFFFFF";
-            } else {
-                document.body.style.background = '#000000';
-            }
-
-            if (device.desktop()) {
-                const arTop = this.arRef.current.Ref.current.getBoundingClientRect();
-                const packTop = this.packRef.current.Ref.current.getBoundingClientRect();
-                if (arTop.top <= 50 || packTop.top <= 50) {
-                    this.setState({
-                        playingAr: arTop.top <= 50,
-                        playingPack: packTop.top <= 50
-                    })
-                }
-
-            }
-        });
     }
 
     render() {
@@ -97,6 +78,24 @@ class Pack extends Component {
                         <SectionCaption>
                             OmniPack supports most of all industrial robots.
                         </SectionCaption>
+                        <div className="download-offer">
+                            <a href={'https://drive.google.com/file/d/120sqFITfTkIN_iXdc7fYcW5UFgbJyHeC/view?usp=sharing'} target={'_blank'}>Download Specification</a>
+                            <div className="download-icon">
+                                <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                        <g id="Native-Robotics" transform="translate(-854.000000, -1643.000000)">
+                                            <g id="Group-3" transform="translate(855.000000, 1644.000000)">
+                                                <circle id="Oval-4" stroke="#FF3C58" fillRule="nonzero" cx="13" cy="13" r="13.5"></circle>
+                                                <g id="baseline-arrow_downward-24px" transform="translate(1.000000, 1.000000)">
+                                                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <polygon id="Shape" fill="#FF3C58" fillRule="nonzero" points="20 12 18.59 10.59 13 16.17 13 4 11 4 11 16.17 5.42 10.58 4 12 12 20"></polygon>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
                         <div className="opack-demo">
                             <div className="demo-ipad">
                                 <div className="screen">

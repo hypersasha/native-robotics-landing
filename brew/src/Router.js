@@ -8,7 +8,7 @@ class AppRouter extends Component {
 
     render() {
         return(
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <div>
                 <Route exact path={'/'} component={App} />
                 <Route path={'/opack'} component={Pack} />
