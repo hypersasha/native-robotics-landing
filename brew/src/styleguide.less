@@ -1,0 +1,124 @@
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  background-color: #252525;
+  padding: 0;
+  margin: 0;
+}
+
+.st-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 48px;
+  background: rgba(53,53,53,0.98);
+  z-index: 999999;
+
+  &--content {
+    width: 876px;
+    margin: 0 auto;
+    height: 48px;
+
+    .st-logo {
+      display: flex;
+      height: 48px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.st-page {
+  width: 876px;
+  margin: 48px auto;
+  padding-top: 60px;
+  display: flex;
+
+  .st-menu {
+    width: 216px;
+    margin: 0;
+    align-self: flex-start;
+    float: left;
+    position: -webkit-sticky;
+    position: sticky;
+    //bottom: 20px;
+    // Через jS нужно выяснять высоту страницы. Если она меньше высоты этого элемента, то нужно
+    // ставить для него свойства bottom: 0; и align-self: flex-start.
+    top: 108px;
+    min-height: 2px;
+    box-sizing: border-box;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &--tab {
+      display: block;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 4px;
+      margin-bottom: 3px;
+      padding: 0 12px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: #8E8E93;
+
+      &:hover {
+        cursor: pointer;
+        background: rgba(0,0,0,0.25);
+      }
+
+      &.active {
+        color: #FFFFFF;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .st-content {
+    width: 620px;
+    height: auto;
+    margin-left: 40px;
+
+    h1.st-mainTitle {
+      color: #F8F8F8;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 31px;
+      padding: 0;
+      line-height: 31px;
+      margin: 0 0 10px 0;
+
+    }
+    p.st-mainText {
+      color: #E9E9E9;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    &--section {
+
+      margin-bottom: 48px;
+
+      &-title {
+        color: #F8F8F8;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
