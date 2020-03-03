@@ -35,7 +35,7 @@ class Example extends Component {
 }
 
 Example.propTypes = {
-    description: PropTypes.string,
+    description: PropTypes.any,
     prefabsList: PropTypes.element
 };
 

@@ -1,16 +1,19 @@
 .nr-button {
 
-  padding: 0 0 10px;
+  padding: 0 16px 10px;
 
   &--box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     background: #0077FF;
-    border-radius: 10px;
+    border-radius: 8px;
 
     font-family: "IBSF Pro Text Medium";
     font-size: 17px;
     color: #FFFFFF;
     height: 44px;
-    line-height: 44px;
     text-align: center;
 
     -webkit-transition: background 0.1s ease-in;
@@ -19,9 +22,55 @@
     -o-transition: background 0.1s ease-in;
     transition: background 0.1s ease-in;
 
+    &-label {
+      flex-grow: 1;
+      &.icon {
+        text-indent: -31px;
+      }
+
+      &.white {
+        color: #252525;
+      }
+    }
+
+    &-icon {
+      display: block;
+      position: relative;
+      width: 21px;
+      height: 21px;
+      background: transparent;
+      overflow: hidden;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
     &:hover {
       cursor: pointer;
       background: #006CE8;
+    }
+
+    &.secondary {
+      background: #454648;
+
+      &:hover {
+        background: #4F5153;
+      }
+    }
+
+    &.danger {
+      background: #FF3B30;
+
+      &:hover {
+        background: #DF3A30;
+      }
+    }
+
+    &.white {
+      background: #F5F5F5;
+      
+      &:hover {
+        background: #e3e3e3;
+      }
     }
   }
 }

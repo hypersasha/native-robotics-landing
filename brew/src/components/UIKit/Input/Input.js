@@ -7,7 +7,7 @@ class Input extends Component {
         return(
             <div className={'nr-input'}>
                 {this.props.label && <div className="nr-input--label">{this.props.label}</div>}
-                <input type={'text'} placeholder={this.props.placeholder} />
+                <input type={'text'} defaultValue={this.props.defaultValue} placeholder={this.props.placeholder} />
             </div>
         )
     }
