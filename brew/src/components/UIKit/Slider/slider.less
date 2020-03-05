@@ -1,0 +1,42 @@
+.nr-slider {
+  display: flex;
+  position: relative;
+  padding: 10px 0;
+  margin: 0 28px;
+  height: 24px;
+  align-items: center;
+
+  &--pin {
+    width: 24px;
+    height: 24px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 100%;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+  }
+
+  &--track {
+    height: 2px;
+    background: #8E8E93;
+    border-radius: 2px;
+    width: 100%;
+    overflow: hidden;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &-fill {
+      height: 2px;
+      background: #FF9500;
+    }
+  }
+}

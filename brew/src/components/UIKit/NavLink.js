@@ -21,7 +21,7 @@ class NavLink extends Component {
 
     render() {
         return (
-            <div className={"st-menu--tab" + (this.props.activeTab === this.props.hash ? ' active' : '')}
+            <div className={"st-menu--tab" + (this.props.activeTab === this.props.hash ? ' active' : '') + (this.props.head ? ' category' : '')}
                  onClick={this.goNav}>
                 {this.props.children}
             </div>

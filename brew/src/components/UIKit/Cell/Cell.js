@@ -7,16 +7,23 @@ import './cell.less';
 class Cell extends Component {
 
     render() {
+        const {danger, selected, onClick, children, after, icon, ...restProps} = this.props;
         return (
-            <div onClick={() => {this.props.onClick && this.props.onClick()}} className={'nr-cell' + (this.props.selected ? ' selected' : '')}>
-                {this.props.icon &&
+            <div
+                onClick={(e) => {
+                    onClick && onClick(e)
+                }}
+                className={'nr-cell' + (selected ? ' selected' : '')}
+                {...restProps}
+            >
+                {icon &&
                 <div className="nr-cell--icon">
-                    <img src={this.props.icon || SettingsIcon} width={28}/>
+                    <img src={icon || SettingsIcon} width={28}/>
                 </div>
                 }
-                <p className={'nr-cell--label' + (this.props.danger ? ' danger' : '')}>{this.props.children}</p>
+                <p className={'nr-cell--label' + (danger ? ' danger' : '')}>{children}</p>
                 <div className="nr-cell--after">
-                    {this.props.after}
+                    {after}
                 </div>
             </div>
         )

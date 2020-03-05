@@ -30,6 +30,14 @@ import FaceOutIcon from './assets/imgs/icons/faceout.png';
 import RotateIcon from './assets/imgs/icons/rotate.png';
 import TrashIcon from './assets/imgs/icons/trash.png';
 import PlusIcon from './assets/imgs/icons/plus.png';
+import SnackbarIconDone from './assets/imgs/icons/snackdone.png';
+
+import MicroButton from "./components/UIKit/MicroButton/MicroButton";
+import Select from "./components/UIKit/Select/Select";
+import Slider from "./components/UIKit/Slider/Slider";
+import Tooltip from "./components/UIKit/Tooltip/Tooltip";
+import ModalWindow from "./components/UIKit/ModalWindow/ModalWindow";
+import Snackbar from "./components/UIKit/Snackbar/Snackbar";
 
 class Styleguide extends Component {
 
@@ -39,11 +47,17 @@ class Styleguide extends Component {
         this.state = {
             activeTab: 'intro',
             isLogotype: false,
-            activeSettings: 'common'
+            activeSettings: 'common',
+            percent: 0,
+            isModal: false,
+            isSnackbar: false
         };
 
         this.changeTab = this.changeTab.bind(this);
         this.toggleLogo = this.toggleLogo.bind(this);
+        this.updatePercent = this.updatePercent.bind(this);
+        this.onModalCancel = this.onModalCancel.bind(this);
+
         this.scrollPos = window.scrollY;
 
         // window.addEventListener('scroll', () => {
@@ -69,6 +83,30 @@ class Styleguide extends Component {
         //
         //     this.scrollPos = window.scrollY;
         // });
+
+        // window.addEventListener('scroll', () => {
+        //     let navMain = document.getElementById('navigation');
+        //     if (window.scrollY > this.scrollPos) {
+        //         if (navMain.style.alignSelf === 'flex-start') {
+        //             navMain.style.alignSelf = 'flex-end';
+        //             navMain.style.top = 'auto';
+        //             navMain.style.bottom = '20px';
+        //             console.log('scroll down');
+        //         }
+        //     } else {
+        //         if (navMain.style.alignSelf === 'flex-end') {
+        //             console.log('scroll up');
+        //             navMain.style.marginTop = window.scrollY + navMain.getBoundingClientRect().top + 'px';
+        //             navMain.style.alignSelf = 'flex-start';
+        //         }
+        //         if (navMain.getBoundingClientRect().top >= 108) {
+        //             navMain.style.marginTop = '0px';
+        //             navMain.style.top = '108px';
+        //             navMain.style.bottom = 'auto';
+        //         }
+        //     }
+        //     this.scrollPos = window.scrollY;
+        // })
     }
 
     changeTab(newTab) {
@@ -91,15 +129,30 @@ class Styleguide extends Component {
         });
     }
 
+    updatePercent(percent) {
+        percent = Math.ceil(percent);
+        this.setState({percent});
+    }
+
+    onModalCancel() {
+        this.setState({
+            isModal: false
+        })
+    }
+
     render() {
         return (
             <div>
 
-                <div className="scrollUp" onClick={() => {window.scrollTo(0, 0);}}>
+                <div className="scrollUp" onClick={() => {
+                    window.scrollTo(0, 0);
+                }}>
                     <div className="scrollUp--icon">
                         <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.1875 20.0156L21 8.20312L32.8125 20.0156" stroke="#d5d5d5" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M21 9.84375V33.7969" stroke="#d5d5d5" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M9.1875 20.0156L21 8.20312L32.8125 20.0156" stroke="#d5d5d5" strokeWidth="4"
+                                  strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M21 9.84375V33.7969" stroke="#d5d5d5" strokeWidth="4" strokeLinecap="round"
+                                  strokeLinejoin="round"/>
                         </svg>
                     </div>
                 </div>
@@ -131,8 +184,8 @@ class Styleguide extends Component {
 
                     {/* Left-Side Navigation */}
 
-                    <div className="st-menu">
-                        <div id={'navigation'}>
+                    <div id={'navigation'} className="st-menu">
+                        <div>
                             <NavLink activeTab={this.state.activeTab} hash={'intro'}
                                      onNavigate={this.changeTab}>Intro</NavLink>
                             <NavLink activeTab={this.state.activeTab} hash={'container'}
@@ -140,7 +193,7 @@ class Styleguide extends Component {
                             <NavLink activeTab={this.state.activeTab} hash={'group'}
                                      onNavigate={this.changeTab}>Group</NavLink>
 
-                            <div className="navSplit" />
+                            <div className="navSplit"/>
 
                             <NavLink activeTab={this.state.activeTab} hash={'header'}
                                      onNavigate={this.changeTab}>Header</NavLink>
@@ -151,7 +204,7 @@ class Styleguide extends Component {
                             <NavLink activeTab={this.state.activeTab} hash={'headerSwitch'}
                                      onNavigate={this.changeTab}>HeaderSwitch</NavLink>
 
-                            <div className="navSplit" />
+                            <div className="navSplit"/>
 
                             <NavLink activeTab={this.state.activeTab} hash={'listView'}
                                      onNavigate={this.changeTab}>ListView</NavLink>
@@ -170,12 +223,12 @@ class Styleguide extends Component {
                             <NavLink activeTab={this.state.activeTab} hash={'infoRow'}
                                      onNavigate={this.changeTab}>InfoRow</NavLink>
 
-                            <div className="navSplit" />
+                            <div className="navSplit"/>
 
                             <NavLink activeTab={this.state.activeTab} hash={'button'}
                                      onNavigate={this.changeTab}>Button</NavLink>
                             <NavLink activeTab={this.state.activeTab} hash={'iconButton'}
-                                     onNavigate={this.changeTab}>IconButton</NavLink>
+                                     onNavigate={this.changeTab}>ButtonIcon</NavLink>
                             <NavLink activeTab={this.state.activeTab} hash={'secondaryButton'}
                                      onNavigate={this.changeTab}>SecondaryButton</NavLink>
                             <NavLink activeTab={this.state.activeTab} hash={'secondaryButtonIcon'}
@@ -192,8 +245,49 @@ class Styleguide extends Component {
                                      onNavigate={this.changeTab}>InlineButton</NavLink>
                             <NavLink activeTab={this.state.activeTab} hash={'inlineButtonIcon'}
                                      onNavigate={this.changeTab}>InlineButtonIcon</NavLink>
+                            <NavLink activeTab={this.state.activeTab} hash={'microButton'}
+                                     onNavigate={this.changeTab}>MicroButton</NavLink>
 
-                            <div className="navSplit" />
+                            <div className="navSplit"/>
+
+                            <NavLink activeTab={this.state.activeTab} hash={'input'}
+                                     onNavigate={this.changeTab}>Input</NavLink>
+                            <NavLink activeTab={this.state.activeTab} hash={'inputHeaded'}
+                                     onNavigate={this.changeTab}>InputHeaded</NavLink>
+                            <NavLink activeTab={this.state.activeTab} hash={'select'}
+                                     onNavigate={this.changeTab}>Select</NavLink>
+
+                            <div className="navSplit"/>
+
+                            <NavLink activeTab={this.state.activeTab} hash={'switch'}
+                                     onNavigate={this.changeTab}>Switch</NavLink>
+
+                            <div className="navSplit"/>
+
+                            <NavLink activeTab={this.state.activeTab} hash={'slider'}
+                                     onNavigate={this.changeTab}>Slider</NavLink>
+                            <NavLink activeTab={this.state.activeTab} hash={'sliderIcons'}
+                                     onNavigate={this.changeTab}>SliderIcons</NavLink>
+
+                            <div className="navSplit"/>
+
+                            <NavLink activeTab={this.state.activeTab} hash={'tooltip'}
+                                     onNavigate={this.changeTab}>Tooltip</NavLink>
+
+                            <div className="navSplit"/>
+
+                            <NavLink activeTab={this.state.activeTab} hash={'modalWindow'}
+                                     onNavigate={this.changeTab}>ModalWindow</NavLink>
+
+                            <div className="navSplit"/>
+
+                            <NavLink activeTab={this.state.activeTab} hash={'snackbar'}
+                                     onNavigate={this.changeTab}>Snackbar</NavLink>
+
+                            <div className="navSplit"/>
+
+                            <NavLink activeTab={this.state.activeTab} hash={'separator'}
+                                     onNavigate={this.changeTab}>Separator</NavLink>
 
                         </div>
                     </div>
@@ -288,7 +382,7 @@ class Styleguide extends Component {
                             </Example>
                         </div>
 
-                        <div className="contentSplit" />
+                        <div className="contentSplit"/>
 
                         {/* header */}
                         <div id={"header"} className="st-content--section">
@@ -406,7 +500,7 @@ class Styleguide extends Component {
                             </Example>
                         </div>
 
-                        <div className="contentSplit" />
+                        <div className="contentSplit"/>
 
                         {/* listView */}
                         <div id={"listView"} className="st-content--section">
@@ -680,7 +774,7 @@ class Styleguide extends Component {
                             </Example>
                         </div>
 
-                        <div className="contentSplit" />
+                        <div className="contentSplit"/>
 
                         {/* Button */}
                         <div id={"button"} className="st-content--section">
@@ -712,7 +806,7 @@ class Styleguide extends Component {
 
                         {/* IconButton */}
                         <div id={"iconButton"} className="st-content--section">
-                            <h1 className="st-content--section-title">IconButton</h1>
+                            <h1 className="st-content--section-title">ButtonIcon</h1>
                             <p className="st-mainText">
                                 Обычная кнопка с иконкой слева. Размер иконки — 21px.
                             </p>
@@ -886,11 +980,12 @@ class Styleguide extends Component {
                         <div id={"inlineButton"} className="st-content--section">
                             <h1 className="st-content--section-title">InlineButton</h1>
                             <p className="st-mainText">
-                                InlineButton отличается от своих братьев принципом размещения. Кнопка такого типа
-                                размещается за пределами контейнера (прямиком на экране). InlineButton сама по себе
-                                контейнер и не требует никаких обёрток.
+                                InlineButton отличается принципом размещения. Кнопка такого типа
+                                размещается за пределами контейнера (прямиком на экране). Кнопка Inline сама по себе
+                                является контейнером, поэтому не требует никаких обёрток.
                             </p>
                             <Example
+                                description={'Inline-кнопка над контейнером.'}
                                 prefabsList={
                                     <div>
                                         <Prefab label={'InlineButton'}/>
@@ -924,7 +1019,351 @@ class Styleguide extends Component {
                             </p>
                         </div>
 
-                        <div className="contentSplit" />
+                        {/* Micro Button */}
+                        <div id={"microButton"} className="st-content--section">
+                            <h1 className="st-content--section-title">MicroButton</h1>
+                            <p className="st-mainText">
+                                MicroButton располагается снизу по-середине экрана. Пример этой кнопки есть на экране
+                                настройки раскладки.
+                            </p>
+                            <Example
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'MicroButton'}/>
+                                    </div>
+                                }>
+                                <div style={{display: 'block', position: 'relative', height: 200, width: 300}}>
+                                    <MicroButton label={'Clear Pallet'}/>
+                                </div>
+                            </Example>
+                        </div>
+
+                        <div className="contentSplit"/>
+
+                        {/* Input */}
+                        <div id={"input"} className="st-content--section">
+                            <h1 className="st-content--section-title">Input</h1>
+                            <p className="st-mainText">
+                                Используйте поля ввода для запроса от пользователя текстовой информации.
+                            </p>
+                            <Example
+                                description={'У обычного Input нет заголовка.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'HeaderDropdown'} level={3}/>
+                                        <Prefab label={'Input'} level={3}/>
+                                    </div>
+                                }>
+                                <Container>
+                                    <Title after={<DropDownButton label={'mm'}/>}>Box Width</Title>
+                                    <Input/>
+                                </Container>
+                            </Example>
+                        </div>
+
+                        {/* InputHeaded */}
+                        <div id={"inputHeaded"} className="st-content--section">
+                            <h1 className="st-content--section-title">InputHeaded</h1>
+                            <p className="st-mainText">
+                                Обычный Input, только с заголовком.
+                            </p>
+                            <Example
+                                description={'У обычного Input нет заголовка.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'HeaderDropdown'} level={3}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                    </div>
+                                }>
+                                <Container>
+                                    <Title after={<DropDownButton label={'mm'}/>}>Box Transform</Title>
+                                    <Input label={'Width'}/>
+                                    <Input label={'Length'}/>
+                                    <Input label={'Height'}/>
+                                </Container>
+                            </Example>
+                        </div>
+
+                        {/* Select */}
+                        <div id={"select"} className="st-content--section">
+                            <h1 className="st-content--section-title">Select</h1>
+                            <p className="st-mainText">
+                                Компонент Select по внешнему виду похож на обычное поле ввода, однако в него нельзя
+                                ввести любую информацию. Используйте Select, когда необходимо предоставить пользователю
+                                выбор из нескольких вариантов (от 3 опций и более).
+                            </p>
+                            <Example
+                                description={'Выбор стороны короба для нанесения логотипа.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'HeaderSwitch'} level={3}/>
+                                        <Prefab label={'Select'} level={3}/>
+                                        <Prefab label={'ButtonWhite'} level={3}/>
+                                    </div>
+                                }>
+                                <Container>
+                                    <Title after={<Switch isActive={true}/>}>Logotype</Title>
+                                    <Select label={'Placement side'} placeholder={'Choose box side'}/>
+                                    <Button level={"white"} label={'Apply'}></Button>
+                                </Container>
+                            </Example>
+                            <Tip title={'Совет'}>
+                                <p>Не используйте Select, для выбора из 2 или менее опций.</p>
+                            </Tip>
+                        </div>
+
+                        <div className="contentSplit"/>
+
+                        {/* Switch */}
+                        <div id={"switch"} className="st-content--section">
+                            <h1 className="st-content--section-title">Switch</h1>
+                            <p className="st-mainText">
+                                Переключатели часто используются в настройках. Когда необходимо
+                                включить/отключить тот или иной функционал. Вы уже встречали этот элемент в качестве
+                                потомка других компонентов. Однако, Switch может существовать и сам по себе.
+                            </p>
+                            <Example
+                                description={'День, ночь, день, ночь...'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Switch'}/>
+                                    </div>
+                                }>
+                                <Switch/>
+                            </Example>
+                        </div>
+
+                        <div className="contentSplit"/>
+
+                        {/* Slider */}
+                        <div id={"slider"} className="st-content--section">
+                            <h1 className="st-content--section-title">Slider</h1>
+                            <p className="st-mainText">
+                                Слайдеры используются для установки какой-либо числовой величины в ограниченном
+                                диапазоне. У слайдеров могут располагаться иконки (слева и справа), а также может
+                                устанавливаться шаг, с которым слайдер переключает числовые значения.
+                            </p>
+                            <Example
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'Slider'} level={3}/>
+                                    </div>
+                                }>
+                                <Container>
+                                    <Slider/>
+                                </Container>
+                            </Example>
+                        </div>
+
+                        <div id={"sliderIcons"} className="st-content--section">
+                            <h1 className="st-content--section-title">SliderIcons</h1>
+                            <p className="st-mainText">
+                                Такой же слайдер, только с иконками справа и слева.
+                            </p>
+                        </div>
+
+                        <div className="contentSplit"/>
+
+                        {/* Tooltip */}
+                        <div id={"tooltip"} className="st-content--section">
+                            <h1 className="st-content--section-title">Tooltip</h1>
+                            <p className="st-mainText">
+                                Используйте подсказки для знакомства пользователя с новыми UI-элементами и функциями
+                                приложения.
+                            </p>
+                            <Example
+                                description={'Пример обычной подсказки.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'Header'} level={3}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                        <Prefab label={'ButtonWhite'} level={3}/>
+                                    </div>
+                                }>
+                                <Container>
+                                    <Title>Box Width</Title>
+                                    <Input label={'Width'} placeholder={'100'}/>
+                                    <Tooltip text={'Oh my White!'}>
+                                        <Button level={'white'} label={'Apply'}/>
+                                    </Tooltip>
+                                </Container>
+                            </Example>
+                        </div>
+
+                        <div className="contentSplit"/>
+
+                        {/* ModalWindow */}
+                        <div id={"modalWindow"} className="st-content--section">
+                            <h1 className="st-content--section-title">ModalWindow</h1>
+                            <p className="st-mainText">
+                                Используйте всплывающие окна для вывода особо важных уведомлений.
+                                Например, они хорошо подходят для оповещения пользователя о неудачном завершении
+                                какой-либо операции. ModalWindow затемняет 80% экранного пространства и фокусирует
+                                внимание пользователя на себя.
+                            </p>
+                            <Example
+                                description={'Нажмите на синюю кнопку.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'Header'} level={3}/>
+                                        <Prefab label={'ListView'} level={3} expanded/>
+                                        <Prefab label={'InfoRow'} level={4}/>
+                                        <Prefab label={'InfoRow'} level={4}/>
+                                        <Prefab label={'InfoRow'} level={4}/>
+                                        <Prefab label={'InfoRow'} level={4}/>
+                                        <Prefab label={'InfoRow'} level={4}/>
+                                        <Prefab label={'InfoRow'} level={4}/>
+                                    </div>
+                                }>
+                                <div>
+                                    {this.state.isModal && <ModalWindow onCancel={this.onModalCancel}/>}
+                                    <Container>
+                                        <Title>Layout Information</Title>
+                                        <InfoRow title={'Box Transform'}>320x150x90 mm</InfoRow>
+                                        <InfoRow title={'Box Weight'}>2 250 gr</InfoRow>
+                                        <InfoRow title={'Pallet'}>EURO</InfoRow>
+                                        <InfoRow title={'Layout Symmetry'}>X and Y</InfoRow>
+                                        <InfoRow title={'Number of Layers'}>7</InfoRow>
+                                        <InfoRow title={'Number of Pallets'}>2</InfoRow>
+                                        <Separator/>
+                                        <Button onClick={() => {
+                                            this.setState({isModal: true})
+                                        }} label={'Continue'}></Button>
+                                    </Container>
+                                </div>
+                            </Example>
+                        </div>
+
+                        <div className="contentSplit"/>
+
+                        {/* Snackbar */}
+                        <div id={"snackbar"} className="st-content--section">
+                            <h1 className="st-content--section-title">Snackbar</h1>
+                            <p className="st-mainText">
+                                Этот компонент является упрощенной версией модального окна. Snackbar появляется снизу
+                                экрана на некоторое время. Элемент отлично подходит для оповещения
+                                пользователя о каких-либо событиях. Snackbar не блокирует интерфейс.
+                            </p>
+                            <p className="st-mainText">
+                                Snackbar может содержать иконку слева от текста. В примере ниже используется именно
+                                версия с иконкой.
+                            </p>
+                            <Example
+                                description={'Нажмите на синюю кнопку.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'Header'} level={3}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                        <Prefab label={'Button'} level={3}/>
+                                    </div>
+                                }>
+                                <div>
+                                    {this.state.isSnackbar &&
+                                    <Snackbar description={'Creating layout with this box.'}
+                                              icon={SnackbarIconDone}
+                                              onClose={() => {
+                                                  this.setState({isSnackbar: false})
+                                              }}/>}
+                                    <Container>
+                                        <Title after={<DropDownButton label={'mm'}/>}>Box Transform</Title>
+                                        <Input label={'Width'}/>
+                                        <Input label={'Length'}/>
+                                        <Input label={'Height'}/>
+                                        <Separator/>
+                                        <Button onClick={() => {
+                                            this.setState({isSnackbar: true})
+                                        }} label={'Continue'}/>
+                                    </Container>
+                                </div>
+                            </Example>
+                        </div>
+
+                        <div className="contentSplit"/>
+
+                        {/* separator */}
+                        <div id={"separator"} className="st-content--section">
+                            <h1 className="st-content--section-title">Separator</h1>
+                            <p className="st-mainText">
+                                Разделитель контента. На самом деле, данный элемент используется повсеместно. Главной
+                                задачей разделителя является уравнивание отступов внутри контейнеров.
+                            </p>
+                            <p className="st-mainText">
+                                Дело в том, что большинство компонентов имеют фиксированные отступы сверху и снизу. При
+                                сборке интерфейса часто встречаются ситуации, когда один компонент прилипает к другому.
+                                Используя разделитель, можно легко миновать подобные проблемы.
+                            </p>
+                            <p className="st-mainText">
+                                Например, Вам необходимо разместить в контейнере лишь одно поле ввода. Давайте
+                                попробуем:
+                            </p>
+                            <Example
+                                description={'Одно поле ввода, без разделителя.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                    </div>
+                                }>
+                                <div>
+                                    {this.state.isSnackbar &&
+                                    <Snackbar description={'Creating layout with this box.'}
+                                              icon={SnackbarIconDone}
+                                              onClose={() => {
+                                                  this.setState({isSnackbar: false})
+                                              }}/>}
+                                    <Container>
+                                        <Input placeholder={'First Name'}/>
+                                    </Container>
+                                </div>
+                            </Example>
+                            <p className="st-mainText">
+                                Можно заметить, как поле ввода "прилипло" к верхней границе
+                                контейнера. Теперь добавим разделитель:
+                            </p>
+                            <Example
+                                description={'Разделитель сверху. Отступы равны.'}
+                                prefabsList={
+                                    <div>
+                                        <Prefab label={'Container'} expanded/>
+                                        <Prefab label={'Separator'} level={2}/>
+                                        <Prefab label={'Group'} expanded level={2}/>
+                                        <Prefab label={'InputHeaded'} level={3}/>
+                                    </div>
+                                }>
+                                <div>
+                                    {this.state.isSnackbar &&
+                                    <Snackbar description={'Creating layout with this box.'}
+                                              icon={SnackbarIconDone}
+                                              onClose={() => {
+                                                  this.setState({isSnackbar: false})
+                                              }}/>}
+                                    <Container>
+                                        <Separator />
+                                        <Input placeholder={'First Name'}/>
+                                    </Container>
+                                </div>
+                            </Example>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -1,0 +1,66 @@
+.snackbar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 99999;
+  align-items: center;
+  padding-bottom: 30px;
+
+  animation:  0.16s ease-in-out forwards SnackbarShow;
+
+  &.closing {
+    animation:  0.2s ease-in-out forwards SnackbarHide;
+  }
+}
+
+.nr-snackbar {
+  min-width: 100px;
+  background: #454648;
+  box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 20px 16px;
+
+  &--description {
+    font-family: "IBSF Pro Text Regular";
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: normal;
+    color: #ffffff;
+  }
+
+  &--icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+  }
+}
+
+@keyframes SnackbarShow {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes SnackbarHide {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

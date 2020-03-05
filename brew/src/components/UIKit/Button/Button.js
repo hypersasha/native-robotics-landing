@@ -5,13 +5,13 @@ import './button.less';
 class Button extends Component {
 
     render() {
-        const {label, level, ...restProps} = this.props;
+        const {label, level, onClick, ...restProps} = this.props;
         return (
             <div className="nr-button">
                 <div
                     className={"nr-button--box" + (level === 'secondary' ? ' secondary' : '')
                     + (level === 'danger' ? ' danger' : '')
-                    + (level === 'white' ? ' white' : '')}>
+                    + (level === 'white' ? ' white' : '')} onClick={onClick}>
                     {this.props.icon &&
                     <div className="nr-button--box-icon">
                         <img src={this.props.icon} width={this.props.width || 21}/>

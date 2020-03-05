@@ -62,17 +62,19 @@ html, body {
 
   .st-menu {
     width: 216px;
-    margin: 0;
-    align-self: flex-end;
-    float: left;
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
+    overflow-y: scroll;
+    top: 108px;
     bottom: 20px;
     // Через jS нужно выяснять высоту страницы. Если она меньше высоты этого элемента, то нужно
     // ставить для него свойства bottom: 0; и align-self: flex-start.
     min-height: 2px;
     box-sizing: border-box;
     z-index: 1;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     display: flex;
     flex-direction: column;
@@ -97,6 +99,11 @@ html, body {
       font-size: 15px;
       color: #8E8E93;
 
+      &.category {
+        font-size: 19px;
+        font-weight: 600;
+      }
+
       &:hover {
         cursor: pointer;
         background: rgba(0,0,0,0.25);
@@ -112,7 +119,7 @@ html, body {
   .st-content {
     width: 620px;
     height: auto;
-    margin-left: 40px;
+    margin-left: 266px;
 
     .contentSplit {
       height: 40px;
