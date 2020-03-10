@@ -1181,6 +1181,41 @@ class Styleguide extends Component {
                                 Используйте подсказки для знакомства пользователя с новыми UI-элементами и функциями
                                 приложения.
                             </p>
+                            <p className="st-mainText">
+                                Чтобы внедрить Tooltip в объект на сцене, просто добавьте компонент Tooltip на
+                                необходимый объект. Компонент Tooltip обладает следующими полями:
+                            </p>
+                            <p className="st-mainText">
+                                <ul>
+                                    <li>Position - указывает с какой стороны от объекта будет отображаться подсказка.
+                                        Возможные варианты - Left, Right, Down Right Arrow, Down Left Arrow, Up Right
+                                        Arrow, Up Left Arrow
+                                    </li>
+                                    <li>Text - текст, который будет выведен в подсказке</li>
+                                    <li>Prefab - стандартный префаб подсказки (по умолчанию - представленный в этом
+                                        Styleguide)
+                                    </li>
+                                    <li>Arrow Sprite - стандартная текстура стрелки для подсказки (по умолчанию -
+                                        представленная в этом Styleguide)
+                                    </li>
+                                    <li>Temp Tooltip Time - время в секундах, за которое подсказка появится и пропадет с
+                                        экрана
+                                    </li>
+                                </ul>
+                            </p>
+                            <p className="st-mainText">
+                                Компонент Tooltip обладает следующими функциями, которыми вы можете вызывать, чтобы
+                                управлять отображением подсказки для объекта, к которому этот компонент прикреплен:
+                            </p>
+                            <p className="st-mainText">
+                                <ul>
+                                    <li>ShowTooltip() - показывает подсказку</li>
+                                    <li>HideTooltip() - прячет подсказку</li>
+                                    <li>ShowTempTooltip() - показывает подсказку на Temp Tooltip Time секунд, затем
+                                        подсказка прячется
+                                    </li>
+                                </ul>
+                            </p>
                             <Example
                                 description={'Пример обычной подсказки.'}
                                 prefabsList={
@@ -1212,6 +1247,46 @@ class Styleguide extends Component {
                                 Например, они хорошо подходят для оповещения пользователя о неудачном завершении
                                 какой-либо операции. ModalWindow затемняет 80% экранного пространства и фокусирует
                                 внимание пользователя на себя.
+                            </p>
+                            <p className="st-mainText">
+                                Для использования функционала ModalWindow, необходимо добавить ModalWindow на сцену.
+                                Затем все методы ModalWindow будут доступны из любого скрипта с помощью конструкции
+                                ModalWindow.instance.Method().
+                            </p>
+                            <p className="st-mainText">
+                                Главным методом ModalWindow является Show(), который отобразит необходимое вам модальное
+                                окно. Метод Show() принимает следующие параметры:
+                            </p>
+                            <p className="st-mainText">
+                                <ul>
+                                    <li>header (string) - заголовок модального окна</li>
+                                    <li>message (string) - главное сообщение модального окна</li>
+                                    <li>actions (ModalWindowAction []) - массив объектов</li>
+                                    <li>ModalWindowAction, которые будут представлены в модальном окне, по умолчанию =
+                                        null
+                                    </li>
+                                    <li>withCancel (bool) - при значении true, добавляется кнопка отмены. Позиция кнопки
+                                        будет определена автоматически, в соответствии с OmniKit UI Styleguide. По
+                                        умолчанию = true.
+                                    </li>
+                                    <li>isHorizontal (bool) - при значении true, модальное окно будет представлено в
+                                        горизонтальной ориентации. Если в модальном окне представлено больше, чем два
+                                        ModalWindowAction или один ModalWIndowAction и кнопка отмены, то модальное окно
+                                        всё равно будет отображаться в вертикальной ориентации, в соответствии с OmniKit
+                                        UI Styleguide. По умолчанию = false
+                                    </li>
+                                    <li>cancelAction (Action) - метод, который необходимо вызвать при нажатии
+                                        пользователем кнопки отмены, по умолчанию = null
+                                    </li>
+                                    <li>
+                                        preview (Sprite) - спрайт, который необходимо добавить в модальное окно, по
+                                        умолчанию = null
+                                    </li>
+                                </ul>
+                            </p>
+                            <p className="st-mainText">
+                                Чтобы закрыть модальное окно, воспользуйтесь методом Close().
+                                Чтобы открыть модальное окно с последними параметрами, воспользуйтесь методом Open().
                             </p>
                             <Example
                                 description={'Нажмите на синюю кнопку.'}
@@ -1261,6 +1336,19 @@ class Styleguide extends Component {
                             <p className="st-mainText">
                                 Snackbar может содержать иконку слева от текста. В примере ниже используется именно
                                 версия с иконкой.
+                            </p>
+                            <p className="st-mainText">
+                                Для использования функционала Snackbar, необходимо добавить Snackbar на сцену. Затем
+                                вызов Snackbar будет доступен из любого скрипта с помощью конструкции
+                                Snackbar.instance.Show().
+                            </p>
+                            <p className="st-mainText">Метод Show() принимает следующие параметры:</p>
+                            <p className="st-mainText">
+                                <ul>
+                                    <li>text (string) - текст, который необходимо отобразить в Snackbar</li>
+                                    <li>style (SnackbarStyle) - стиль Snackbar. Возможные варианты: Default, Success, Warning, Error.</li>
+                                    <li>duration (float) - время в секундах, за которое Snackbar появится и пропадет с экрана. По умолчанию = 3.0f</li>
+                                </ul>
                             </p>
                             <Example
                                 description={'Нажмите на синюю кнопку.'}
@@ -1357,7 +1445,7 @@ class Styleguide extends Component {
                                                   this.setState({isSnackbar: false})
                                               }}/>}
                                     <Container>
-                                        <Separator />
+                                        <Separator/>
                                         <Input placeholder={'First Name'}/>
                                     </Container>
                                 </div>
