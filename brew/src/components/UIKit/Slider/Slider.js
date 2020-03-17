@@ -38,7 +38,6 @@ class Slider extends Component {
             percent = Slider.clamp(percent, 0, 100);
             x = Slider.clamp(x, 0, this.sliderTrackRef.current.clientWidth);
             this.setState({percent, x}, () => {
-                console.log(this.state.percent);
                 if (this.props.onUpdate) {
                     this.props.onUpdate(this.state.percent);
                 }

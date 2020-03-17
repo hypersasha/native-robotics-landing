@@ -38,6 +38,7 @@ import Slider from "./components/UIKit/Slider/Slider";
 import Tooltip from "./components/UIKit/Tooltip/Tooltip";
 import ModalWindow from "./components/UIKit/ModalWindow/ModalWindow";
 import Snackbar from "./components/UIKit/Snackbar/Snackbar";
+import Arguments from "./components/UIKit/Arguments/Arguments";
 
 class Styleguide extends Component {
 
@@ -162,7 +163,7 @@ class Styleguide extends Component {
                 <div className="st-header">
                     <div className="st-header--content">
                         <div className="st-logo">
-                            <div>
+                            <div style={{height: 28}}>
                                 <svg width="25" height="28" viewBox="0 0 25 28" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1185,36 +1186,39 @@ class Styleguide extends Component {
                                 Чтобы внедрить Tooltip в объект на сцене, просто добавьте компонент Tooltip на
                                 необходимый объект. Компонент Tooltip обладает следующими полями:
                             </p>
-                            <p className="st-mainText">
-                                <ul>
-                                    <li>Position - указывает с какой стороны от объекта будет отображаться подсказка.
-                                        Возможные варианты - Left, Right, Down Right Arrow, Down Left Arrow, Up Right
-                                        Arrow, Up Left Arrow
-                                    </li>
-                                    <li>Text - текст, который будет выведен в подсказке</li>
-                                    <li>Prefab - стандартный префаб подсказки (по умолчанию - представленный в этом
-                                        Styleguide)
-                                    </li>
-                                    <li>Arrow Sprite - стандартная текстура стрелки для подсказки (по умолчанию -
-                                        представленная в этом Styleguide)
-                                    </li>
-                                    <li>Temp Tooltip Time - время в секундах, за которое подсказка появится и пропадет с
-                                        экрана
-                                    </li>
-                                </ul>
-                            </p>
+                            <Arguments rows={[
+                                {
+                                    arg: 'Position',
+                                    type: 'enum',
+                                    desc: 'указывает с какой стороны от объекта будет отображаться подсказка. Возможные варианты - Left, Right, Down Right Arrow, Down Left Arrow, Up Right Arrow, Up Left Arrow.'
+                                },
+                                {
+                                    arg: 'Text',
+                                    type: 'string',
+                                    desc: 'Текст, который будет выведен в подсказке.'
+                                },
+                                {
+                                    arg: 'Prefab',
+                                    type: 'Unity Prefab',
+                                    desc: 'Стандартный префаб подсказки (по умолчанию - представленный в этом Styleguide)'
+                                },
+                                {
+                                    arg: 'ArrowSprite',
+                                    type: 'Sprite',
+                                    desc: 'Стандартная текстура стрелки для подсказки (по умолчанию - представленная в этом Styleguide).'
+                                },
+                                {
+                                    arg: 'TempTooltipTime',
+                                    type: 'float',
+                                    desc: 'Показывает подсказку на Temp Tooltip Time секунд, затем подсказка прячется.'
+                                }
+                            ]}/>
                             <p className="st-mainText">
                                 Компонент Tooltip обладает следующими функциями, которыми вы можете вызывать, чтобы
                                 управлять отображением подсказки для объекта, к которому этот компонент прикреплен:
                             </p>
                             <p className="st-mainText">
-                                <ul>
-                                    <li>ShowTooltip() - показывает подсказку</li>
-                                    <li>HideTooltip() - прячет подсказку</li>
-                                    <li>ShowTempTooltip() - показывает подсказку на Temp Tooltip Time секунд, затем
-                                        подсказка прячется
-                                    </li>
-                                </ul>
+                                ShowTooltip(), HideTooltip(), ShowTempTooltip()
                             </p>
                             <Example
                                 description={'Пример обычной подсказки.'}
@@ -1257,33 +1261,43 @@ class Styleguide extends Component {
                                 Главным методом ModalWindow является Show(), который отобразит необходимое вам модальное
                                 окно. Метод Show() принимает следующие параметры:
                             </p>
-                            <p className="st-mainText">
-                                <ul>
-                                    <li>header (string) - заголовок модального окна</li>
-                                    <li>message (string) - главное сообщение модального окна</li>
-                                    <li>actions (ModalWindowAction []) - массив объектов</li>
-                                    <li>ModalWindowAction, которые будут представлены в модальном окне, по умолчанию =
-                                        null
-                                    </li>
-                                    <li>withCancel (bool) - при значении true, добавляется кнопка отмены. Позиция кнопки
-                                        будет определена автоматически, в соответствии с OmniKit UI Styleguide. По
-                                        умолчанию = true.
-                                    </li>
-                                    <li>isHorizontal (bool) - при значении true, модальное окно будет представлено в
-                                        горизонтальной ориентации. Если в модальном окне представлено больше, чем два
-                                        ModalWindowAction или один ModalWIndowAction и кнопка отмены, то модальное окно
-                                        всё равно будет отображаться в вертикальной ориентации, в соответствии с OmniKit
-                                        UI Styleguide. По умолчанию = false
-                                    </li>
-                                    <li>cancelAction (Action) - метод, который необходимо вызвать при нажатии
-                                        пользователем кнопки отмены, по умолчанию = null
-                                    </li>
-                                    <li>
-                                        preview (Sprite) - спрайт, который необходимо добавить в модальное окно, по
-                                        умолчанию = null
-                                    </li>
-                                </ul>
-                            </p>
+                            <Arguments rows={[
+                                {
+                                    arg: 'header',
+                                    type: 'string',
+                                    desc: 'Заголовок модального окна.'
+                                },
+                                {
+                                    arg: 'message',
+                                    type: 'string',
+                                    desc: 'Главное сообщение модального окна.'
+                                },
+                                {
+                                    arg: 'actions',
+                                    type: 'ModalWindowAction []',
+                                    desc: 'Массив объектов ModalWindowAction, которые будут представлены в модальном окне, по умолчанию null.'
+                                },
+                                {
+                                    arg: 'withCancel',
+                                    type: 'bool',
+                                    desc: 'При значении true, добавляется кнопка отмены. Позиция кнопки будет определена автоматически, в соответствии с OmniKit UI Styleguide. По-умолчанию = true.'
+                                },
+                                {
+                                    arg: 'isHorizontal',
+                                    type: 'bool',
+                                    desc: 'При значении true, модальное окно будет представлено в горизонтальной ориентации. Если в модальном окне представлено больше, чем два ModalWindowAction или один ModalWIndowAction и кнопка отмены, то модальное окно всё равно будет отображаться в вертикальной ориентации, в соответствии с OmniKit UI Styleguide. По умолчанию = false'
+                                },
+                                {
+                                    arg: 'cancelAction',
+                                    type: 'Action',
+                                    desc: 'Метод, который необходимо вызвать при нажатии пользователем кнопки отмены, по-умолчанию = null'
+                                },
+                                {
+                                    arg: 'preview',
+                                    type: 'Sprite',
+                                    desc: 'Спрайт, который необходимо добавить в модальное окно, по-умолчанию = null'
+                                }
+                            ]}/>
                             <p className="st-mainText">
                                 Чтобы закрыть модальное окно, воспользуйтесь методом Close().
                                 Чтобы открыть модальное окно с последними параметрами, воспользуйтесь методом Open().
@@ -1343,13 +1357,23 @@ class Styleguide extends Component {
                                 Snackbar.instance.Show().
                             </p>
                             <p className="st-mainText">Метод Show() принимает следующие параметры:</p>
-                            <p className="st-mainText">
-                                <ul>
-                                    <li>text (string) - текст, который необходимо отобразить в Snackbar</li>
-                                    <li>style (SnackbarStyle) - стиль Snackbar. Возможные варианты: Default, Success, Warning, Error.</li>
-                                    <li>duration (float) - время в секундах, за которое Snackbar появится и пропадет с экрана. По умолчанию = 3.0f</li>
-                                </ul>
-                            </p>
+                            <Arguments rows={[
+                                {
+                                    arg: 'text',
+                                    type: 'string',
+                                    desc: 'Текст, который необходимо отобразить в Snackbar'
+                                },
+                                {
+                                    arg: 'style',
+                                    type: 'SnackbarStyle',
+                                    desc: 'Стиль Snackbar. Возможные варианты: Default, Success, Warning, Error.'
+                                },
+                                {
+                                    arg: 'duration',
+                                    type: 'float',
+                                    desc: 'Время в секундах, за которое Snackbar появится и пропадет с экрана. По умолчанию = 3.0f.'
+                                }
+                            ]}/>
                             <Example
                                 description={'Нажмите на синюю кнопку.'}
                                 prefabsList={
