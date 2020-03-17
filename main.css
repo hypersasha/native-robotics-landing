@@ -2010,3 +2010,36 @@ body {
   }
 }
 
+.st-arguments {
+  padding-bottom: 20px;
+}
+.st-arguments table {
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+.st-arguments table tr {
+  color: #CCCCCC;
+}
+.st-arguments table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.st-arguments table tr:first-child {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.st-arguments table tr th {
+  text-align: left;
+  font-family: "IBSF Pro Text Bold";
+  font-size: 13px;
+  font-weight: normal;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.st-arguments table tr td {
+  text-align: left;
+  font-family: "IBSF Pro Text Regular";
+  font-size: 13px;
+  padding: 6px 8px;
+}
+
