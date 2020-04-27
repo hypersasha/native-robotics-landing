@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import App from "./App";
 import Pack from './Pack';
 import Styleguide from "./Styleguide";
+import Omnifit from "./Omnifit";
 
 class AppRouter extends Component {
 
@@ -14,6 +15,7 @@ class AppRouter extends Component {
                 <Route exact path={'/'} component={App} />
                 <Route path={'/opack'} component={Pack} />
                 <Route path={'/styleguide'} component={Styleguide} />
+                <Route path={'/omnifit'} component={Omnifit} />
                 </div>
             </Router>
             )

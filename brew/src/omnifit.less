@@ -1,0 +1,153 @@
+html, body {
+  background: #000000;
+}
+
+header.omnifit {
+  padding-top: 70px;
+}
+
+.container {
+  max-width: 988px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  overflow: visible;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-navigation {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &--links {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 18px;
+
+    .nav-link {
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #8E8E93;
+      padding: 7px 0;
+      cursor: pointer;
+      margin: 0 13px;
+      letter-spacing: 0;
+
+      &:hover {
+        color: #1C8DFF;
+      }
+
+      &.active {
+        color: #ECECED;
+      }
+    }
+  }
+}
+
+section {
+  padding: 60px 0 0 0;
+
+
+  &.divided {
+    border-bottom: 5px solid #252525;
+  }
+
+  &.intro {
+    padding-top: 50px;
+  }
+
+  .section-text {
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #EAEAEA;
+
+    padding: 20px 0 0 0;
+    margin: 0;
+
+    max-width: 652px;
+
+    &.centered {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+#ipad-ar-preview {
+  width: 1061px;
+  height: 554px;
+  background: url("./assets/imgs/ipad-ar-peview.png");
+  background-size: 1061px 554px;
+  margin-left: -39px;
+  margin-top: 40px;
+}
+
+.gallery-tabs {
+  margin-top: 40px;
+  margin-bottom: 60px;
+
+  .gallery-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+}
+
+.padhor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 60px;
+
+  &-text {
+    width: 300px;
+  }
+
+  .padview {
+    flex-shrink: 0;
+    margin-left: 36px;
+  }
+
+  .photo {
+    flex-shrink: 0;
+    margin-left: 98px;
+    background-size: 612px 432px;
+    width: 612px;
+    height: 432px;
+  }
+
+  &.mirrored {
+    flex-direction: row-reverse;
+
+    .padview {
+      flex-shrink: 0;
+      margin-right: 36px;
+      margin-left: 0;
+    }
+
+    .photo {
+      margin-left: 0;
+      margin-right: 98px;
+    }
+  }
+}
