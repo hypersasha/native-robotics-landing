@@ -2043,3 +2043,216 @@ body {
   padding: 6px 8px;
 }
 
+html,
+body {
+  background: #000000;
+}
+header.omnifit {
+  padding-top: 70px;
+}
+.container {
+  max-width: 988px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  overflow: visible;
+}
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-navigation--links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 18px;
+}
+.header-navigation--links .nav-link {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8E8E93;
+  padding: 7px 0;
+  cursor: pointer;
+  margin: 0 13px;
+  letter-spacing: 0;
+}
+.header-navigation--links .nav-link:hover {
+  color: #1C8DFF;
+}
+.header-navigation--links .nav-link.active {
+  color: #ECECED;
+}
+section {
+  padding: 60px 0 0 0;
+}
+section.divided {
+  border-bottom: 5px solid #252525;
+}
+section.intro {
+  padding-top: 50px;
+}
+section .section-text {
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #EAEAEA;
+  padding: 20px 0 0 0;
+  margin: 0;
+  max-width: 652px;
+}
+section .section-text.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+#ipad-ar-preview {
+  width: 1061px;
+  height: 554px;
+  background: url(assets/images/ipad-ar-peview.png);
+  background-size: 1061px 554px;
+  margin-left: -39px;
+  margin-top: 40px;
+}
+.gallery-tabs {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+.gallery-tabs .gallery-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.padhor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 60px;
+}
+.padhor-text {
+  width: 300px;
+}
+.padhor .padview {
+  flex-shrink: 0;
+  margin-left: 36px;
+}
+.padhor .photo {
+  flex-shrink: 0;
+  margin-left: 98px;
+  background-size: 612px 432px;
+  width: 612px;
+  height: 432px;
+}
+.padhor.mirrored {
+  flex-direction: row-reverse;
+}
+.padhor.mirrored .padview {
+  flex-shrink: 0;
+  margin-right: 36px;
+  margin-left: 0;
+}
+.padhor.mirrored .photo {
+  margin-left: 0;
+  margin-right: 98px;
+}
+
+.action-button {
+  color: #ffffff;
+  padding: 8px 16px;
+  background: #0071E3;
+  border-radius: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: normal;
+  font-size: 52px;
+  line-height: 68px;
+  text-indent: -5px;
+  color: #FAFAFA;
+  max-width: 484px;
+}
+.title.centered {
+  max-width: none;
+  text-align: center;
+}
+.title.small {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 20px;
+}
+.app .content {
+  display: none;
+}
+.app .content .app-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 49px;
+  color: #D9D9D9;
+  margin-bottom: 16px;
+}
+.app .content .app-description {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #C7C7C7;
+}
+.app .preview {
+  width: 316px;
+  height: 349px;
+  background-size: 316px 349px;
+  background-color: #252525;
+  flex-shrink: 0;
+}
+
+.padview {
+  width: 652px;
+  height: 472px;
+  background-size: 652px 472px;
+  background-image: url(assets/images/ipad-pro-mock.png);
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+.padview .padview-image {
+  background: #242424;
+  flex-shrink: 0;
+  border-radius: 16px;
+  margin: 20px;
+  flex-grow: 1;
+  background-size: 612px 432px;
+}
+
