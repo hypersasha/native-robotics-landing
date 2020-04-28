@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './omnifit.less';
 import ActionButton from "./components/OmniFit/ActionButton/ActionButton";
 import Title from "./components/OmniFit/Title/Title";
-import AppRouter from "./Router";
 import AppTab from "./components/OmniFit/ApplicationTab/AppTab";
 import Padview from "./components/OmniFit/Padview/Padview";
 
@@ -35,7 +34,8 @@ class Omnifit extends Component {
 
         this.state = {
             name: '',
-            mail: ''
+            mail: '',
+            formSent: false
         };
 
         this.sendRequest = this.sendRequest.bind(this);
@@ -74,11 +74,15 @@ class Omnifit extends Component {
             let mail = this.state.mail.trim();
             console.log('Sending data: ' + name + ' - ' + mail);
 
-            axios.post('https://nr-form-api-test.now.sh', {
+            axios.post('https://nr-form-api-test.now.sh/requestDemo', {
                 name: name,
                 email: mail
-            }).then((response) => {
-                console.log(response)
+            }
+            ).then((response) => {
+                console.log(response);
+                this.setState({
+                    formSent: true
+                })
             }).catch((err) => {
                 console.error(err);
             })
@@ -265,7 +269,7 @@ class Omnifit extends Component {
                                 <div className="padhor-text--title">
                                     <Title small={true} text={'Exhibit anywhere.'}/>
                                     <p className="section-text">
-                                        Interactive and immersive content for any presentation and exhibition. And up to 40m of free space!
+                                        Interactive and immersive content for any presentation and exhibition. And up to 40m<sup>2</sup> of free space!
                                     </p>
                                 </div>
                             </div>
@@ -277,14 +281,26 @@ class Omnifit extends Component {
                 <section className="light" id={"request-form"}>
                     <div className="container" style={{padding: '60px 0 120px 0'}}>
                         <Title center={true} text={'Try OmniFit now.'} />
-                        <p className="section-text centered">
-                            Fill out the form below and we will contact you shortly.
-                        </p>
-                        <form style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 40}}>
-                            <input type="text" onChange={this.onChange} name={'name'} value={this.state.name} placeholder={'Name'} className={'form-input'} />
-                            <input type="text" onChange={this.onChange} name={'mail'} value={this.state.mail} placeholder={'E-mail'} className={'form-input'} />
-                            <div className="submit-button" onClick={this.sendRequest}>Request Demo</div>
-                        </form>
+                        {
+                            !this.state.formSent &&
+                            <p className="section-text centered">
+                                Fill out the form below and we will contact you shortly.
+                            </p>
+                        }
+                        {
+                            this.state.formSent &&
+                            <p className="section-text centered">
+                                Thank you! We will contact you soon.
+                            </p>
+                        }
+                        {
+                            !this.state.formSent &&
+                            <form style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 40}}>
+                                <input type="text" onChange={this.onChange} name={'name'} value={this.state.name} placeholder={'Name'} className={'form-input'} />
+                                <input type="text" onChange={this.onChange} name={'mail'} value={this.state.mail} placeholder={'E-mail'} className={'form-input'} />
+                                <div className="submit-button" onClick={this.sendRequest}>Request Demo</div>
+                            </form>
+                        }
                     </div>
                 </section>
 
