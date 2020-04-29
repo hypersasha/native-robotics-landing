@@ -5,6 +5,7 @@ import App from "./App";
 import Pack from './Pack';
 import Styleguide from "./Styleguide";
 import Omnifit from "./Omnifit";
+import OmniFitRequests from "./OmniFitRequests";
 
 class AppRouter extends Component {
 
@@ -16,6 +17,7 @@ class AppRouter extends Component {
                 <Route path={'/opack'} component={Pack} />
                 <Route path={'/styleguide'} component={Styleguide} />
                 <Route path={'/omnifit'} component={Omnifit} />
+                <Route path={'/omnifitreq'} component={OmniFitRequests} />
                 </div>
             </Router>
             )
