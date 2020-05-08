@@ -2063,6 +2063,17 @@ header.omnifit {
   align-items: center;
   justify-content: space-between;
 }
+.product-name {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: normal;
+  font-size: 52px;
+  line-height: 68px;
+  text-indent: -5px;
+  color: #e3e3e3;
+  max-width: 484px;
+  margin: 0;
+  padding: 0;
+}
 .header-navigation {
   display: flex;
   flex-direction: row;
@@ -2295,7 +2306,7 @@ section .section-text.centered {
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 15px;
   margin-left: 20px;
 }
