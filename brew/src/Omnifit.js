@@ -101,7 +101,6 @@ class Omnifit extends Component {
                             <div className="header-navigation--links">
                                 <div className="nav-link active">Overview</div>
                                 <div className="nav-link" onClick={() => {this.navToSection('why-omnifit')}}>Why OmniFit</div>
-                                <div className="nav-link" onClick={() => {this.navToSection('features')}}>Features</div>
                             </div>
                             <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
                         </div>
@@ -111,6 +110,7 @@ class Omnifit extends Component {
                 {/* Boost your sales with AR experience. */}
                 <section className="intro divided">
                     <div className="container">
+                        <h3 className={"product-name"}>OmniFit.</h3>
                         <Title text={'Boost your sales with AR experience.'}/>
                         <p className="section-text">
                             We’ve created hyper-realistic AR models of all UR robots, additional hardware and&nbsp;even
@@ -177,11 +177,11 @@ class Omnifit extends Component {
                                 <div className="padhor-text--title">
                                     <Title small={true} text={`Place the robot anywhere.`}/>
                                     <p className="section-text">
-                                        Check robot reachability for various applications. You have a full time of UR robots at your fingertips, even if you brought only UR-5 with you.
+                                        Check robot reachability for various applications. You have a full range of UR robots at your fingertips, even if you brought only UR-3 with you.
                                     </p>
                                 </div>
                             </div>
-                            <div className="photo" style={{backgroundImage: 'url(' + photoTend + ')'}} />
+                            <Padview image={photoTend}/>
                         </div>
                     </div>
                 </section>
@@ -191,7 +191,7 @@ class Omnifit extends Component {
                         <div className="padhor mirrored photo">
                             <div className="padhor-text">
                                 <div className="padhor-text--title">
-                                    <Title small={true} text={'Break the ice & attract\u00A0attention.'}/>
+                                    <Title small={true} text={'Attract\u00A0attention.'}/>
                                     <p className="section-text">
                                         Show case your solutions to anyone and anywhere even in the conference room.
                                     </p>
@@ -226,7 +226,7 @@ class Omnifit extends Component {
                                 <div className="padhor-text--title">
                                     <Title small={true} text={'Create catchy visualizations.'}/>
                                     <p className="section-text">
-                                        Attach the visuals to your commercial proposal.
+                                        Attach the illustrations to your commercial proposal.
                                     </p>
                                 </div>
                             </div>
@@ -273,7 +273,7 @@ class Omnifit extends Component {
                                     </p>
                                 </div>
                             </div>
-                            <div className="photo" style={{backgroundImage: 'url(' + photoExhibit + ')', zIndex: 1, position: 'relative'}} />
+                            <Padview image={photoExhibit}/>
                         </div>
                     </div>
                 </section>
