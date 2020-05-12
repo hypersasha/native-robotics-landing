@@ -27,6 +27,10 @@ const photoTabletop = require('./assets/imgs/photo-tabletop.png');
 const photoLetter = require('./assets/imgs/photo-letter.png');
 const photoExhibit = require('./assets/imgs/photo-exhibit.png');
 
+const insta = require('./assets/imgs/icons/insta.png');
+const youtube = require('./assets/imgs/icons/youtube.png');
+const linkedin = require('./assets/imgs/icons/linkedin.png');
+
 class Omnifit extends Component {
 
     constructor(props) {
@@ -35,12 +39,16 @@ class Omnifit extends Component {
         this.state = {
             name: '',
             mail: '',
+            mailValid: true,
+            nameValid: true,
             formSent: false
         };
 
         this.sendRequest = this.sendRequest.bind(this);
         this.onChange = this.onChange.bind(this);
         this.navToSection = this.navToSection.bind(this);
+        this.checkEmail = this.checkEmail.bind(this);
+        this.checkName = this.checkName.bind(this);
 
     }
 
@@ -62,13 +70,41 @@ class Omnifit extends Component {
         });
     }
 
+    checkEmail(e) {
+        const value = this.state.mail;
+        this.setState({
+            mailValid: this.validateEmail(value)
+        })
+    }
+
+    checkName(e) {
+        const value = this.state.name;
+        this.setState({
+            nameValid: (value.trim().length > 2)
+        });
+    }
+
+
+    validateEmail(email) {
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
     navToSection(section_id) {
         document.getElementById(section_id).scrollIntoView({block: 'start'});
     }
 
     sendRequest() {
+
+        this.checkEmail();
+        this.checkName();
+
+        if (!this.state.mailValid || !this.state.nameValid) {
+            return false;
+        }
+
         if (this.state.name.trim().length === 0 || this.state.mail.trim().length === 0) {
-            console.log('Enter your name and mail.');
+            return false;
         } else {
             let name = this.state.name.trim();
             let mail = this.state.mail.trim();
@@ -283,21 +319,21 @@ class Omnifit extends Component {
                         <Title center={true} text={'Try OmniFit now.'} />
                         {
                             !this.state.formSent &&
-                            <p className="section-text centered">
-                                Fill out the form below and we will contact you shortly.
+                            <p className="section-text centered" style={{fontSize: 18}}>
+                                Request a free demo by filling out the form below.
                             </p>
                         }
                         {
                             this.state.formSent &&
-                            <p className="section-text centered">
+                            <p className="section-text centered" style={{fontSize: 21}}>
                                 Thank you! We will contact you soon.
                             </p>
                         }
                         {
                             !this.state.formSent &&
                             <form style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 40}}>
-                                <input type="text" onChange={this.onChange} name={'name'} value={this.state.name} placeholder={'Name'} className={'form-input'} />
-                                <input type="text" onChange={this.onChange} name={'mail'} value={this.state.mail} placeholder={'E-mail'} className={'form-input'} />
+                                <input type="text" onChange={this.onChange} onBlur={this.checkName} name={'name'} value={this.state.name} placeholder={'Name'} className={'form-input' + (this.state.nameValid ? "" : " error")} />
+                                <input type="text" onChange={this.onChange} onBlur={this.checkEmail} name={'mail'} value={this.state.mail} placeholder={'E-mail'} className={'form-input' + (this.state.mailValid ? "" : " error")} />
                                 <div className="submit-button" onClick={this.sendRequest}>Request Demo</div>
                             </form>
                         }
@@ -316,9 +352,9 @@ class Omnifit extends Component {
                                 </div>
                             </div>
                             <div className="footer-links">
-                                <div className="link"><a href="https://www.linkedin.com/company/native-robotics" target={'_blank'}>Linked.in</a></div>
-                                <div className="link"><a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a></div>
-                                <div className="link"><a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ" target={'_blank'}>YouTube</a></div>
+                                <div className="link"><div className={'link-icon'} style={{backgroundImage: "url(" + linkedin + ")"}} /><a href="https://www.linkedin.com/company/native-robotics" target={'_blank'}>Linked.in</a></div>
+                                <div className="link"><div className={'link-icon'} style={{backgroundImage: "url(" + insta + ")"}} /><a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a></div>
+                                <div className="link"><div className={'link-icon'} style={{backgroundImage: "url(" + youtube + ")"}} /><a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ" target={'_blank'}>YouTube</a></div>
                                 <div className="link">hello@native-robotics.com</div>
                             </div>
                         </div>
