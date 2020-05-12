@@ -2255,6 +2255,9 @@ section .section-text.centered {
   font-size: 16px;
   line-height: 19px;
 }
+.form-input.error {
+  border-color: #DF3A30 !important;
+}
 .form-input:focus {
   border-color: #1C8DFF;
 }
@@ -2309,6 +2312,18 @@ section .section-text.centered {
   font-size: 13px;
   line-height: 15px;
   margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-links .link-icon {
+  width: 21px;
+  height: 21px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 6px;
 }
 .footer-links .link a {
   color: #555555;
