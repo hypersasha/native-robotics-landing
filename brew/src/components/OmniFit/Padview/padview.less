@@ -1,3 +1,5 @@
+@mobile-preview-width: 3vw;
+
 .padview {
   width: 652px;
   height: 472px;
@@ -7,6 +9,33 @@
   justify-content: stretch;
   align-items: stretch;
 
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    height: auto;
+    width: auto;
+    display: block;
+    position: relative;
+    background: transparent;
+    margin-top: 16px;
+    overflow: hidden;
+  }
+
+  .iPadMockMobile {
+
+    display: none;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      display: block;
+      width: 94vw;
+      height: auto;
+    }
+  }
+
   .padview-image {
     background: #242424;
     flex-shrink: 0;
@@ -14,5 +43,20 @@
     margin: 20px;
     flex-grow: 1;
     background-size: 612px 432px;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin: 0;
+      top: @mobile-preview-width;
+      bottom: @mobile-preview-width;
+      left: @mobile-preview-width;
+      right: @mobile-preview-width;
+      border-radius: 8px;
+      position: absolute;
+      background-size: cover;
+      background-position: center;
+    }
   }
 }

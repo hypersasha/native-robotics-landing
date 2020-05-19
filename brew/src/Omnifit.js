@@ -152,7 +152,9 @@ class Omnifit extends Component {
                             We’ve created hyper-realistic AR models of all UR robots, additional hardware and&nbsp;even
                             complete robotic cells. So you can showcase your solutions anytime and&nbsp;anywhere.
                         </p>
-                        <div id="ipad-ar-preview"/>
+                        <div id="ipad-ar-preview">
+                            <img src={arPreview} alt={"OmniFit preview screenshot."} />
+                        </div>
                     </div>
                 </section>
 
@@ -231,7 +233,7 @@ class Omnifit extends Component {
                                     <p className="section-text">
                                         Show case your solutions to anyone and anywhere even in the conference room.
                                     </p>
-                                    <div style={{width: 316, height: 144, backgroundImage: "url(" + photoTabletop + ")", backgroundSize: 'cover', marginTop: 20, borderRadius: 4, marginLeft: -140, boxShadow: '0 8px 24px rgba(0,0,0,0.6)', position: 'relative', zIndex: 99999}} />
+                                    <div className={'tabletop'} />
                                 </div>
                             </div>
                             <div className="photo" style={{backgroundImage: 'url(' + photoBluesun + ')', zIndex: 1, position: 'relative'}} />
@@ -258,7 +260,7 @@ class Omnifit extends Component {
                 <section className="light" id={"features"}>
                     <div className="container">
                         <div className="padhor mirrored">
-                            <div className="padhor-text" style={{marginRight: 80}}>
+                            <div className="padhor-text margined">
                                 <div className="padhor-text--title">
                                     <Title small={true} text={'Create catchy visualizations.'}/>
                                     <p className="section-text">
@@ -285,7 +287,7 @@ class Omnifit extends Component {
                 <section className="light">
                     <div className="container">
                         <div className="padhor">
-                            <div className="padhor-text" style={{marginLeft: 156}}>
+                            <div className="padhor-text leftMargined">
                                 <div className="padhor-text--title">
                                     <Title small={true} text={'Make it personal.'}/>
                                     <p className="section-text">

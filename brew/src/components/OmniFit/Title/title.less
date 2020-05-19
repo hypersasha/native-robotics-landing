@@ -7,6 +7,15 @@
   color: #FAFAFA;
   max-width: 484px;
 
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 48px;
+    line-height: 56px;
+    text-indent: 0;
+  }
+
   &.centered {
     max-width: none;
     text-align: center;
