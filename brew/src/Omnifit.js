@@ -161,10 +161,13 @@ class Omnifit extends Component {
                 {/* Gallery cards. */}
                 <section className="gallery">
                     <div className="container">
-                        <Title text={"Interactive simulations at your fingertips."} center={true}/>
+                        <Title small={false} text={"Interactive simulations at your fingertips."} center={true}/>
                         <p className="section-text centered">
                             All these models are interactive and customizable already in the app, so you can find the solution, which is just for you.
                         </p>
+                        <div style={{width: 150, margin: "24px auto 0"}}>
+                            <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
+                        </div>
                         <div className="gallery-tabs">
                             <div className="gallery-row">
                                 <AppTab title={'Palletizing'}
@@ -241,7 +244,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
-                <section>
+                <section className={'divided'}>
                     <div className="container">
                         <div className="padhor">
                             <div className="padhor-text">
@@ -253,6 +256,24 @@ class Omnifit extends Component {
                                 </div>
                             </div>
                             <Padview image={previewLayout}/>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div className="container">
+                        <Title text={"Create AR demos right on the plant."} center />
+                        <p className="section-text centered">
+                            Customize the system according to technical requirements&nbsp;and record a video with AR simulations.
+                        </p>
+                        <div style={{width: 150, margin: "24px auto 0"}}>
+                            <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
+                        </div>
+                        <div className="iphone-border">
+                            <iframe className={"yt-player-iphone"} src="https://www.youtube.com/embed/yLfmKYhOt9g?color=white&fs=1&rel=0&showinfo=0&iv_load_policy=3&controls=1&rel=0&loop=1"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen></iframe>
                         </div>
                     </div>
                 </section>
