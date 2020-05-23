@@ -11,21 +11,19 @@ const logo = require('./assets/nr-logo-omnikit.svg');
 const logoLetter = require('./assets/logo-letter.svg');
 const logoFooter = require('./assets/nr-logo-footer.svg');
 
-const arPreview = require('./assets/imgs/ipad-ar-peview.png');
+const arPreview = require('./assets/imgs/ipad-ar-peview.jpg');
 
-const previewPallets = require('./assets/imgs/preview-palletizing.png');
-const previewDispencing = require('./assets/imgs/preview-dispencing.png');
-const previewCaseFold = require('./assets/imgs/preview-casefold.png');
-const previewTend = require('./assets/imgs/preview-tending.png');
-const previewPlain = require('./assets/imgs/preview-plain.png');
-const previewScrew = require('./assets/imgs/preview-screw.png');
-const previewLayout = require('./assets/imgs/preview-layout.png');
-const previewAR = require('./assets/imgs/preview-ar.png');
-const photoTend = require('./assets/imgs/photo-view.png');
-const photoBluesun = require('./assets/imgs/photo-bluesun.png');
-const photoTabletop = require('./assets/imgs/photo-tabletop.png');
-const photoLetter = require('./assets/imgs/photo-letter.png');
-const photoExhibit = require('./assets/imgs/photo-exhibit.png');
+const previewPallets = require('./assets/imgs/preview-palletizing.jpg');
+const previewDispencing = require('./assets/imgs/preview-dispencing.jpg');
+const previewCaseFold = require('./assets/imgs/preview-casefold.jpg');
+const previewTend = require('./assets/imgs/preview-tending.jpg');
+const previewPlain = require('./assets/imgs/preview-plain.jpg');
+const previewScrew = require('./assets/imgs/preview-screw.jpg');
+const previewLayout = require('./assets/imgs/preview-layout.jpg');
+const previewAR = require('./assets/imgs/preview-ar.jpg');
+const photoTend = require('./assets/imgs/photo-view.jpg');
+const photoBluesun = require('./assets/imgs/photo-bluesun.jpg');
+const photoExhibit = require('./assets/imgs/photo-exhibit.jpg');
 
 const insta = require('./assets/imgs/icons/insta.png');
 const youtube = require('./assets/imgs/icons/youtube.png');
