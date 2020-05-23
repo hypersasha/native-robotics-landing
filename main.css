@@ -2229,7 +2229,7 @@ section .section-text.centered {
 .padhor .tabletop {
   width: 316px;
   height: 144px;
-  background-image: url(assets/images/photo-tabletop.png);
+  background-image: url(assets/images/photo-tabletop.jpg);
   background-size: cover;
   margin-top: 20px;
   border-radius: 4px;
@@ -2356,7 +2356,7 @@ section .section-text.centered {
 .letter-photo {
   width: 378px;
   height: 238px;
-  background-image: url(assets/images/photo-letter.png);
+  background-image: url(assets/images/photo-letter.jpg);
   background-size: 378px 238px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
