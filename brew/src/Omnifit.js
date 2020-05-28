@@ -24,6 +24,7 @@ const previewAR = require('./assets/imgs/preview-ar.jpg');
 const photoTend = require('./assets/imgs/photo-view.jpg');
 const photoBluesun = require('./assets/imgs/photo-bluesun.jpg');
 const photoExhibit = require('./assets/imgs/photo-exhibit.jpg');
+const outlook = require('./assets/imgs/outlook.png');
 
 const insta = require('./assets/imgs/icons/insta.png');
 const youtube = require('./assets/imgs/icons/youtube.png');
@@ -150,6 +151,9 @@ class Omnifit extends Component {
                             We’ve created hyper-realistic AR models of all UR robots, additional hardware and&nbsp;even
                             complete robotic cells. So you can showcase your solutions anytime and&nbsp;anywhere.
                         </p>
+                        <div className="action-mobile">
+                            <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
+                        </div>
                         <div id="ipad-ar-preview">
                             <img src={arPreview} alt={"OmniFit preview screenshot."} />
                         </div>
@@ -163,9 +167,6 @@ class Omnifit extends Component {
                         <p className="section-text centered">
                             All these models are interactive and customizable already in the app, so you can find the solution, which is just for you.
                         </p>
-                        <div style={{width: 150, margin: "24px auto 0"}}>
-                            <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
-                        </div>
                         <div className="gallery-tabs">
                             <div className="gallery-row">
                                 <AppTab title={'Palletizing'}
@@ -314,7 +315,9 @@ class Omnifit extends Component {
                                     </p>
                                 </div>
                             </div>
-                            <div className="outlook" />
+                            <div className="outlook">
+                                <img src={outlook}  />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -361,8 +364,9 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
-                <section className={'light'}>
-                    <div className="container" style={{borderTop: '1px solid #EFEFF3'}}>
+                <section className={'light gray'}>
+                    <div className="container top-border">
+                        <h3 className={"footer-header--mobile"}>Contact Us</h3>
                         <div className="footer-content">
                             <div className="footer-logo">
                                 <div style={{height: 21}}>

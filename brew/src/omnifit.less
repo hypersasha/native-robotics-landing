@@ -19,6 +19,10 @@ header.omnifit {
   position: relative;
   display: block;
   overflow: visible;
+
+  &.top-border {
+    border-top: 1px solid #EFEFF3;
+  }
 }
 
 .header-content {
@@ -32,6 +36,19 @@ header.omnifit {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
     padding: 0 12px;
+  }
+}
+
+.action-mobile {
+  max-width: 150px;
+  margin: 24px 0 0 0;
+  display: none;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    display: block;
   }
 }
 
@@ -60,6 +77,16 @@ header.omnifit {
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  .action-button {
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      display: none;
+    }
+  }
 
   &--links {
 
@@ -122,6 +149,12 @@ section {
     &.divided {
       border-bottom: 5px solid #E0E0E0;
     }
+  }
+
+  &.gray {
+    background: #EFEFF5;
+    padding-top: 10px;
+    border-top: 0;
   }
 
 
@@ -429,13 +462,29 @@ section {
   and (-webkit-min-device-pixel-ratio: 2) {
     width: 94vw;
     margin-left: 0;
-    background-size: contain;
-    height: 460px;
+    background: transparent;
+    height: auto;
     margin-top: 20px;
+  }
+
+  img {
+    display: none;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      width: 94vw;
+      display: block;
+    }
   }
 }
 
 .form-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
   padding: 12px 16px;
   width: 286px;
   background: #ffffff;
@@ -445,6 +494,7 @@ section {
   display: block;
   margin-bottom: 10px;
   outline: none;
+  box-shadow: none;
 
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -460,6 +510,14 @@ section {
     border-color: #1C8DFF;
   }
 
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
 }
 
 .submit-button {
@@ -483,6 +541,35 @@ section {
   &:hover {
     background: linear-gradient(180deg, #45A2FF 0%, #1075DA 100%);
   }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: auto;
+    align-self: stretch;
+    padding: 14px 24px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+  }
+}
+
+.footer-header--mobile {
+  display: none;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    display: block;
+    font-weight: 500;
+    margin: 0;
+    padding: 18px 0 0;
+  }
 }
 
 .footer-content {
@@ -495,13 +582,25 @@ section {
   and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 100%;
   }
 
   .footer-logo {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin-bottom: 24px;
+      margin-top: 40px;
+    }
   }
 }
 
@@ -527,6 +626,9 @@ section {
   and (-webkit-min-device-pixel-ratio: 2) {
     flex-direction: column;
     align-items: flex-start;
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
   }
 
   .link {
@@ -547,7 +649,12 @@ section {
     and (max-device-width: 568px)
     and (-webkit-min-device-pixel-ratio: 2) {
       margin-left: 0;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      background: #FFFFFF;
+      padding: 12px;
+      border-radius: 10px;
+      align-self: stretch;
     }
 
     &-icon {
@@ -557,7 +664,6 @@ section {
       background-position: center;
       background-repeat: no-repeat;
       margin-right: 6px;
-
     }
 
     a {
@@ -567,6 +673,14 @@ section {
       &:hover {
         color: #1C8DFF;
         cursor: pointer;
+      }
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        display: block;
+        width: 100%;
       }
     }
   }
