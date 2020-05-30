@@ -170,8 +170,8 @@ section {
     font-family: 'Noto Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 28px;
     letter-spacing: 0;
     color: #EAEAEA;
 
@@ -714,6 +714,87 @@ section {
   }
 }
 
+.iphone-video {
+  width: 896px;
+  height: 448px;
+  position: relative;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  margin: 40px auto 60px;
+
+  .device-border {
+    width: 896px;
+    height: 448px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 3;
+    background-image: url("./assets/imgs/iphone-11-border.png");
+    background-color: transparent;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      display: none;
+    }
+  }
+
+  video {
+    width: 100%;
+    border-radius: 120px;
+    margin-top: -16px;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      border-radius: 0;
+      width: 100vw;
+      margin-left: -12px;
+      height: auto;
+    }
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: auto;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .play-video {
+    left: 50%;
+    margin-left: -32px;
+    top: 50%;
+    margin-top: -42px;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    border-radius: 50%;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+}
+
 .iphone-border {
   width: 896px;
   height: 448px;
@@ -726,7 +807,6 @@ section {
 
   .yt-player-iphone {
     flex-grow: 1;
-    margin: 20px 60px;
 
     @media only screen
     and (min-device-width: 320px)

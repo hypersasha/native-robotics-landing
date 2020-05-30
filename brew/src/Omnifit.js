@@ -30,6 +30,9 @@ const insta = require('./assets/imgs/icons/insta.png');
 const youtube = require('./assets/imgs/icons/youtube.png');
 const linkedin = require('./assets/imgs/icons/linkedin.png');
 
+const robovid = require('./assets/robotend.mp4');
+const vidpreview = require('./assets/imgs/vidpreview.png');
+
 class Omnifit extends Component {
 
     constructor(props) {
@@ -40,7 +43,8 @@ class Omnifit extends Component {
             mail: '',
             mailValid: true,
             nameValid: true,
-            formSent: false
+            formSent: false,
+            isVideoPlaying: false
         };
 
         this.sendRequest = this.sendRequest.bind(this);
@@ -48,6 +52,9 @@ class Omnifit extends Component {
         this.navToSection = this.navToSection.bind(this);
         this.checkEmail = this.checkEmail.bind(this);
         this.checkName = this.checkName.bind(this);
+
+        this.videoRef = React.createRef();
+        this.videoPlaying = false;
 
     }
 
@@ -58,7 +65,20 @@ class Omnifit extends Component {
             })
             .catch((err) => {
                 console.error(err);
-            })
+            });
+
+        this.videoRef.current.pause();
+
+        window.addEventListener('scroll', () => {
+            let position = this.videoRef.current.getBoundingClientRect();
+            // checking for partial visibility
+            if(position.top < window.innerHeight && position.bottom >= 0) {
+                if (this.videoPlaying === false) {
+                    this.videoPlaying = true;
+                    this.videoRef.current.play();
+                }
+            }
+        });
     }
 
     onChange(e) {
@@ -110,9 +130,9 @@ class Omnifit extends Component {
             console.log('Sending data: ' + name + ' - ' + mail);
 
             axios.post('https://nr-form-api-test.now.sh/requestDemo', {
-                name: name,
-                email: mail
-            }
+                    name: name,
+                    email: mail
+                }
             ).then((response) => {
                 console.log(response);
                 this.setState({
@@ -123,6 +143,7 @@ class Omnifit extends Component {
             })
         }
     }
+
 
     render() {
         return (
@@ -135,9 +156,14 @@ class Omnifit extends Component {
                         <div className="header-navigation">
                             <div className="header-navigation--links">
                                 <div className="nav-link active">Overview</div>
-                                <div className="nav-link" onClick={() => {this.navToSection('why-omnifit')}}>Why OmniFit</div>
+                                <div className="nav-link" onClick={() => {
+                                    this.navToSection('why-omnifit')
+                                }}>Why OmniFit
+                                </div>
                             </div>
-                            <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
+                            <ActionButton onClick={() => {
+                                this.navToSection('request-form')
+                            }} label={'Request Demo'}/>
                         </div>
                     </div>
                 </header>
@@ -152,10 +178,12 @@ class Omnifit extends Component {
                             complete robotic cells. So you can showcase your solutions anytime and&nbsp;anywhere.
                         </p>
                         <div className="action-mobile">
-                            <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
+                            <ActionButton onClick={() => {
+                                this.navToSection('request-form')
+                            }} label={'Request Demo'}/>
                         </div>
                         <div id="ipad-ar-preview">
-                            <img src={arPreview} alt={"OmniFit preview screenshot."} />
+                            <img src={arPreview} alt={"OmniFit preview screenshot."}/>
                         </div>
                     </div>
                 </section>
@@ -165,7 +193,8 @@ class Omnifit extends Component {
                     <div className="container">
                         <Title small={false} text={"Interactive simulations at your fingertips."} center={true}/>
                         <p className="section-text centered">
-                            All these models are interactive and customizable already in the app, so you can find the solution, which is just for you.
+                            All these models are interactive and customizable already in the app, so you can find the
+                            solution, which is just for you.
                         </p>
                         <div className="gallery-tabs">
                             <div className="gallery-row">
@@ -201,7 +230,9 @@ class Omnifit extends Component {
                                 <div className="padhor-text--title">
                                     <Title small={true} text={'Visualize instantly.'}/>
                                     <p className="section-text">
-                                        Fit your system on the customer factory floor and show how exactly the whole system will look like, how much space it takes, how it moves, and how fast it is.
+                                        Fit your system on the customer factory floor and show how exactly the whole
+                                        system will look like, how much space it takes, how it moves, and how fast it
+                                        is.
                                     </p>
                                 </div>
                             </div>
@@ -217,7 +248,8 @@ class Omnifit extends Component {
                                 <div className="padhor-text--title">
                                     <Title small={true} text={`Place the robot anywhere.`}/>
                                     <p className="section-text">
-                                        Check robot reachability for various applications. You have a full range of UR robots at your fingertips, even if you brought only UR-3 with you.
+                                        Check robot reachability for various applications. You have a full range of UR
+                                        robots at your fingertips, even if you brought only UR-3 with you.
                                     </p>
                                 </div>
                             </div>
@@ -235,10 +267,14 @@ class Omnifit extends Component {
                                     <p className="section-text">
                                         Show case your solutions to anyone and anywhere even in the conference room.
                                     </p>
-                                    <div className={'tabletop'} />
+                                    <div className={'tabletop'}/>
                                 </div>
                             </div>
-                            <div className="photo" style={{backgroundImage: 'url(' + photoBluesun + ')', zIndex: 1, position: 'relative'}} />
+                            <div className="photo" style={{
+                                backgroundImage: 'url(' + photoBluesun + ')',
+                                zIndex: 1,
+                                position: 'relative'
+                            }}/>
                         </div>
                     </div>
                 </section>
@@ -250,7 +286,8 @@ class Omnifit extends Component {
                                 <div className="padhor-text--title">
                                     <Title small={true} text={'Make it interactive.'}/>
                                     <p className="section-text">
-                                        Bring hands-on experience and show how easy it will be to set up the robot.<br/><br/>We remove the fear of complexity and hidden operational costs on reconfiguration.
+                                        Bring hands-on experience and show how easy it will be to set up the robot.<br/><br/>We
+                                        remove the fear of complexity and hidden operational costs on reconfiguration.
                                     </p>
                                 </div>
                             </div>
@@ -261,18 +298,28 @@ class Omnifit extends Component {
 
                 <section>
                     <div className="container">
-                        <Title text={"Create AR demos right on the plant."} center />
+                        <Title text={"Create AR demos right on the plant."} center/>
                         <p className="section-text centered">
-                            Customize the system according to technical requirements&nbsp;and record a video with AR simulations.
+                            Customize the system according to technical requirements&nbsp;and record a video with AR
+                            simulations.
                         </p>
                         <div style={{width: 150, margin: "24px auto 0"}}>
-                            <ActionButton onClick={() => {this.navToSection('request-form')}} label={'Request Demo'}/>
+                            <ActionButton onClick={() => {
+                                this.navToSection('request-form')
+                            }} label={'Request Demo'}/>
                         </div>
-                        <div className="iphone-border">
-                            <iframe className={"yt-player-iphone"} src="https://www.youtube.com/embed/yLfmKYhOt9g?color=white&fs=1&rel=0&showinfo=0&iv_load_policy=3&controls=1&rel=0&loop=1"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen></iframe>
+                        <div className={'iphone-video'}>
+                            <video preload={'metadata'}
+                                   poster={vidpreview}
+                                   controls={false}
+                                   muted={true}
+                                   autoPlay={true}
+                                   loop
+                                   playsInline={true}
+                                   ref={this.videoRef}>
+                                <source src={robovid} type={"video/mp4"}/>
+                            </video>
+                            <div className="device-border"/>
                         </div>
                     </div>
                 </section>
@@ -294,9 +341,10 @@ class Omnifit extends Component {
                                         <object data={logoLetter} type={'image/svg+xml'}/>
                                     </div>
                                     <div className="letter-text">
-                                        Dear Luis,<br/><br/>Thank you for your interest in our products. The below summarizes technical and commercial details of the system.
+                                        Dear Luis,<br/><br/>Thank you for your interest in our products. The below
+                                        summarizes technical and commercial details of the system.
                                     </div>
-                                    <div className="letter-photo" />
+                                    <div className="letter-photo"/>
                                     <div className="letter-photo--label">Figure 1. Rielic box folding station.</div>
                                 </div>
                             </div>
@@ -316,7 +364,7 @@ class Omnifit extends Component {
                                 </div>
                             </div>
                             <div className="outlook">
-                                <img src={outlook}  />
+                                <img src={outlook}/>
                             </div>
                         </div>
                     </div>
@@ -329,7 +377,8 @@ class Omnifit extends Component {
                                 <div className="padhor-text--title">
                                     <Title small={true} text={'Exhibit anywhere.'}/>
                                     <p className="section-text">
-                                        Interactive and immersive content for any presentation and exhibition. And up to 40m<sup>2</sup> of free space!
+                                        Interactive and immersive content for any presentation. And up to
+                                        40m<sup>2</sup> of free space!
                                     </p>
                                 </div>
                             </div>
@@ -340,7 +389,7 @@ class Omnifit extends Component {
 
                 <section className="light" id={"request-form"}>
                     <div className="container" style={{padding: '60px 0 120px 0'}}>
-                        <Title center={true} text={'Try OmniFit now.'} />
+                        <Title center={true} text={'Try OmniFit now.'}/>
                         {
                             !this.state.formSent &&
                             <p className="section-text centered" style={{fontSize: 18}}>
@@ -355,9 +404,14 @@ class Omnifit extends Component {
                         }
                         {
                             !this.state.formSent &&
-                            <form style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 40}}>
-                                <input type="text" onChange={this.onChange} onBlur={this.checkName} name={'name'} value={this.state.name} placeholder={'Name'} className={'form-input' + (this.state.nameValid ? "" : " error")} />
-                                <input type="text" onChange={this.onChange} onBlur={this.checkEmail} name={'mail'} value={this.state.mail} placeholder={'E-mail'} className={'form-input' + (this.state.mailValid ? "" : " error")} />
+                            <form
+                                style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 40}}>
+                                <input type="text" onChange={this.onChange} onBlur={this.checkName} name={'name'}
+                                       value={this.state.name} placeholder={'Name'}
+                                       className={'form-input' + (this.state.nameValid ? "" : " error")}/>
+                                <input type="text" onChange={this.onChange} onBlur={this.checkEmail} name={'mail'}
+                                       value={this.state.mail} placeholder={'E-mail'}
+                                       className={'form-input' + (this.state.mailValid ? "" : " error")}/>
                                 <div className="submit-button" onClick={this.sendRequest}>Request Demo</div>
                             </form>
                         }
@@ -377,9 +431,18 @@ class Omnifit extends Component {
                                 </div>
                             </div>
                             <div className="footer-links">
-                                <div className="link"><div className={'link-icon'} style={{backgroundImage: "url(" + linkedin + ")"}} /><a href="https://www.linkedin.com/company/native-robotics" target={'_blank'}>Linked.in</a></div>
-                                <div className="link"><div className={'link-icon'} style={{backgroundImage: "url(" + insta + ")"}} /><a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a></div>
-                                <div className="link"><div className={'link-icon'} style={{backgroundImage: "url(" + youtube + ")"}} /><a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ" target={'_blank'}>YouTube</a></div>
+                                <div className="link">
+                                    <div className={'link-icon'} style={{backgroundImage: "url(" + linkedin + ")"}}/>
+                                    <a href="https://www.linkedin.com/company/native-robotics"
+                                       target={'_blank'}>Linked.in</a></div>
+                                <div className="link">
+                                    <div className={'link-icon'} style={{backgroundImage: "url(" + insta + ")"}}/>
+                                    <a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a>
+                                </div>
+                                <div className="link">
+                                    <div className={'link-icon'} style={{backgroundImage: "url(" + youtube + ")"}}/>
+                                    <a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ"
+                                       target={'_blank'}>YouTube</a></div>
                                 <div className="link">hello@native-robotics.com</div>
                             </div>
                         </div>
