@@ -8,6 +8,7 @@ import Title from "./components/OmniPack/Title/Title";
 import Text from "./components/OmniPack/Text/Text";
 import AppMock from "./components/OmniPack/AppMock/AppMock";
 import axios from "axios";
+import Loader from "./components/OmniPack/Loader/Loader";
 
 // images
 const introScreen = require('./assets/imgs/omnipack/intro-screen.jpg');
@@ -29,7 +30,8 @@ class OmniPack extends Component {
             name: '',
             mailValid: true,
             nameValid: true,
-            formSent: false
+            formSent: false,
+            sending: false
         };
 
         this.onChange = this.onChange.bind(this);
@@ -92,17 +94,25 @@ class OmniPack extends Component {
             let mail = this.state.mail.trim();
             console.log('Sending data: ' + name + ' - ' + mail);
 
-            axios.post('https://nr-form-api-test.now.sh/requestDemo', {
-                    name: name + ' [-> OmniPack!]',
+            this.setState({
+                sending: true
+            });
+
+            axios.post('https://nr-form-api-test.now.sh/opackDemo', {
+                    name: name,
                     email: mail
                 }
             ).then((response) => {
                 console.log(response);
                 this.setState({
-                    formSent: true
+                    formSent: true,
+                    sending: false
                 })
             }).catch((err) => {
                 console.error(err);
+                this.setState({
+                    sending: false
+                })
             })
         }
     }
@@ -121,7 +131,7 @@ class OmniPack extends Component {
                     <div className="opack-content row">
                         <div>
                             <Title level={"primary"}>OmniPack</Title>
-                            <Text>Cut your costs and simplify operations with a cutting-edge palletization
+                            <Text>Reduce your costs and simplify operations with a cutting-edge palletization
                                 software.</Text>
                             <div className="blue-button" onClick={() => this.navToSection('form')}>Try it for Free</div>
                         </div>
@@ -311,12 +321,12 @@ class OmniPack extends Component {
                 {/* UR+ Certified */}
                 <section className={'opack-container'}>
                     <div className="opack-content column">
+                        {/*<Text align={'center'}>*/}
+                        {/*    OmniPack software is certified by the leading collaborative robots' producer.*/}
+                        {/*</Text>*/}
+                        {/*<div className="ur-certified"/>*/}
                         <Text align={'center'}>
-                            OmniPack software is certified by the leading collaborative robots' producer.
-                        </Text>
-                        <div className="ur-certified"/>
-                        <Text align={'center'}>
-                            And recognized by the Distributors and Integrators all over the world.
+                            OmniPack is recognized by the Distributors and Integrators all over the world.
                         </Text>
                         <div className="integrators">
                             <div className="fluitronic"/>
@@ -344,7 +354,7 @@ class OmniPack extends Component {
                         </Text>
                         }
 
-                        {!this.state.formSent &&
+                        {(!this.state.formSent && !this.state.sending) &&
                         <div className="opack-form">
                             <form>
                                 <input name={"name"} onChange={this.onChange} onBlur={this.checkName}
@@ -357,6 +367,7 @@ class OmniPack extends Component {
                             </form>
                         </div>
                         }
+                        {this.state.sending && <Loader/>}
                     </div>
                 </section>
 
