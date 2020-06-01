@@ -9,7 +9,7 @@ const ipad = require('../../../assets/imgs/omnipack/ipad-11-border.jpg');
 
 const AppMock = props => {
     return (
-        <div className={classNames("app-mock", {['inline']: props.inline})}>
+        <div className={classNames("app-mock", {['inline']: props.inline})} style={{height: props.customHeight + 'px'}}>
             <div className="app-mock--image" style={{backgroundImage: "url(" + props.image + ")"}}/>
             <img src={ipad} />
         </div>
@@ -17,11 +17,13 @@ const AppMock = props => {
 };
 
 AppMock.propTypes = {
-    'inline': PropTypes.bool
+    'inline': PropTypes.bool,
+    'customHeight': PropTypes.number
 };
 
 AppMock.defaultProps = {
-    'inline': false
+    'inline': false,
+    customHeight: 460
 };
 
 export default AppMock;

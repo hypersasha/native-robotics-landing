@@ -15,6 +15,7 @@ const introScreen = require('./assets/imgs/omnipack/intro-screen.jpg');
 const palletScreen = require('./assets/imgs/omnipack/pallet-screen.jpg');
 const trajectories = require('./assets/imgs/omnipack/trajectories.jpg');
 const urPlusSupport = require('./assets/imgs/omnipack/ur-plus-support.jpg');
+const urComponents = require('./assets/imgs/omnipack/components.jpg');
 
 const insta = require('./assets/imgs/icons/insta.png');
 const youtube = require('./assets/imgs/icons/youtube.png');
@@ -314,7 +315,7 @@ class OmniPack extends Component {
                                 <div className="rollon"/>
                             </div>
                         </div>
-                        <AppMock inline={true} image={urPlusSupport}/>
+                        <AppMock inline={true} image={urComponents} customHeight={766}/>
                     </div>
                 </section>
 

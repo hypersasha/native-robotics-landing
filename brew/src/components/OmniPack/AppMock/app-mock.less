@@ -21,12 +21,14 @@
   }
 
   &--image {
-    background-color: #252525;
+    background-color: #FFFFFF;
     flex-grow: 1;
     flex-shrink: 0;
     margin: 22px;
     border-radius: 10px;
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
     @media only screen
     and (min-device-width: 320px)
@@ -59,7 +61,7 @@
   and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    height: auto;
+    height: auto !important;
     width: 94vw;
     position: relative;
     display: block;
