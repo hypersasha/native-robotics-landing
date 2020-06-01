@@ -2711,6 +2711,43 @@ section .section-text.centered {
     height: 190px;
   }
 }
+.omnipack-link {
+  display: flex;
+  align-items: center;
+  background: #252525;
+  border-radius: 10px;
+  height: 42px;
+  position: relative;
+  justify-content: center;
+  padding: 0 16px;
+  width: 148px;
+  margin-top: 20px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-link {
+    display: none;
+  }
+}
+.omnipack-link a {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+}
+.omnipack-link p {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #e5e5e5;
+  font-weight: 500;
+}
+.omnipack-link div {
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+  margin-top: -5px;
+}
 
 .action-button {
   color: #ffffff;
