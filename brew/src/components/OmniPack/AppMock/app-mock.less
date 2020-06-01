@@ -1,0 +1,27 @@
+.app-mock {
+  width: 636px;
+  height: 460px;
+  background-image: url("../../../assets/imgs/omnipack/ipad-11-border.jpg");
+  background-size: 636px 460px;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+
+  &--image {
+    background-color: #252525;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 22px;
+    border-radius: 10px;
+    background-size: contain;
+  }
+
+  &.inline {
+    background-image: none;
+
+    .app-mock--image {
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+}
