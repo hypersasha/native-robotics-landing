@@ -331,7 +331,7 @@ class OmniPack extends Component {
                 {/* Contact form.  */}
                 <section id={'form'} className={'opack-container gray'}>
                     <div className="opack-content column">
-                        <Title>Try OmniPack now</Title>
+                        <Title align={'center'}>Try OmniPack now</Title>
                         {!this.state.formSent &&
                         <Text align={'center'}>
                             We will be happy to meet you online, showcase our solutions and perform remote demo on our
