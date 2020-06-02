@@ -132,7 +132,8 @@ section.opack-container {
   and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    flex-direction: column;
   }
 
   .connector {
@@ -144,13 +145,35 @@ section.opack-container {
       height: 3px;
       margin-bottom: 3px;
       background-color: #B2B2B2;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        height: 80px;
+        width: 3px;
+        margin: 0 3px 0 0;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      min-width: auto;
+      min-height: 80px;
+      display: flex;
+      flex-direction: row;
+      flex-basis: auto;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   }
 
   .ipad-big {
     width: 680px;
     height: 493px;
-    background: url("./assets/imgs/omnipack/ipad-11-big.jpg");
+    background: url("./assets/imgs/omnipack/ipad-11-big-layers.jpg");
     background-size: 680px 493px;
     flex-shrink: 0;
     position: relative;
@@ -167,13 +190,36 @@ section.opack-container {
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
       color: #161616;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        bottom: auto;
+        right: auto;
+        position: relative;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 0;
+      width: 94vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 72.5%;
+      margin: 0;
     }
   }
 
   .intel-pc {
     width: 108px;
     height: 493px;
-    background: url("./assets/imgs/omnipack/intel-pc-small.jpg");
+    background: url("./assets/imgs/omnipack/intel-pc.jpg");
     background-size: 108px 493px;
     flex-shrink: 0;
     display: block;
@@ -189,6 +235,31 @@ section.opack-container {
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
       color: #161616;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        bottom: auto;
+        left: auto;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-top: 12px;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 0;
+      width: 94vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 100%;
+      background-position: center;
+      margin: 0 0 14px 0;
     }
   }
 
@@ -210,6 +281,31 @@ section.opack-container {
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
       color: #161616;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        bottom: auto;
+        left: auto;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-top: 6px;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 0;
+      width: 94vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 81%;
+      background-position: center;
+      margin: 0;
     }
   }
 }

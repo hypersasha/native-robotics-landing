@@ -223,6 +223,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
+                {/* Visualize instantly */}
                 <section id={'why-omnifit'}>
                     <div className="container">
                         <div className="padhor mirrored">
@@ -241,6 +242,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
+                {/* Place anywhere */}
                 <section>
                     <div className="container">
                         <div className="padhor photo">
@@ -258,6 +260,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
+                {/* Attract attention */}
                 <section>
                     <div className="container">
                         <div className="padhor mirrored photo">
@@ -279,6 +282,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
+                {/* Make it interactive */}
                 <section className={'divided'}>
                     <div className="container">
                         <div className="padhor">
@@ -289,6 +293,17 @@ class Omnifit extends Component {
                                         Bring hands-on experience and show how easy it will be to set up the robot.<br/><br/>We
                                         remove the fear of complexity and hidden operational costs on reconfiguration.
                                     </p>
+                                    <div className={'omnipack-link'}>
+                                        <a href={'/omnipack'} target={'_blank'} />
+                                        <p>See OmniPack</p>
+                                        <div>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 10.5V19.125C18 19.3712 17.9515 19.615 17.8573 19.8425C17.763 20.07 17.6249 20.2767 17.4508 20.4508C17.2767 20.6249 17.07 20.763 16.8425 20.8573C16.615 20.9515 16.3712 21 16.125 21H4.875C4.37772 21 3.90081 20.8025 3.54917 20.4508C3.19754 20.0992 3 19.6223 3 19.125V7.875C3 7.37772 3.19754 6.90081 3.54917 6.54917C3.90081 6.19754 4.37772 6 4.875 6H12.7256" stroke="#969696" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M15.75 3H21V8.25" stroke="#969696" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M10.5 13.5L20.625 3.375" stroke="#969696" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <Padview image={previewLayout}/>
@@ -296,6 +311,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
+                {/* AR Demos right on the plant */}
                 <section>
                     <div className="container">
                         <Title text={"Create AR demos right on the plant."} center/>
