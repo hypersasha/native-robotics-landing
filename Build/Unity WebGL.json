@@ -1,0 +1,13 @@
+{
+"companyName": "Native Robotics",
+"productName": "Omni Fit",
+"dataUrl": "OmniPackWebGL.data.unityweb",
+"wasmCodeUrl": "OmniPackWebGL.wasm.code.unityweb",
+"wasmFrameworkUrl": "OmniPackWebGL.wasm.framework.unityweb",
+"TOTAL_MEMORY": 1610612736,
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000",
+"cacheControl": {"default": "must-revalidate"}
+}
