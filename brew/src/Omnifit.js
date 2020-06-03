@@ -447,19 +447,24 @@ class Omnifit extends Component {
                                 </div>
                             </div>
                             <div className="footer-links">
-                                <div className="link">
-                                    <div className={'link-icon'} style={{backgroundImage: "url(" + linkedin + ")"}}/>
-                                    <a href="https://www.linkedin.com/company/native-robotics"
-                                       target={'_blank'}>Linked.in</a></div>
-                                <div className="link">
-                                    <div className={'link-icon'} style={{backgroundImage: "url(" + insta + ")"}}/>
-                                    <a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a>
+                                <div className="links">
+                                    <div className="link">
+                                        <div className={'link-icon'} style={{backgroundImage: "url(" + linkedin + ")"}}/>
+                                        <a href="https://www.linkedin.com/company/native-robotics"
+                                           target={'_blank'}>Linked.in</a></div>
+                                    <div className="link">
+                                        <div className={'link-icon'} style={{backgroundImage: "url(" + insta + ")"}}/>
+                                        <a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a>
+                                    </div>
+                                    <div className="link">
+                                        <div className={'link-icon'} style={{backgroundImage: "url(" + youtube + ")"}}/>
+                                        <a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ"
+                                           target={'_blank'}>YouTube</a></div>
+                                    <div className="link">hello@native-robotics.com</div>
                                 </div>
-                                <div className="link">
-                                    <div className={'link-icon'} style={{backgroundImage: "url(" + youtube + ")"}}/>
-                                    <a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ"
-                                       target={'_blank'}>YouTube</a></div>
-                                <div className="link">hello@native-robotics.com</div>
+                                <div className="terms">
+                                    <a href="/privacy" target={'_blank'}>Privacy Policy</a>
+                                </div>
                             </div>
                         </div>
                     </div>

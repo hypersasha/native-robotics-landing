@@ -7,6 +7,7 @@ import Styleguide from "./Styleguide";
 import Omnifit from "./Omnifit";
 import OmniFitRequests from "./OmniFitRequests";
 import OmniPack from "./OmniPack";
+import Privacy from "./Privacy";
 
 class AppRouter extends Component {
 
@@ -20,6 +21,7 @@ class AppRouter extends Component {
                 <Route path={'/omnifit'} component={Omnifit} />
                 <Route path={'/omnifitreq'} component={OmniFitRequests} />
                 <Route path={'/omnipack'} component={OmniPack} />
+                <Route path={'/privacy'} component={Privacy} />
                 </div>
             </Router>
             )
