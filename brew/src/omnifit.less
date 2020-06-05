@@ -521,6 +521,10 @@ section {
   }
 }
 
+textarea.form-input {
+  resize: vertical;
+}
+
 .submit-button {
   padding: 10px 24px;
   width: 236px;
@@ -594,6 +598,7 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    align-self: flex-start;
 
     @media only screen
     and (min-device-width: 320px)
@@ -621,6 +626,15 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
+  }
 
   .links {
     display: flex;

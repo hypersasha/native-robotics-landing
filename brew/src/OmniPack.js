@@ -29,6 +29,7 @@ class OmniPack extends Component {
         this.state = {
             mail: '',
             name: '',
+            description: '',
             mailValid: true,
             nameValid: true,
             formSent: false,
@@ -93,7 +94,9 @@ class OmniPack extends Component {
         } else {
             let name = this.state.name.trim();
             let mail = this.state.mail.trim();
-            console.log('Sending data: ' + name + ' - ' + mail);
+            let desc = this.state.description.trim();
+            desc = desc.length > 0 ? desc : undefined;
+            console.log('Sending data: ' + name + ' - ' + mail + ' - ' + desc);
 
             this.setState({
                 sending: true
@@ -101,7 +104,8 @@ class OmniPack extends Component {
 
             axios.post('https://nr-form-api-test.now.sh/opackDemo', {
                     name: name,
-                    email: mail
+                    email: mail,
+                    description: desc
                 }
             ).then((response) => {
                 console.log(response);
@@ -312,6 +316,8 @@ class OmniPack extends Component {
                                 <div className="schmalz"/>
                                 <div className="onrobot"/>
                                 <div className="piab"/>
+                                <div className="easy-robotics"/>
+                                <div className="ewellix"/>
                                 <div className="rollon"/>
                             </div>
                         </div>
@@ -323,18 +329,27 @@ class OmniPack extends Component {
                 <section className={'opack-container'}>
                     <div className="opack-content column">
                         <Text align={'center'}>
-                            OmniPack software is certified by the leading collaborative robots' producer.
+                            OmniPack software is certified by the leading producer of <a href={"https://universal-robots.com"}
+                                                                             target={'_blank'}>collaborative
+                            robots</a>.
                         </Text>
                         <div className="ur-certified"/>
                         <Text align={'center'}>
-                            OmniPack is recognized by the Distributors and Integrators all over the world.
+                            And is recognized by the Distributors and Integrators all over the world.
                         </Text>
                         <div className="integrators">
-                            <div className="fluitronic"/>
-                            <div className="vicosystems"/>
                             <div className="cfz-robot"/>
+                            <div className="fluitronic"/>
                             <div className="robot-plus"/>
+                            <div className="vicosystems"/>
+                        </div>
+                        <div className="integrators">
+                            <div className="sea"/>
+                            <div className="iruna"/>
                             <div className="sinterpack"/>
+                        </div>
+                        <div className="blue-button" style={{marginTop: 60}}
+                             onClick={() => this.navToSection('form')}>Become a Distributor
                         </div>
                     </div>
                 </section>
@@ -364,6 +379,9 @@ class OmniPack extends Component {
                                 <input name={"mail"} onChange={this.onChange} onBlur={this.checkEmail}
                                        placeholder={"E-mail"} type="text"
                                        className={'form-input' + (this.state.mailValid ? "" : " error")}/>
+                                <textarea name={"description"} onChange={this.onChange}
+                                          className={'form-input'}
+                                          placeholder={'Tell us a bit about yourself (optional)'}/>
                                 <div className="submit-button" onClick={this.sendRequest}>Contact me</div>
                             </form>
                         </div>
@@ -387,7 +405,8 @@ class OmniPack extends Component {
                             <div className="footer-links">
                                 <div className="links">
                                     <div className="link">
-                                        <div className={'link-icon'} style={{backgroundImage: "url(" + linkedin + ")"}}/>
+                                        <div className={'link-icon'}
+                                             style={{backgroundImage: "url(" + linkedin + ")"}}/>
                                         <a href="https://www.linkedin.com/company/native-robotics"
                                            target={'_blank'}>Linked.in</a></div>
                                     <div className="link">
