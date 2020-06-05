@@ -3368,6 +3368,12 @@ section.opack-container {
   background-repeat: no-repeat;
   margin: 60px 0 110px;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .ur-certified {
+    width: 220px;
+    height: 98px;
+  }
+}
 .integrators {
   display: flex;
   flex-direction: row;
