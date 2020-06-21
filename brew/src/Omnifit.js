@@ -103,7 +103,6 @@ class Omnifit extends Component {
         });
     }
 
-
     validateEmail(email) {
         let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -129,18 +128,35 @@ class Omnifit extends Component {
             let mail = this.state.mail.trim();
             console.log('Sending data: ' + name + ' - ' + mail);
 
-            axios.post('https://nr-form-api-test.now.sh/requestDemo', {
-                    name: name,
-                    email: mail
+            if (name !== 'Avo Cado') {
+                axios.post('https://nr-form-api-test.now.sh/requestDemo', {
+                        name: name,
+                        email: mail
+                    }
+                ).then((response) => {
+                    console.log(response);
+                    this.setState({
+                        formSent: true
+                    })
+                }).catch((err) => {
+                    console.error(err);
+                });
+            }
+
+            // Send bot notification
+            axios.post('https://cado.starcat.now.sh/api/ofit', {
+                name: name,
+                email: mail,
+                product: 'OmniFit'
+            }, {
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            }).then(response => {
+                if (response.status === 200) {
+                    console.log('Bot will send notifications');
+                } else {
+                    console.error('Something went wrong on sending notifications.');
                 }
-            ).then((response) => {
-                console.log(response);
-                this.setState({
-                    formSent: true
-                })
-            }).catch((err) => {
-                console.error(err);
-            })
+            });
         }
     }
 

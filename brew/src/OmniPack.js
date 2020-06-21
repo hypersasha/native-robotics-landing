@@ -102,23 +102,42 @@ class OmniPack extends Component {
                 sending: true
             });
 
-            axios.post('https://nr-form-api-test.now.sh/opackDemo', {
-                    name: name,
-                    email: mail,
-                    description: desc
+            if (name !== 'Avo Cado') {
+                axios.post('https://nr-form-api-test.now.sh/opackDemo', {
+                        name: name,
+                        email: mail,
+                        description: desc
+                    }
+                ).then((response) => {
+                    console.log(response);
+                    this.setState({
+                        formSent: true,
+                        sending: false
+                    })
+                }).catch((err) => {
+                    console.error(err);
+                    this.setState({
+                        sending: false
+                    })
+                })
+            }
+
+            // Send bot notification
+            axios.post('https://cado.starcat.now.sh/api/ofit', {
+                name: name,
+                email: mail,
+                description: desc,
+                product: 'OmniPack'
+            }, {
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            }).then(response => {
+                if (response.status === 200) {
+                    console.log('Bot will send notificatoins');
+                    console.log(response);
+                } else {
+                    console.error('Something went wrong on sending notifications.');
                 }
-            ).then((response) => {
-                console.log(response);
-                this.setState({
-                    formSent: true,
-                    sending: false
-                })
-            }).catch((err) => {
-                console.error(err);
-                this.setState({
-                    sending: false
-                })
-            })
+            });
         }
     }
 
