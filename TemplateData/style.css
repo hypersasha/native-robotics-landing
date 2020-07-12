@@ -1,4 +1,9 @@
 
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background: #000000;
 }
@@ -10,12 +15,12 @@ body {
 }
 
 .webgl-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*-webkit-transform: translate(-50%, -50%);*/
+    /*transform: translate(-50%, -50%);*/
+    border-radius: 0  0 10px 10px;
     overflow: hidden;
 }
 
@@ -74,6 +79,10 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    /*position: fixed;*/
+    /*width: 100vw;*/
+    /*box-sizing: border-box;*/
+    /*bottom: 0;*/
 }
 
 .webgl-content .footer .nr-logo {
