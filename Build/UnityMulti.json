@@ -1,0 +1,13 @@
+{
+"companyName": "Native Robotics",
+"productName": "Omni Pack Multiplayer",
+"dataUrl": "https://mindopoly.ml/static/MultiplayerBuild/OmniMultiplayerTestWebGL.data.unityweb",
+"wasmCodeUrl": "https://mindopoly.ml/static/MultiplayerBuild/OmniMultiplayerTestWebGL.wasm.code.unityweb",
+"wasmFrameworkUrl": "https://mindopoly.ml/static/MultiplayerBuild/OmniMultiplayerTestWebGL.wasm.framework.unityweb",
+"TOTAL_MEMORY": 1006632960,
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000",
+"cacheControl": {"default": "must-revalidate"}
+}
