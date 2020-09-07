@@ -27,6 +27,8 @@
 !/dist/logo-webgl.svg
 !/dist/TemplateData
 !/dist/TemplateData/**/*
+!/dist/Build
+!/dist/Build/UnityLoader.js
 
 # ts build server
 /ibds/dist/**/*
