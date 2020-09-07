@@ -19,6 +19,14 @@
 !/dist/favicon.ico
 !/dist/manifest.json
 !/dist/404.html
+!/dist/favicon-16x16.png
+!/dist/favicon-32x32.png
+!/dist/demo.html
+!/dist/box_folding_demo.html
+!/dist/multiplayer_demo.html
+!/dist/logo-webgl.svg
+!/dist/TemplateData
+!/dist/TemplateData/**/*
 
 # ts build server
 /ibds/dist/**/*
