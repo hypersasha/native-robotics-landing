@@ -29,10 +29,6 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /*position: fixed;*/
-    /*width: 100vw;*/
-    /*box-sizing: border-box;*/
-    /*bottom: 0;*/
 }
 
 .footer .nr-logo {
