@@ -2,7 +2,6 @@ var gameInstance = null;
 var gameContainer = null;
 var gameCanvas = null;
 var runtimeInitialized = false;
-var canvasAspectRatio = false;
 
 function handleResize() {
     var windowWidth = window.innerWidth;
