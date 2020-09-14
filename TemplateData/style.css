@@ -109,6 +109,11 @@ body {
     margin-right: 6px;
 }
 
+.webgl-content .footer .data-item {
+    margin-right: 6px;
+    font-size: 14px;
+}
+
 .webgl-content .footer .data-button:hover {
     color: #FFFFFF;
     cursor: pointer;
