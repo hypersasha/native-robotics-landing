@@ -1,0 +1,40 @@
+.opack-text {
+  max-width: 450px;
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #313131;
+    padding: 0;
+    margin: 0;
+
+    white-space: pre-line;
+
+    a {
+      color: #1C8DFF;
+
+      &:hover {
+        color: #1b71e1;
+      }
+    }
+  }
+
+  &.wide {
+    max-width: none;
+  }
+
+  &.center {
+    p {
+      text-align: center;
+    }
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    max-width: none;
+  }
+}

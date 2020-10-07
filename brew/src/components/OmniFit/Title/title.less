@@ -1,0 +1,29 @@
+.title {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: normal;
+  font-size: 52px;
+  line-height: 68px;
+  text-indent: -5px;
+  color: #FAFAFA;
+  max-width: 484px;
+  white-space: pre-line;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 48px;
+    line-height: 56px;
+    text-indent: 0;
+  }
+
+  &.centered {
+    max-width: none;
+    text-align: center;
+  }
+
+  &.small {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

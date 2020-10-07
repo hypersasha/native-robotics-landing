@@ -1,0 +1,71 @@
+.app-mock {
+  width: 636px;
+  height: 460px;
+  background-image: url("../../../assets/imgs/omnipack/ipad-11-border.jpg");
+  background-size: 636px 460px;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+
+  img {
+    display: none;
+    height: auto;
+    width: 94vw;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      display: block;
+    }
+  }
+
+  &--image {
+    background-color: #FFFFFF;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 22px;
+    border-radius: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin: 0;
+      position: absolute;
+      border-radius: 8px;
+      top: 3vw;
+      left: 3vw;
+      right: 3vw;
+      bottom: 3vw;
+    }
+  }
+
+  &.inline {
+    background-image: none;
+
+    img {
+      visibility: hidden;
+    }
+
+    .app-mock--image {
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    height: auto !important;
+    width: 94vw;
+    position: relative;
+    display: block;
+    margin-top: 24px;
+  }
+
+}

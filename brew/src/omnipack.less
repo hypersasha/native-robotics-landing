@@ -1,0 +1,642 @@
+.opack-container {
+  max-width: 1140px;
+  height: auto;
+  margin: 0 auto;
+
+  &.gray {
+    background: #f5f5f5;
+    max-width: none;
+    margin: 0;
+    padding-top: 140px;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      padding-top: 60px;
+    }
+  }
+}
+
+header {
+  padding: 50px 0 53px 0;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+section.opack-container {
+  padding: 0;
+}
+
+.opack-content {
+  padding-bottom: 140px;
+
+
+  &.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &.mirror {
+      flex-direction: row-reverse;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        flex-direction: column;
+      }
+
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      flex-direction: column;
+    }
+  }
+
+  &.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    padding-bottom: 60px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+.smart-camera {
+  width: 620px;
+  height: 208px;
+  background-image: url("./assets/imgs/omnipack/smart-camera.jpg");
+  background-size: 620px 208px;
+  margin-bottom: 40px;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 94vw;
+    height: 0;
+    padding-top: 33.54%;
+    background-size: contain;
+  }
+}
+
+.blue-button {
+  display: inline-block;
+  background: #0071E3;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+
+  &:hover {
+    cursor: pointer;
+    background: #0481FF;
+  }
+
+}
+
+.webgl-frame-wide {
+  width: 100%;
+  height: 792px;
+  margin-top: 20px;
+}
+
+.webgl-frame {
+  width: 768px;
+  height: 432px;
+  margin-top: 20px;
+}
+
+.opack-plug-scheme {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 140px;
+  margin-bottom: 70px;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    margin-bottom: 80px;
+    flex-direction: column;
+  }
+
+  .connector {
+    min-width: 80px;
+    flex-basis: 120px;
+
+    .line {
+      max-width: 120px;
+      height: 3px;
+      margin-bottom: 3px;
+      background-color: #B2B2B2;
+      opacity: 0;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        height: 80px;
+        width: 3px;
+        margin: 0 3px 0 0;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      min-width: auto;
+      min-height: 80px;
+      display: flex;
+      flex-direction: row;
+      flex-basis: auto;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .ipad-big {
+    width: 644px;
+    height: 500px;
+    background: url("./assets/imgs/omnipack/layout-setup.jpg");
+    background-size: 644px 500px;
+    flex-shrink: 0;
+    position: relative;
+    display: block;
+    margin-left: -74px;
+    margin-right: 5px;
+
+    &::after {
+      content: 'Full HD touch display.';
+      position: absolute;
+      bottom: -35px;
+      right: 40px;
+
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      color: #161616;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        bottom: auto;
+        right: auto;
+        position: relative;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 0;
+      width: 94vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 72.5%;
+      margin: 0;
+    }
+  }
+
+  .intel-pc {
+    width: 108px;
+    height: 493px;
+    background: url("./assets/imgs/omnipack/intel-pc.jpg");
+    background-size: 108px 493px;
+    flex-shrink: 0;
+    display: block;
+    position: relative;
+
+    &::after {
+      content: 'Compact industrial PC.';
+      position: absolute;
+      bottom: -40px;
+      left: -10px;
+      white-space: nowrap;
+
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      color: #161616;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        bottom: auto;
+        left: auto;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-top: 12px;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 0;
+      width: 94vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 100%;
+      background-position: center;
+      margin: 0 0 14px 0;
+    }
+  }
+
+  .palletization-stand {
+    display: block;
+    position: relative;
+    width: 606px;
+    height: 491px;
+    background-image: url("./assets/imgs/omnipack/palletization-stand.jpg");
+    background-size: 606px 491px;
+    flex-shrink: 0;
+
+    &::after {
+      content: 'Palletization stand.';
+      position: absolute;
+      bottom: -40px;
+      left: 40px;
+
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      color: #161616;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        bottom: auto;
+        left: auto;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-top: 6px;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 0;
+      width: 94vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 81%;
+      background-position: center;
+      margin: 0;
+    }
+  }
+}
+
+.benefits {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 16px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .benefit-title {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 16px;
+
+      .icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .text {
+        margin-left: 10px;
+
+        h3 {
+          font-family: 'Roboto', sans-serif;
+          font-size: 21px;
+          font-weight: 400;
+          color: #313131;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .benefit-content {
+      max-width: 248px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .item {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: #4b4b4b;
+        line-height: 28px;
+        margin-bottom: 16px;
+      }
+    }
+
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      align-items: center;
+    }
+  }
+
+  & > div:nth-child(even) {
+    margin: 0 60px;
+
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin: 24px 0;
+    }
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+
+}
+
+.cost-reduction {
+  margin-top: 30px;
+  padding-top: 30px;
+  min-width: 780px;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.12);
+
+  .text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .opack-text p {
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        text-align: center;
+      }
+    }
+
+    .percent {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: #FFFFFF;
+      background: #248A3D;
+      line-height: 24px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-right: 12px;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        margin-bottom: 24px;
+        margin-right: 0;
+      }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      flex-direction: column;
+    }
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    min-width: auto;
+  }
+}
+
+.logos {
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 450px;
+  margin-top: 24px;
+
+  div {
+    background-size: contain;
+    margin-right: 40px;
+    margin-bottom: 20px;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin-right: 0;
+      margin-bottom: 44px;
+    }
+  }
+
+  .schmalz {
+    width: 122px;
+    height: 80px;
+    background-image: url("./assets/imgs/omnipack/logo-schmalz.jpg");
+  }
+
+  .onrobot {
+    width: 151px;
+    height: 60px;
+    background-image: url("./assets/imgs/omnipack/logo-onrobot.jpg");
+  }
+
+  .piab {
+    width: 122px;
+    height: 43px;
+    background-image: url("./assets/imgs/omnipack/logo-piab.jpg");
+  }
+
+  .easy-robotics {
+    width: 222px;
+    height: 43px;
+    background-image: url("./assets/imgs/omnipack/logo-easy-robotics.png");
+  }
+
+  .ewellix {
+    width: 186px;
+    height: 44px;
+    background-image: url("./assets/imgs/omnipack/logo-ewellix.png");
+    margin-top: 16px;
+  }
+
+  .piab {
+    width: 122px;
+    height: 43px;
+    background-image: url("./assets/imgs/omnipack/logo-piab.jpg");
+  }
+
+  .rollon {
+    width: 161px;
+    height: 43px;
+    background-image: url("./assets/imgs/omnipack/logo-rollon.jpg");
+  }
+
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+}
+
+.ur-certified {
+  width: 419px;
+  height: 154px;
+  background-image: url("./assets/imgs/omnipack/ur-plus-certified.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 60px 0 110px;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 220px;
+    height: 98px;
+  }
+}
+
+.integrators {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
+
+  div {
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 44px;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin-right: 0;
+      margin-bottom: 44px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .fluitronic {
+    width: 268px;
+    height: 38px;
+    background-image: url("./assets/imgs/omnipack/iterpack.png");
+  }
+
+  .vicosystems {
+    width: 260px;
+    height: 38px;
+    background-image: url("./assets/imgs/omnipack/logo-vicosystems.png");
+  }
+
+  .sea {
+    width: 143px;
+    height: 45px;
+    background-image: url("./assets/imgs/omnipack/logo-sea.png");
+  }
+
+  .iruna {
+    width: 144px;
+    height: 55px;
+    background-image: url("./assets/imgs/omnipack/logo-iruna.png");
+  }
+
+  .cfz-robot {
+    width: 127px;
+    height: 69px;
+    background-image: url("./assets/imgs/omnipack/logo-cfz-robots.png");
+  }
+
+  .robot-plus {
+    width: 107px;
+    height: 53px;
+    background-image: url("./assets/imgs/omnipack/logo-robot-plus.png");
+  }
+
+  .sinterpack {
+    width: 102px;
+    height: 64px;
+    background-image: url("./assets/imgs/omnipack/logo-sinterpack.png");
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+}
+
+.opack-form {
+  margin-top: 24px;
+  width: 100%;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
