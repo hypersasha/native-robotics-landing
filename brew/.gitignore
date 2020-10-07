@@ -22,6 +22,8 @@
 !/dist/favicon-16x16.png
 !/dist/favicon-32x32.png
 !/dist/demo.html
+!/dist/demo-data.html
+!/dist/demo-old.html
 !/dist/box_folding_demo.html
 !/dist/multiplayer_demo.html
 !/dist/logo-webgl.svg
@@ -29,6 +31,8 @@
 !/dist/TemplateData/**/*
 !/dist/Build
 !/dist/Build/UnityLoader.js
+!/dist/responsiveMinimalTemplateLoader.js
+!/dist/responsiveMinimalTemplateStyles.css
 
 # ts build server
 /ibds/dist/**/*
