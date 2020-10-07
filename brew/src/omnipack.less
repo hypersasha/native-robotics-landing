@@ -119,6 +119,18 @@ section.opack-container {
 
 }
 
+.webgl-frame-wide {
+  width: 100%;
+  height: 792px;
+  margin-top: 20px;
+}
+
+.webgl-frame {
+  width: 768px;
+  height: 432px;
+  margin-top: 20px;
+}
+
 .opack-plug-scheme {
   overflow: hidden;
   display: flex;
@@ -126,7 +138,7 @@ section.opack-container {
   justify-content: center;
   align-items: center;
   padding-bottom: 140px;
-  margin-bottom: 140px;
+  margin-bottom: 70px;
 
   @media only screen
   and (min-device-width: 320px)
@@ -145,6 +157,7 @@ section.opack-container {
       height: 3px;
       margin-bottom: 3px;
       background-color: #B2B2B2;
+      opacity: 0;
 
       @media only screen
       and (min-device-width: 320px)
@@ -171,10 +184,10 @@ section.opack-container {
   }
 
   .ipad-big {
-    width: 680px;
-    height: 493px;
-    background: url("./assets/imgs/omnipack/ipad-11-big-layers.jpg");
-    background-size: 680px 493px;
+    width: 644px;
+    height: 500px;
+    background: url("./assets/imgs/omnipack/layout-setup.jpg");
+    background-size: 644px 500px;
     flex-shrink: 0;
     position: relative;
     display: block;
@@ -184,7 +197,7 @@ section.opack-container {
     &::after {
       content: 'Full HD touch display.';
       position: absolute;
-      bottom: -40px;
+      bottom: -35px;
       right: 40px;
 
       font-family: 'Roboto', sans-serif;
