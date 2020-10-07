@@ -105,6 +105,19 @@ body {
     box-sizing: border-box;
     max-width: 100%;
 }
+.webgl-content .footer .data-button {
+    margin-right: 6px;
+}
+
+.webgl-content .footer .data-item {
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+.webgl-content .footer .data-button:hover {
+    color: #FFFFFF;
+    cursor: pointer;
+}
 
 .webgl-content .footer .fullscreen {
     flex-basis: 0;
@@ -113,6 +126,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .fullscreen-icon {
