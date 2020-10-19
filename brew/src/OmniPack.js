@@ -9,6 +9,8 @@ import Text from "./components/OmniPack/Text/Text";
 import AppMock from "./components/OmniPack/AppMock/AppMock";
 import axios from "axios";
 import Loader from "./components/OmniPack/Loader/Loader";
+import Footer from './components/Footer/Footer';
+import ContactForm from './components/ContactForm/ContactForm';
 
 // images
 const introScreen = require('./assets/imgs/omnipack/intro-screen.jpg');
@@ -373,8 +375,8 @@ class OmniPack extends Component {
                     </div>
                 </section>
 
-                {/* Contact form.  */}
-                <section id={'form'} className={'opack-container gray'}>
+                {/* Contact form.  */} 
+                <section id={'form'} className={'opack-container gray border'}>
                     <div className="opack-content column">
                         <Title align={'center'}>Try OmniPack now</Title>
                         {!this.state.formSent &&
@@ -408,6 +410,8 @@ class OmniPack extends Component {
                         {this.state.sending && <Loader/>}
                     </div>
                 </section>
+
+                {/* <ContactForm /> */}
 
                 <section className={'light gray'}>
                     <div className="container top-border">

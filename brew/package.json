@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "brew": "webpack-dev-server --config ./webpack.dev.js",
@@ -41,7 +41,7 @@
     "file-loader": "^2.0.0",
     "gh-pages": "^2.0.1",
     "gulp": "^4.0.0",
-    "gulp-nodemon": "^2.4.2",
+    "gulp-nodemon": "^2.5.0",
     "gulp-typescript": "^5.0.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
@@ -52,7 +52,7 @@
     "typescript": "^3.2.2",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.3.1",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.1.4"
   }
 }
