@@ -12,6 +12,8 @@ import Loader from "./components/OmniPack/Loader/Loader";
 import Footer from './components/Footer/Footer';
 import ContactForm from './components/ContactForm/ContactForm';
 
+import DistributorsMap from './components/DistributorsMap/DistributorsMap';
+
 // images
 const introScreen = require('./assets/imgs/omnipack/intro-screen.jpg');
 const palletScreen = require('./assets/imgs/omnipack/pallet-screen.jpg');
@@ -348,7 +350,7 @@ class OmniPack extends Component {
 
                 {/* UR+ Certified */}
                 <section className={'opack-container'}>
-                    <div className="opack-content column">
+                    <div className="opack-content column" style={{paddingBottom: 60}}>
                         <Text align={'center'}>
                             OmniPack software is certified by the leading producer of <a href={"https://universal-robots.com"}
                                                                              target={'_blank'}>collaborative
@@ -375,8 +377,10 @@ class OmniPack extends Component {
                     </div>
                 </section>
 
+                <DistributorsMap />
+
                 {/* Contact form.  */} 
-                <section id={'form'} className={'opack-container gray border'}>
+                {/* <section id={'form'} className={'opack-container gray border'}>
                     <div className="opack-content column">
                         <Title align={'center'}>Try OmniPack now</Title>
                         {!this.state.formSent &&
@@ -409,9 +413,9 @@ class OmniPack extends Component {
                         }
                         {this.state.sending && <Loader/>}
                     </div>
-                </section>
+                </section> */}
 
-                {/* <ContactForm /> */}
+                <ContactForm />
 
                 <section className={'light gray'}>
                     <div className="container top-border">

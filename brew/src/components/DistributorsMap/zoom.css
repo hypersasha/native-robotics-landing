@@ -1,0 +1,64 @@
+.mapZoom {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 80px;
+    margin-left: -44px;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .mapZoom > .button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .mapZoom > .button:first-child {
+    border-right: 1px solid #efefef;
+  }
+  
+  .mapZoom > .button:hover {
+    background: #f5f5f5;
+  }
+  
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+    .mapZoom {
+      left: auto;
+      margin-left: 0;
+      right: 12px;
+    }
+  
+    .noselect {
+      -webkit-touch-callout: auto;
+      -webkit-user-select: auto;
+    }
+  }
+  

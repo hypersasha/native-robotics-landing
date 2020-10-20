@@ -13,7 +13,7 @@ const ContactForm = (props) => {
     const [isMailValid, setIsMailValid] = useState(true);
 
     const [sending, setSending] = useState(false);
-    const [formSent, setFormSent] = useState(true);
+    const [formSent, setFormSent] = useState(false);
 
     function validateEmail(email) {
         let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -71,11 +71,11 @@ const ContactForm = (props) => {
     }
 
     return(
-        <section id="contact-form" className="contact-form">
+        <section id="form" className={"contact-form" + (formSent ? ' sent' : '')}>
             <div className="form-container">
                 <h1 className="form-title">{!formSent ? "Free demo." : "Thank you."}</h1>
                 <p className="form-text">
-                    {!formSent ? "We will be happy to meet you online, showcase our solutions and perform remote demo even on your robot." : "We will contact you in a quick time. But now you can try OmniPack right in your browser."}</p>
+                    {!formSent ? "We will be happy to meet you online, showcase our solutions and perform remote demo even on your robot." : "We will contact you as soon as possible."}</p>
                 {!formSent &&
                 <div className="form-inputs">
                     <div className={"input" + (isNameValid ? '' : ' error')}>

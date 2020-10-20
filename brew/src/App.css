@@ -1,3 +1,8 @@
+* {
+  outline: none;
+}
+
+
 :root {
   --font-common: -apple-system, BlinkMacSystemFont,"Noto Sans", Helvetica Neue, Arial;
   --font-h1: "IBSF Pro Display Bold";

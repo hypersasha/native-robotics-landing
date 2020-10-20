@@ -1,0 +1,14 @@
+.marker-circle {
+    transition: transform 0.1s ease-in;
+  }
+  
+  .marker-circle:hover {
+    cursor: pointer;
+    fill: #0077ff;
+  }
+  
+  .dist-marker:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  

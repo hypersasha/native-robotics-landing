@@ -1,13 +1,48 @@
 .contact-form {
     display: flex;
-    padding: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-right: 0;
+    padding-left: 0;
+    // height: 100vh;
     justify-content: center;
     align-items: center;
+
+    &.sent {
+        padding-top: 180px;
+        padding-bottom: 180px;
+
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            justify-content: stretch;
+            padding-top: 20px;
+            padding-bottom: 32px;
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        justify-content: stretch;
+        padding-top: 20px;
+        padding-bottom: 12px;
+    }
 
     .form-container {
         padding: 42px 32px;
         border-radius: 10px;
         background: #f5f5f5;
+
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            border-radius: 0;
+            width: 100%;
+        }
 
         .form-title {
             font-family: Roboto;
@@ -27,8 +62,15 @@
             font-size: 18px;
             line-height: 26px;
             color: #000000;
-            max-width: 392px;
+            width: 392px;
             margin: 0;
+
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                width: auto;
+            }
         }
 
         .form-inputs {
@@ -84,7 +126,8 @@
 
                 &.error {
                     input {
-                        border: 1px solid #FF3B30;
+                        border: 1px solid rgb(255, 59, 48);
+                        background: rgba(255, 59, 48, 0.05)
                     }
                 }
             }

@@ -1,0 +1,80 @@
+  .distributors-map > .mapContainer > .distributorMap > svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .distributorMap {
+    /* border-radius: 4px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+  }
+  
+  .mapContainer {
+    position: relative;
+    display: block;
+  }
+  
+  .distributorMap {
+    position: relative;
+  }
+  
+  .showMore {
+    display: none;
+  }
+  
+  .country-label {
+    cursor: default;
+  }
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+    .distributorMap {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      border-radius: 0;
+      background: #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .mapLegend {
+      position: relative;
+      max-width: none;
+      max-height: 240px;
+      overflow: hidden;
+      left: auto;
+      top: auto;
+      border-radius: 0;
+      border: none;
+    }
+  
+    .mapLegend.show {
+      max-height: none;
+      overflow: auto;
+    }
+  
+    .showMore {
+      display: block;
+      text-align: center;
+      padding: 16px 12px;
+      background: rgba(0, 119, 255, 0.1);
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgb(51, 68, 88);
+      margin: 24px 12px 12px 12px;
+      border-radius: 8px;
+    }
+  
+    .showMore:hover {
+      background: rgba(0, 119, 255, 0.2);
+    }
+  
+    .mapLegend .distributors {
+      max-height: none;
+    }
+  
+    .country {
+      position: relative;
+    }
+  }
+  
