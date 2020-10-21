@@ -174,9 +174,13 @@ export default function DistributorsMap() {
   }, [zoom]);
 
   function scrollToDist(dist_id) {
+    if (!dist_id) {
+      setPickedMarker(null)
+    };
+    if (!document.getElementById(dist_id)) return false; 
     const top = document.getElementById(dist_id).offsetTop;
     console.log(document.getElementById(dist_id).offsetTop - 68);
-    distRef.current.scrollTop = top - 68;
+    distRef.current.scrollTop = top - 76;
     if (document.getElementsByClassName("distributor highlight")[0]) {
       document.getElementsByClassName("distributor highlight")[0].className =
         "distributor";

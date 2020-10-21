@@ -364,12 +364,11 @@ class OmniPack extends Component {
                             <div className="cfz-robot"/>
                             <div className="fluitronic"/>
                             <div className="robot-plus"/>
-                            <div className="vicosystems"/>
                         </div>
                         <div className="integrators">
+                            <div className="vicosystems"/>
                             <div className="sea"/>
                             <div className="iruna"/>
-                            <div className="sinterpack"/>
                         </div>
                         <div className="blue-button" style={{marginTop: 60}}
                              onClick={() => this.navToSection('form')}>Become a Distributor

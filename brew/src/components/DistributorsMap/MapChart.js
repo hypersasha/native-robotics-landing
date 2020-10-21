@@ -50,6 +50,12 @@ const MapChart = (props) => {
     setPos(position.coordinates || [-6, 45]);
   }
 
+  function blurSelectedMarker(e) {
+    if (e.target && e.target.parentNode && e.target.parentElement.className && e.target.parentElement.className.baseVal !== "dist-marker") {
+      props.scrollToDist(null);
+    }
+  }
+
   useEffect(() => {
     setPos(props.center);
   }, [props.center]);
@@ -64,6 +70,7 @@ const MapChart = (props) => {
         width={mapWidth}
         height={mapHeight}
         // projection="geoOrthographic"
+        onClick={blurSelectedMarker}
         projectionConfig={{
           // rotate: [props.rotation, -30, 0],
           scale: 600
