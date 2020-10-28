@@ -4,9 +4,6 @@ import './index.css';
 import './App.css'; // This is IMPORTANT import.
 import AppRouter from './Router';
 import * as serviceWorker from './serviceWorker';
-import connect from '@vkontakte/vkui-connect';
-
-connect.send('VKWebAppInit', {});
 
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
 

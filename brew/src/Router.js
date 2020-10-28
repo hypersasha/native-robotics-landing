@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Styleguide from "./Styleguide";
 import Omnifit from "./Omnifit";
-import OmniFitRequests from "./OmniFitRequests";
 import OmniPack from "./OmniPack";
 import OmniPackLive from "./OmniPackLive";
 import OmniPackLiveWide from "./OmniPackLiveWide";
@@ -18,7 +17,6 @@ class AppRouter extends Component {
                 <Route exact path={'/'} component={Omnifit} />
                 <Route path={'/styleguide'} component={Styleguide} />
                 <Route path={'/omnifit'} component={Omnifit} />
-                <Route path={'/omnifitreq'} component={OmniFitRequests} />
                 <Route path={'/omnipack'} component={OmniPack} />
                 <Route path={'/privacy'} component={Privacy} />
                 <Route path={'/omnipack-live'} component={OmniPackLive}/>
