@@ -7,11 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  background: #000000;
-}
-
-body[data-scheme="dark"] {
-  background: var(--black-pearl);
+  /* background: #000000; */
 }
 
 code {
@@ -272,7 +268,6 @@ p > b, strong {
 
 html,
 body {
-  background-color: #252525;
   padding: 0;
   margin: 0;
 }
@@ -1142,10 +1137,6 @@ body {
   padding: 6px 8px;
 }
 
-html,
-body {
-  background: #000000;
-}
 header.omnifit {
   padding-top: 70px;
 }
