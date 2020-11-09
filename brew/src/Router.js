@@ -14,7 +14,7 @@ class AppRouter extends Component {
         return(
             <Router basename={process.env.PUBLIC_URL}>
                 <div>
-                <Route exact path={'/'} component={Omnifit} />
+                <Route exact path={'/'} component={OmniPack} />
                 <Route path={'/styleguide'} component={Styleguide} />
                 <Route path={'/omnifit'} component={Omnifit} />
                 <Route path={'/omnipack'} component={OmniPack} />

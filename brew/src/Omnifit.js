@@ -59,6 +59,9 @@ class Omnifit extends Component {
     }
 
     componentDidMount() {
+        document.querySelectorAll('html,body').forEach((element) => {
+            element.style.background = "#000000";
+        });
         axios.get('https://nr-form-api-test.now.sh/allDemoRequests')
             .then((response) => {
                 console.log(response)
