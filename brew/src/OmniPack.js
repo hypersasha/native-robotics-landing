@@ -13,6 +13,8 @@ import ContactForm from './components/ContactForm/ContactForm';
 import DistributorsMap from './components/DistributorsMap/DistributorsMap';
 import Footer from './components/Footer/Footer';
 
+import Header from './components/Header/Header';
+
 // images
 const introScreen = require('./assets/imgs/omnipack/intro-screen.jpg');
 const palletScreen = require('./assets/imgs/omnipack/pallet-screen.jpg');
@@ -79,7 +81,15 @@ class OmniPack extends Component {
     }
 
     navToSection(section_id) {
-        document.getElementById(section_id).scrollIntoView({block: 'start'});
+        let element = document.getElementById(section_id);
+        let headerOffset = 84;
+        let elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        let offsetPosition = elementPosition - headerOffset;
+        console.log(elementPosition)
+
+        window.scrollTo({
+            top: offsetPosition
+        });
     }
 
     sendRequest() {
@@ -146,14 +156,10 @@ class OmniPack extends Component {
     render() {
         return (
             <div>
-                <header className={'opack-container'}>
-                    <div style={{height: 37}}>
-                        <object data={logo} type={'image/svg+xml'}/>
-                    </div>
-                </header>
+                <Header navToSection={this.navToSection} />
 
                 {/* Intro */}
-                <section className={'opack-container'}>
+                <section id="intro" className={'opack-container'} style={{marginTop: 116}}>
                     <div className="opack-content row">
                         <div>
                             <Title level={"primary"}>OmniPack</Title>
@@ -166,7 +172,7 @@ class OmniPack extends Component {
                 </section>
 
                 {/* As Simple as Possible */}
-                <section className={'opack-container'}>
+                <section id="why-omnipack" className={'opack-container'}>
                     <div className="opack-content row mirror">
                         <div>
                             <Title>As simple as possible</Title>
@@ -180,7 +186,7 @@ class OmniPack extends Component {
                 </section>
 
                 {/* As efficient as Possible */}
-                <section className={'opack-container'}>
+                <section id="efficient" className={'opack-container'}>
                     <div className="opack-content row">
                         <div>
                             <Title>As efficient as possible</Title>
@@ -194,12 +200,12 @@ class OmniPack extends Component {
                 </section>
 
                 {/* Smart and Reliable */}
-                <section className={'opack-container'}>
+                <section id="smart" className={'opack-container'}>
                     <div className="opack-content column">
                         <div className="smart-camera"/>
                         <Title align={'center'}>Smart and Reliable</Title>
                         <Text align={'center'}>
-                            Comprehensive error handling system automatically analyze and try to recover from any issue
+                            Comprehensive error handling system automatically analyzes and tries to recover from any issue
                             to secure non-stop production.
                         </Text>
                         <div className="blue-button" onClick={() => this.navToSection('form')}>Request Demo</div>
@@ -214,7 +220,7 @@ class OmniPack extends Component {
                             If we were showing you the live demo, we would have finished it before you got here.
                         </Text>
                     </div>
-                    <div className="opack-plug-scheme">
+                    <div className="opack-plug-scheme" id="plugplay">
                         <div className="ipad-big"/>
                         <div className="connector">
                             <div className="line"/>
@@ -233,7 +239,7 @@ class OmniPack extends Component {
                 <section className={'opack-container'}>
                     <div className="opack-content column">
                         <Title align={'center'}>What it means<br/>for your business</Title>
-                        <div className="benefits">
+                        <div className="benefits" id="business">
                             {/* Easy */}
                             <div className="easy">
                                 <div className="benefit-title">
@@ -333,7 +339,7 @@ class OmniPack extends Component {
                                 <br/>
                                 We can include your custom hardware as well.
                             </Text>
-                            <div className="logos">
+                            <div className="logos" id="ur-plus">
                                 <div className="schmalz"/>
                                 <div className="onrobot"/>
                                 <div className="piab"/>
@@ -358,7 +364,7 @@ class OmniPack extends Component {
                         <Text align={'center'}>
                             And is recognized by the Distributors and Integrators all over the world.
                         </Text>
-                        <div className="integrators">
+                        <div className="integrators" id="distributors">
                             <div className="cfz-robot"/>
                             <div className="fluitronic"/>
                             <div className="robot-plus"/>
