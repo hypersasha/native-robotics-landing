@@ -3402,6 +3402,7 @@ section.opack-container {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .header-container--menu .menu-item.link {
     font-size: 16px;
+    margin-left: auto;
   }
 }
 .header-container--menu .menu-item.link a {
@@ -3524,10 +3525,20 @@ section.opack-container {
   justify-content: center;
   background: #000;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .notfound {
+    flex-direction: column;
+  }
+}
 .notfound-content {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .notfound-content {
+    flex-direction: column;
+  }
 }
 .notfound-content .ufo {
   position: relative;
@@ -3535,8 +3546,19 @@ section.opack-container {
   width: 222px;
   height: 186px;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .notfound-content .ufo {
+    transform: scale(0.6);
+  }
+}
 .notfound-content .description {
   margin-left: 56px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .notfound-content .description {
+    margin-left: auto;
+    padding: 16px;
+  }
 }
 .notfound-content .description h1 {
   font-family: 'Roboto', sans-serif;
@@ -3547,6 +3569,12 @@ section.opack-container {
   margin: 0;
   line-height: 61px;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .notfound-content .description h1 {
+    font-size: 42px;
+    text-align: center;
+  }
+}
 .notfound-content .description p {
   padding: 8px 0 0 0;
   margin: 0;
@@ -3554,6 +3582,11 @@ section.opack-container {
   font-size: 18px;
   line-height: 26px;
   color: #eeeeee;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .notfound-content .description p {
+    text-align: center;
+  }
 }
 .notfound-content .description .form-button {
   display: block;
@@ -3570,6 +3603,11 @@ section.opack-container {
   font-size: 18px;
   line-height: 18px;
   color: #fff;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .notfound-content .description .form-button {
+    margin: 24px auto 0;
+  }
 }
 .notfound-content .description .form-button a {
   position: absolute;
