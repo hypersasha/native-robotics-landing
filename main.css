@@ -1137,12 +1137,116 @@ body {
   padding: 6px 8px;
 }
 
+.omnipack-badge {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  background: rgba(0, 113, 227, 0.98);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  z-index: 999999;
+  animation: OmniPackBadge 0.3s ease-in;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-badge {
+    padding: 0 12px;
+  }
+}
+.omnipack-badge .badge-container {
+  max-width: 988px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.omnipack-badge .badge-container .left-side {
+  display: flex;
+  align-items: center;
+}
+.omnipack-badge .badge-container .left-side .logo {
+  width: 20px;
+  height: 24px;
+}
+.omnipack-badge .badge-container .left-side .title-desc {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+.omnipack-badge .badge-container .left-side .title-desc .badge-title {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+.omnipack-badge .badge-container .left-side .title-desc .description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 200px;
+  display: none;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-badge .badge-container .left-side .title-desc .description {
+    display: block;
+  }
+}
+.omnipack-badge .badge-container .right-side {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.omnipack-badge .badge-container .right-side .description {
+  color: #fff;
+  font-family: 'Robot', sans-serif;
+  font-size: 14px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-badge .badge-container .right-side .description {
+    display: none;
+  }
+}
+.omnipack-badge .badge-container .right-side .action-button {
+  margin: 14px 0;
+  margin-left: 12px;
+  background: #ffffff;
+  color: #0077ff;
+  position: relative;
+  display: block;
+}
+.omnipack-badge .badge-container .right-side .action-button a {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.omnipack-badge .badge-container .right-side .action-button:hover {
+  opacity: 0.9;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-badge .badge-container .right-side .action-button {
+    margin: 10px 0;
+  }
+}
+@keyframes OmniPackBadge {
+  from {
+    top: -70px;
+  }
+  to {
+    top: 0;
+  }
+}
 header.omnifit {
   padding-top: 70px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   header.omnifit {
-    padding-top: 30px;
+    padding-top: 60px;
+    padding-bottom: 10px;
   }
 }
 .container {
