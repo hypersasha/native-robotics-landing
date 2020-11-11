@@ -44,7 +44,8 @@ class Omnifit extends Component {
             mailValid: true,
             nameValid: true,
             formSent: false,
-            isVideoPlaying: false
+            isVideoPlaying: false,
+            isBadge: false
         };
 
         this.sendRequest = this.sendRequest.bind(this);
@@ -80,6 +81,16 @@ class Omnifit extends Component {
                     this.videoPlaying = true;
                     this.videoRef.current.play();
                 }
+            }
+
+            let interactive = document.getElementById('interactive');
+            if (interactive) {
+                let inter_pos = interactive.getBoundingClientRect();
+                if (inter_pos.top <= 0 && !this.state.isBadge) {
+                    this.setState({
+                        isBadge: true
+                    })
+                } 
             }
         });
     }
@@ -167,6 +178,32 @@ class Omnifit extends Component {
     render() {
         return (
             <div id={'omnifit-page'}>
+                {this.state.isBadge && 
+                <div className="omnipack-badge">
+                    <div className="badge-container">
+                        <div className="left-side">
+                            <div className="logo">
+                                <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.64 10.0693H9.83395C10.0265 10.0693 10.2112 10.1462 10.3473 10.2831C10.4835 10.42 10.56 10.6057 10.56 10.7993V11.9998H8.64V10.0693Z" fill="#ffffff"/>
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M5.24564 23.0999V6.06163H12.562C12.9323 6.0622 13.2872 6.20738 13.549 6.46533C13.8109 6.72329 13.9582 7.07299 13.9588 7.4378V15.271H10.6753L13.9544 23.0999H19.2V4.53255C19.2006 3.57007 18.8132 2.64675 18.1231 1.96556C17.433 1.28437 16.4965 0.90106 15.5196 0.899902H0V23.0999H5.24564Z" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                            <div className="title-desc">
+                                <div className="badge-title">OmniPack</div>
+                                <div className="description">
+                                    Powerful palletizing tool.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="right-side">
+                            <div className="description">
+                                Setup your palletizing stand in a few minutes.
+                            </div>
+                            <div className="action-button"><a href="/omnipack"></a><span>Watch more</span></div>
+                        </div>
+                    </div>
+                </div>
+                }
                 <header className={'omnifit'}>
                     <div className="container header-content">
                         <div className="logo" style={{height: 37}}>
@@ -302,7 +339,7 @@ class Omnifit extends Component {
                 </section>
 
                 {/* Make it interactive */}
-                <section className={'divided'}>
+                <section className={'divided'} id="interactive">
                     <div className="container">
                         <div className="padhor">
                             <div className="padhor-text">
