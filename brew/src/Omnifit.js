@@ -6,6 +6,9 @@ import AppTab from "./components/OmniFit/ApplicationTab/AppTab";
 import Padview from "./components/OmniFit/Padview/Padview";
 
 import axios from 'axios';
+import Footer from './components/Footer/Footer';
+import ContactForm from './components/ContactForm/ContactForm';
+import Header from './components/Header/Header';
 
 const logo = require('./assets/nr-logo-omnikit.svg');
 const logoLetter = require('./assets/logo-letter.svg');
@@ -19,7 +22,7 @@ const previewCaseFold = require('./assets/imgs/preview-casefold.jpg');
 const previewTend = require('./assets/imgs/preview-tending.jpg');
 const previewPlain = require('./assets/imgs/preview-plain.jpg');
 const previewScrew = require('./assets/imgs/preview-screw.jpg');
-const previewLayout = require('./assets/imgs/preview-layout.jpg');
+const previewLayout = require('./assets/imgs/omnipack/pallet-screen.jpg');
 const previewAR = require('./assets/imgs/preview-ar.jpg');
 const photoTend = require('./assets/imgs/photo-view.jpg');
 const photoBluesun = require('./assets/imgs/photo-bluesun.jpg');
@@ -45,7 +48,12 @@ class Omnifit extends Component {
             nameValid: true,
             formSent: false,
             isVideoPlaying: false,
-            isBadge: false
+            isBadge: false,
+            headerLinks: [
+                {id: 'overview', label: 'Overview'},
+                {id: 'why-omnifit', label: 'Why OmniFit'},
+                {id: 'features', label: 'Features'}
+            ]
         };
 
         this.sendRequest = this.sendRequest.bind(this);
@@ -218,15 +226,15 @@ class Omnifit extends Component {
                                 </div>
                             </div>
                             <ActionButton onClick={() => {
-                                this.navToSection('request-form')
-                            }} label={'Request Demo'}/>
+                                this.navToSection('form')
+                            }} label={'Free demo'}/>
                         </div>
                     </div>
                 </header>
 
                 {/* Boost your sales with AR experience. */}
                 <section className="intro divided">
-                    <div className="container">
+                    <div id="overview" className="container">
                         <h3 className={"product-name"}>OmniFit.</h3>
                         <Title text={'Boost your sales with AR experience.'}/>
                         <p className="section-text">
@@ -235,7 +243,7 @@ class Omnifit extends Component {
                         </p>
                         <div className="action-mobile">
                             <ActionButton onClick={() => {
-                                this.navToSection('request-form')
+                                this.navToSection('form')
                             }} label={'Request Demo'}/>
                         </div>
                         <div id="ipad-ar-preview">
@@ -377,7 +385,7 @@ class Omnifit extends Component {
                         </p>
                         <div style={{width: 150, margin: "24px auto 0"}}>
                             <ActionButton onClick={() => {
-                                this.navToSection('request-form')
+                                this.navToSection('form')
                             }} label={'Request Demo'}/>
                         </div>
                         <div className={'iphone-video'}>
@@ -442,7 +450,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
-                <section className={'light divided'}>
+                <section className={'light'}>
                     <div className="container">
                         <div className="padhor mirrored photo">
                             <div className="padhor-text">
@@ -459,7 +467,7 @@ class Omnifit extends Component {
                     </div>
                 </section>
 
-                <section className="light" id={"request-form"}>
+                {/* <section className="light" id={"request-form"}>
                     <div className="container" style={{padding: '60px 0 120px 0'}}>
                         <Title center={true} text={'Try OmniFit now.'}/>
                         {
@@ -488,9 +496,13 @@ class Omnifit extends Component {
                             </form>
                         }
                     </div>
-                </section>
+                </section> */}
 
-                <section className={'light gray'}>
+                <ContactForm demoUrl="requestDemo" product="OmniFit" />
+
+                <Footer />
+
+                {/* <section className={'light gray'}>
                     <div className="container top-border">
                         <h3 className={"footer-header--mobile"}>Contact Us</h3>
                         <div className="footer-content">
@@ -524,7 +536,7 @@ class Omnifit extends Component {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
             </div>
         )
     }

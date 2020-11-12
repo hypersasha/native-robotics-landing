@@ -70,6 +70,11 @@ export default function Header(props) {
 
                 </div>
                 <div className="header-container--menu">
+                    {/* {props.navLinks && props.navLinks.map((link) => {
+                        return <div className={"menu-item" + isActiveTab(link.id)} onClick={() => {navTo(link.id)}}>
+                            {link.label}
+                        </div>
+                    })} */}
                     <div className={"menu-item" + isActiveTab('why-omnipack')} onClick={() => {navTo('why-omnipack')}}>Why OmniPack</div>
                     <div className={"menu-item" + isActiveTab('business')} onClick={() => {navTo('business')}}>Benefits</div>
                     <div className={"menu-item" + isActiveTab('distributors')} onClick={() => {navTo('distributors')}}>Distributors</div>

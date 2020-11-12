@@ -30,7 +30,7 @@ const ContactForm = (props) => {
 
             // Send email
             if (name !== 'Avo Cado') {
-                axios.post('https://nr-form-api-test.now.sh/opackDemo', {
+                axios.post('https://nr-form-api-test.now.sh/' + props.demoUrl, {
                         name: user_name,
                         email: mail,
                         description: desc
@@ -52,7 +52,7 @@ const ContactForm = (props) => {
                 name: user_name,
                 email: mail,
                 description: desc,
-                product: 'OmniPack'
+                product: props.product
             }, {
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             }).then(response => {

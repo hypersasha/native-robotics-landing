@@ -382,7 +382,7 @@ class OmniPack extends Component {
 
                 <DistributorsMap />
 
-                <ContactForm />
+                <ContactForm demoUrl="opackDemo" product="OmniPack" />
 
                 <Footer />
             </div>
