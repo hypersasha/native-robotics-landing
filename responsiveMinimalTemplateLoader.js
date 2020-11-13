@@ -1,4 +1,4 @@
-var gameInstance = null;
+var unityInstance = null;
 var gameContainer = null;
 var gameCanvas = null;
 var runtimeInitialized = false;
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function OnRuntimeIntialized() {
     runtimeInitialized = true;
-    gameCanvas = gameInstance.container.querySelector("canvas");
+    gameCanvas = unityInstance.container.querySelector("canvas");
     gameCanvas.style.width = null;
     gameCanvas.style.height = null;
     handleResize();
@@ -44,7 +44,7 @@ function instantiateUnity(url) {
 
     var canvasSize = getCanvasSize();
 
-    gameInstance = UnityLoader.instantiate("gameContainer", url,  {
+    unityInstance = UnityLoader.instantiate("gameContainer", url,  {
         width:canvasSize.width,
         height: canvasSize.height,
         margin: 0,
