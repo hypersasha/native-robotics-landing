@@ -19,7 +19,7 @@ export default function DistributorsMap() {
     {
       name: "CFZ Cobots",
       country: "Spain",
-      address: "Inda Levante, C Jose Sanchez Saez 19, 03202, Elche, Alicante",
+      address: "C Jose Maria Castano Martinez, 44, 03202, Elch, Alicante",
       city: "Alicante",
       url: "https://cfzcobots.com/",
       coordinates: [-0.686868, 38.272803]
