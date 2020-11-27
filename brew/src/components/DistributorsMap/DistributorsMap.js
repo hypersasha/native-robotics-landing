@@ -42,6 +42,14 @@ export default function DistributorsMap() {
       coordinates: [2.78902, 42.283948]
     },
     {
+      name: "Einsrobotics",
+      country: "Mexico",
+      address: 'Cerro de La Popa 2924 / Mirador Residencial / 64910 / Monterrey',
+      city: 'Mexico',
+      url: 'https://einsrobotics.com/',
+      coordinates: [-99.148969, 19.393361]
+    },
+    {
       name: "Native Robotics",
       country: "UK",
       address: "2 Oscar Wilde Road, Reading",
