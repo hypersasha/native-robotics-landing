@@ -3034,6 +3034,41 @@ section.opack-container {
   height: 69px;
   background-image: url(assets/images/logo-cfz-robots.png);
 }
+.integrators .elektres {
+  width: 214px;
+  height: 58px;
+  background-image: url(assets/images/logo-itsme-elektres.png);
+}
+.integrators .epl {
+  width: 155px;
+  height: 84px;
+  background-image: url(assets/images/epl_logo.png);
+}
+.integrators .impertek {
+  width: 237px;
+  height: 88px;
+  background-image: url(assets/images/impertek.png);
+}
+.integrators .eins {
+  width: 285px;
+  height: 61px;
+  background-image: url(assets/images/einsrobotics-logo.png);
+}
+.integrators .procobot {
+  width: 222px;
+  height: 72px;
+  background-image: url(assets/images/procobot.png);
+}
+.integrators .fluit {
+  width: 151px;
+  height: 43px;
+  background-image: url(assets/images/fluitronic.png);
+}
+.integrators .pst {
+  width: 172px;
+  height: 78px;
+  background-image: url(assets/images/pst.jpg);
+}
 .integrators .robot-plus {
   width: 107px;
   height: 53px;
