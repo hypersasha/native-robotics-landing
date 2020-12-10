@@ -3,6 +3,10 @@
   height: auto;
   margin: 0 auto;
 
+  &.values {
+    padding: 40px 0;
+  }
+
   &.gray {
     background: #f5f5f5;
     max-width: none;
@@ -328,6 +332,136 @@ section.opack-container {
   }
 }
 
+.values-clients {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+
+  &--item {
+    width: 300px;
+    padding: 30px;
+    border-radius: 6px 6px 0 0;
+    background: linear-gradient(180deg, #F5F5F5 0%, rgba(255, 255, 255, 0) 100%);
+  
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      width: auto;
+    }
+
+    &:nth-child(even) {
+      margin: 0 30px;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        margin: 40px 0;
+      }
+    }
+
+    .value-title {
+      margin: 0 0 26px 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.2em;
+      text-align: center;
+
+      &.easy {
+        color: #ff9500;
+      }
+
+      &.efficient {
+        color: #56B030;
+      }
+
+      &.reliable {
+        color: #007AFF;
+      }
+    }
+
+    .value-option {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      &--icon {
+        width: 42px;
+        height: 42px;
+        margin-right: 16px;
+      }
+
+      &--text {
+        color: #333333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 17px;
+        line-height: 1.3em;
+      }
+    }
+  }
+}
+
+.values-percent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+
+  &--number {
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    line-height: 56px;
+    color: #78CB55;
+    font-weight: 700;
+    margin: 0;
+    margin-right: 24px;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin: 0;
+    }
+  }
+
+  &--text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 1.2em;
+    color: #000000;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      text-align: center;
+    }
+  }
+}
+
 .benefits {
 
   display: flex;
@@ -614,6 +748,48 @@ section.opack-container {
     width: 127px;
     height: 69px;
     background-image: url("./assets/imgs/omnipack/logo-cfz-robots.png");
+  }
+
+  .elektres {
+    width: 214px;
+    height: 58px;
+    background-image: url('./assets/imgs/omnipack/logo-itsme-elektres.png');
+  }
+
+  .epl {
+    width: 155px;
+    height: 84px;
+    background-image: url('./assets/imgs//omnipack/epl_logo.png')
+  }
+
+  .impertek {
+    width: 237px;
+    height: 88px;
+    background-image: url('./assets/imgs/omnipack/impertek.png');
+  }
+
+  .eins {
+    width: 285px;
+    height: 61px;
+    background-image: url('./assets/imgs/omnipack/einsrobotics-logo.png');
+  }
+
+  .procobot {
+    width: 222px;
+    height: 72px;
+    background-image: url('./assets/imgs/omnipack/procobot.png');
+  }
+
+  .fluit {
+    width: 151px;
+    height: 43px;
+    background-image: url('./assets/imgs/omnipack/fluitronic.png');
+  }
+
+  .pst {
+    width: 172px;
+    height: 78px;
+    background-image: url('./assets/imgs/omnipack/pst.jpg');
   }
 
   .robot-plus {
