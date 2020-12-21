@@ -10,7 +10,8 @@
   "scripts": {
     "brew": "webpack-dev-server --config ./webpack.dev.js",
     "product-brew": "webpack --config ./webpack.prod.js",
-    "deploy": "node gh-pages.js"
+    "deploy": "node gh-pages.js",
+    "dev-deploy": "node gh-pages-dev.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,6 +26,11 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.0.0",
+    "@editorjs/editorjs": "^2.19.1",
+    "@editorjs/embed": "^2.4.0",
+    "@editorjs/header": "^2.6.1",
+    "@editorjs/list": "^1.6.1",
+    "@editorjs/simple-image": "^1.4.0",
     "axios": "^0.19.2",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
@@ -39,6 +45,7 @@
     "react-simple-maps": "^2.1.2",
     "style-loader": "^0.23.1",
     "typescript": "^3.2.2",
+    "url-loader": "^4.1.1",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.11.0",

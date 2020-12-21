@@ -84,7 +84,7 @@
     font-size: 12px;
     font-family: "Noto Sans", sans-serif;
     text-decoration: none;
-    color: #2787f5;
+    color: #ff9500;
   }
   
   .distributorLinks a:hover {
@@ -101,7 +101,7 @@
     position: sticky;
     position: -webkit-sticky;
     top: 0px;
-    background-color: #efefef;
+    background-color: #f5f5f5;
   }
   
   .country h3 {
@@ -149,17 +149,17 @@
       display: block;
       text-align: center;
       padding: 16px 12px;
-      background: rgba(0, 119, 255, 0.1);
+      background: rgba(255, 149, 0, 0.1);
       font-family: "Roboto", sans-serif;
       font-size: 16px;
       font-weight: 500;
-      color: rgb(51, 68, 88);
+      color: #ff9500;
       margin: 24px 12px 12px 12px;
       border-radius: 8px;
     }
   
     .showMore:hover {
-      background: rgba(0, 119, 255, 0.2);
+      background: rgba(255, 149, 0, 0.2);
     }
   
     .mapLegend .distributors {

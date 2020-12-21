@@ -4,7 +4,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        // publicPath: '/',
+        publicPath: '/', // If you comment this, images (url in less) will not load when open site from links like /blog/random-article
         filename: '[name].bundle.js',
     },
     module: {

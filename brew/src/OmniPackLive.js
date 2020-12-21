@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 const logo = require('./assets/black-logo.svg');
-const logoFooter = require('./assets/nr-logo-footer.svg');
 
 import './omnipack.less'
 import Title from "./components/OmniPack/Title/Title";
@@ -144,12 +143,6 @@ class OmniPackLive extends Component {
     render() {
         return (
             <div>
-                <header className={'opack-container'}>
-                    <div style={{height: 37}}>
-                        <object data={logo} type={'image/svg+xml'}/>
-                    </div>
-                </header>
-
                 {/* Intro */}
                 <section className={'opack-container'}>
                     <div className="opack-content row">
@@ -381,79 +374,6 @@ class OmniPackLive extends Component {
                         </div>
                         <div className="blue-button" style={{marginTop: 60}}
                              onClick={() => this.navToSection('form')}>Become a Distributor
-                        </div>
-                    </div>
-                </section>
-
-                {/* Contact form.  */}
-                <section id={'form'} className={'opack-container gray'}>
-                    <div className="opack-content column">
-                        <Title align={'center'}>Try OmniPack now</Title>
-                        {!this.state.formSent &&
-                        <Text align={'center'}>
-                            We will be happy to meet you online, showcase our solutions and perform remote demo on our
-                            or even your robot!
-                        </Text>
-                        }
-                        {this.state.formSent &&
-                        <Text align={'center'}>
-                            Thank you! We will contact you soon.
-                        </Text>
-                        }
-
-                        {(!this.state.formSent && !this.state.sending) &&
-                        <div className="opack-form">
-                            <form>
-                                <input name={"name"} onChange={this.onChange} onBlur={this.checkName}
-                                       placeholder={"Your name"} type="text"
-                                       className={'form-input' + (this.state.nameValid ? "" : " error")}/>
-                                <input name={"mail"} onChange={this.onChange} onBlur={this.checkEmail}
-                                       placeholder={"E-mail"} type="text"
-                                       className={'form-input' + (this.state.mailValid ? "" : " error")}/>
-                                <textarea name={"description"} onChange={this.onChange}
-                                          className={'form-input'}
-                                          placeholder={'Tell us a bit about yourself (optional)'}/>
-                                <div className="submit-button" onClick={this.sendRequest}>Contact me</div>
-                            </form>
-                        </div>
-                        }
-                        {this.state.sending && <Loader/>}
-                    </div>
-                </section>
-
-                <section className={'light gray'}>
-                    <div className="container top-border">
-                        <h3 className={"footer-header--mobile"}>Contact Us</h3>
-                        <div className="footer-content">
-                            <div className="footer-logo">
-                                <div style={{height: 21}}>
-                                    <object data={logoFooter} type={'image/svg+xml'}/>
-                                </div>
-                                <div className="copy">
-                                    © 2020
-                                </div>
-                            </div>
-                            <div className="footer-links">
-                                <div className="links">
-                                    <div className="link">
-                                        <div className={'link-icon'}
-                                             style={{backgroundImage: "url(" + linkedin + ")"}}/>
-                                        <a href="https://www.linkedin.com/company/native-robotics"
-                                           target={'_blank'}>Linked.in</a></div>
-                                    <div className="link">
-                                        <div className={'link-icon'} style={{backgroundImage: "url(" + insta + ")"}}/>
-                                        <a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a>
-                                    </div>
-                                    <div className="link">
-                                        <div className={'link-icon'} style={{backgroundImage: "url(" + youtube + ")"}}/>
-                                        <a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ"
-                                           target={'_blank'}>YouTube</a></div>
-                                    <div className="link">hello@native-robotics.com</div>
-                                </div>
-                                <div className="terms">
-                                    <a href="/privacy" target={'_blank'}>Privacy Policy</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </section>

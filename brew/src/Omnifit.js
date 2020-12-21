@@ -6,13 +6,9 @@ import AppTab from "./components/OmniFit/ApplicationTab/AppTab";
 import Padview from "./components/OmniFit/Padview/Padview";
 
 import axios from 'axios';
-import Footer from './components/Footer/Footer';
 import ContactForm from './components/ContactForm/ContactForm';
-import Header from './components/Header/Header';
 
-const logo = require('./assets/nr-logo-omnikit.svg');
 const logoLetter = require('./assets/logo-letter.svg');
-const logoFooter = require('./assets/nr-logo-footer.svg');
 
 const arPreview = require('./assets/imgs/ipad-ar-peview.jpg');
 
@@ -28,10 +24,6 @@ const photoTend = require('./assets/imgs/photo-view.jpg');
 const photoBluesun = require('./assets/imgs/photo-bluesun.jpg');
 const photoExhibit = require('./assets/imgs/photo-exhibit.jpg');
 const outlook = require('./assets/imgs/outlook.png');
-
-const insta = require('./assets/imgs/icons/insta.png');
-const youtube = require('./assets/imgs/icons/youtube.png');
-const linkedin = require('./assets/imgs/icons/linkedin.png');
 
 const robovid = require('./assets/robotend.mp4');
 const vidpreview = require('./assets/imgs/vidpreview.png');
@@ -61,7 +53,7 @@ class Omnifit extends Component {
         this.navToSection = this.navToSection.bind(this);
         this.checkEmail = this.checkEmail.bind(this);
         this.checkName = this.checkName.bind(this);
-
+        this.onPageScrolling = this.onPageScrolling.bind(this);
         this.videoRef = React.createRef();
         this.videoPlaying = false;
 
@@ -71,6 +63,9 @@ class Omnifit extends Component {
         document.querySelectorAll('html,body').forEach((element) => {
             element.style.background = "#000000";
         });
+
+        window.scrollTo(0,0);
+
         axios.get('https://nr-form-api-test.now.sh/allDemoRequests')
             .then((response) => {
                 console.log(response)
@@ -81,8 +76,15 @@ class Omnifit extends Component {
 
         this.videoRef.current.pause();
 
-        window.addEventListener('scroll', () => {
-            let position = this.videoRef.current.getBoundingClientRect();
+        window.addEventListener('scroll', this.onPageScrolling);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onPageScrolling);
+    }
+
+    onPageScrolling() {
+        let position = this.videoRef.current.getBoundingClientRect();
             // checking for partial visibility
             if(position.top < window.innerHeight && position.bottom >= 0) {
                 if (this.videoPlaying === false) {
@@ -90,17 +92,6 @@ class Omnifit extends Component {
                     this.videoRef.current.play();
                 }
             }
-
-            let interactive = document.getElementById('interactive');
-            if (interactive) {
-                let inter_pos = interactive.getBoundingClientRect();
-                if (inter_pos.top <= 0 && !this.state.isBadge) {
-                    this.setState({
-                        isBadge: true
-                    })
-                } 
-            }
-        });
     }
 
     onChange(e) {
@@ -212,25 +203,6 @@ class Omnifit extends Component {
                     </div>
                 </div>
                 }
-                <header className={'omnifit'}>
-                    <div className="container header-content">
-                        <div className="logo" style={{height: 37}}>
-                            <object data={logo} type={'image/svg+xml'}/>
-                        </div>
-                        <div className="header-navigation">
-                            <div className="header-navigation--links">
-                                <div className="nav-link active">Overview</div>
-                                <div className="nav-link" onClick={() => {
-                                    this.navToSection('why-omnifit')
-                                }}>Why OmniFit
-                                </div>
-                            </div>
-                            <ActionButton onClick={() => {
-                                this.navToSection('form')
-                            }} label={'Free demo'}/>
-                        </div>
-                    </div>
-                </header>
 
                 {/* Boost your sales with AR experience. */}
                 <section className="intro divided">
@@ -499,44 +471,6 @@ class Omnifit extends Component {
                 </section> */}
 
                 <ContactForm demoUrl="requestDemo" product="OmniFit" />
-
-                <Footer />
-
-                {/* <section className={'light gray'}>
-                    <div className="container top-border">
-                        <h3 className={"footer-header--mobile"}>Contact Us</h3>
-                        <div className="footer-content">
-                            <div className="footer-logo">
-                                <div style={{height: 21}}>
-                                    <object data={logoFooter} type={'image/svg+xml'}/>
-                                </div>
-                                <div className="copy">
-                                    © 2020
-                                </div>
-                            </div>
-                            <div className="footer-links">
-                                <div className="links">
-                                    <div className="link">
-                                        <div className={'link-icon'} style={{backgroundImage: "url(" + linkedin + ")"}}/>
-                                        <a href="https://www.linkedin.com/company/native-robotics"
-                                           target={'_blank'}>Linked.in</a></div>
-                                    <div className="link">
-                                        <div className={'link-icon'} style={{backgroundImage: "url(" + insta + ")"}}/>
-                                        <a href="https://instagram.com/native.robotics" target={'_blank'}>Instagram</a>
-                                    </div>
-                                    <div className="link">
-                                        <div className={'link-icon'} style={{backgroundImage: "url(" + youtube + ")"}}/>
-                                        <a href="https://www.youtube.com/watch?v=8wh053Fhqy8&list=PLwsuOQ_v2UBNFWOdnEIp-qCWFU5VEXzQJ"
-                                           target={'_blank'}>YouTube</a></div>
-                                    <div className="link">hello@native-robotics.com</div>
-                                </div>
-                                <div className="terms">
-                                    <a href="/privacy" target={'_blank'}>Privacy Policy</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
             </div>
         )
     }
