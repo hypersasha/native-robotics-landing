@@ -27,7 +27,7 @@ export default function Home() {
 
     useEffect(() => {
 
-        opackVidRef.current.play();
+        // opackVidRef.current.play();
 
         document.querySelectorAll('html,body').forEach((element) => {
             element.style.background = "#FFFFFF";
@@ -55,7 +55,7 @@ export default function Home() {
             <div className="page-container">
                 <section className="page-container--section product" id="products">
                     <div className="video-wrapper">
-                        <video muted playsInline loop preload="none" autoPlay="true" poster={opack_mock} ref={opackVidRef} aria-hidden="false">
+                        <video muted playsInline loop preload="none" autoPlay={true} poster={opack_mock} ref={opackVidRef} aria-hidden="false">
                             <source src={opack_vid} type={'video/mp4'}></source>
                         </video>
                         {/* <img src={opack_mock} alt="OmniPack preview image." />   */}
@@ -66,7 +66,7 @@ export default function Home() {
                                 OmniPack
                             </h1>
                             <p className="product-card--description">
-                                Reduce your costs and&nbsp;simplify operations with&nbsp;a&nbsp;cutting-edge palletization software.
+                                Increase the ROI on your palletizer by 30% with a cutting-edge software.
                             </p>
                             <div className="product-card--actions">
                                 
@@ -82,7 +82,7 @@ export default function Home() {
                             </div>
                         </div>
                     </Link>
-                    <div className="video-control" onClick={pauseVideo}>
+                    <div className="video-control" style={{display: 'none'}} onClick={pauseVideo}>
                         {isVideoPlaying && 
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.375 23.625H8.75C8.51794 23.625 8.29538 23.5328 8.13128 23.3687C7.96719 23.2046 7.875 22.9821 7.875 22.75V5.25C7.875 5.01794 7.96719 4.79538 8.13128 4.63128C8.29538 4.46719 8.51794 4.375 8.75 4.375H11.375C11.6071 4.375 11.8296 4.46719 11.9937 4.63128C12.1578 4.79538 12.25 5.01794 12.25 5.25V22.75C12.25 22.9821 12.1578 23.2046 11.9937 23.3687C11.8296 23.5328 11.6071 23.625 11.375 23.625ZM19.25 23.625H16.625C16.3929 23.625 16.1704 23.5328 16.0063 23.3687C15.8422 23.2046 15.75 22.9821 15.75 22.75V5.25C15.75 5.01794 15.8422 4.79538 16.0063 4.63128C16.1704 4.46719 16.3929 4.375 16.625 4.375H19.25C19.4821 4.375 19.7046 4.46719 19.8687 4.63128C20.0328 4.79538 20.125 5.01794 20.125 5.25V22.75C20.125 22.9821 20.0328 23.2046 19.8687 23.3687C19.7046 23.5328 19.4821 23.625 19.25 23.625Z" fill="white"/>
@@ -149,13 +149,15 @@ export default function Home() {
                                 <p>Native Robotics software is recognized by the distributors and integrators all over the&nbsp;world.</p>
                             </div>
                             <div className="call-to-action">
-                                <div className="action-button-orange">Become a distributor</div>
+                                <Link to="#contacts">
+                                    <div className="action-button-orange">Become a distributor</div>
+                                </Link>
                             </div>
                         </div>
                         <Customers />
-                        <div className="call-to-action mobile">
+                        {/* <div className="call-to-action mobile">
                             <div className="action-button-orange">Become a distributor</div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
@@ -175,7 +177,7 @@ export default function Home() {
                                             <path d="M16 2C10.4794 2 6 6.03188 6 11C6 19 16 30 16 30C16 30 26 19 26 11C26 6.03188 21.5206 2 16 2ZM16 16C15.2089 16 14.4355 15.7654 13.7777 15.3259C13.1199 14.8864 12.6072 14.2616 12.3045 13.5307C12.0017 12.7998 11.9225 11.9956 12.0769 11.2196C12.2312 10.4437 12.6122 9.73098 13.1716 9.17157C13.731 8.61216 14.4437 8.2312 15.2196 8.07686C15.9956 7.92252 16.7998 8.00173 17.5307 8.30448C18.2616 8.60723 18.8864 9.11992 19.3259 9.77772C19.7654 10.4355 20 11.2089 20 12C19.9988 13.0605 19.577 14.0773 18.8271 14.8271C18.0773 15.577 17.0605 15.9988 16 16Z" fill="#8E8E93"/>
                                         </svg>
                                     </div>
-                                    <p>2 Oskar Wilde Road, Reading, UK</p>
+                                    <p>2 Oscar Wilde Road, Reading, UK</p>
                                 </div>
                                 <div className="link">
                                     <div className="icon">

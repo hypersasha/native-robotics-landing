@@ -23,10 +23,10 @@ const previewAR = require('./assets/imgs/preview-ar.jpg');
 const photoTend = require('./assets/imgs/photo-view.jpg');
 const photoBluesun = require('./assets/imgs/photo-bluesun.jpg');
 const photoExhibit = require('./assets/imgs/photo-exhibit.jpg');
-const outlook = require('./assets/imgs/outlook.png');
+const outlook = require('./assets/imgs/outlook.jpg');
 
 const robovid = require('./assets/robotend.mp4');
-const vidpreview = require('./assets/imgs/vidpreview.png');
+const vidpreview = require('./assets/imgs/vidpreview.jpg');
 
 class Omnifit extends Component {
 
@@ -76,7 +76,7 @@ class Omnifit extends Component {
 
         this.videoRef.current.pause();
 
-        window.addEventListener('scroll', this.onPageScrolling);
+        window.addEventListener('scroll', this.onPageScrolling, {passive: true});
     }
 
     componentWillUnmount() {
@@ -208,8 +208,8 @@ class Omnifit extends Component {
                 <section className="intro divided">
                     <div id="overview" className="container">
                         <h3 className={"product-name"}>OmniFit.</h3>
-                        <Title text={'Boost your sales with AR experience.'}/>
-                        <p className="section-text">
+                        <Title center={true} text={'Boost your sales with AR experience.'}/>
+                        <p className="section-text centered">
                             We’ve created hyper-realistic AR models of all UR robots, additional hardware and&nbsp;even
                             complete robotic cells. So you can showcase your solutions anytime and&nbsp;anywhere.
                         </p>

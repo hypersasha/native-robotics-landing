@@ -1,18 +1,18 @@
-import React, {Component} from 'react';
+import React, {Component, lazy, Suspense} from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Omnifit from "./Omnifit";
-import OmniPack from "./OmniPack";
-import OmniPackLive from "./OmniPackLive";
-import OmniPackLiveWide from "./OmniPackLiveWide";
-import Privacy from "./Pages/Privacy/Privacy";
-import NotFound from "./NotFound";
-import Home from './Pages/Home/Home';
-import Blog from './Pages/Blog/Blog';
 
-import Footer from './components/NewFooter/NewFooter';
+import NotFound from "./NotFound";
+
 import TopBar from './components/TopBar/TopBar';
-import Editor from './Pages/Blog/Editor/Editor';
+
+const Home = lazy(() => import('./Pages/Home/Home'));
+const Omnifit = lazy(() => import('./Omnifit'));
+const OmniPack = lazy(() => import('./OmniPack'));
+const Blog = lazy(() => import('./Pages/Blog/Blog'));
+const Editor = lazy(() => import('./Pages/Blog/Editor/Editor'));
+const Privacy = lazy(() => import('./Pages/Privacy/Privacy'));
+const Footer = lazy(() => import('./components/NewFooter/NewFooter'));
 
 class AppRouter extends Component {
 
@@ -20,20 +20,20 @@ class AppRouter extends Component {
         return(
             <Router basename={process.env.PUBLIC_URL}>
                 <TopBar />
-                <Switch>
-                    <Route exact path={'/'} component={Home} />
-                    <Route path={'/omnifit'} component={Omnifit} />
-                    <Route path={'/omnipack'} component={OmniPack} />
-                    <Route path={'/blog'}>
-                        <Blog />
-                    </Route>
-                    <Route path={'/native-blog/editor'} component={Editor} />
-                    <Route path={'/privacy'} component={Privacy} />
-                    <Route path={'/omnipack-live'} component={OmniPackLive}/>
-                    <Route path={'/omnipack-live-wide'} component={OmniPackLiveWide}/>
-                    <Route component={NotFound} />
-                </Switch>
-                <Footer />
+                <Suspense fallback={<div>Загрузка...</div>}>
+                    <Switch>
+                        <Route exact path={'/'} component={Home} />
+                        <Route path={'/omnifit'} component={Omnifit} />
+                        <Route path={'/omnipack'} component={OmniPack} />
+                        <Route path={'/blog'}>
+                            <Blog />
+                        </Route>
+                        <Route path={'/native-blog/editor'} component={Editor} />
+                        <Route path={'/privacy'} component={Privacy} />
+                        <Route component={NotFound} />
+                    </Switch>
+                    <Footer />
+                </Suspense>
             </Router>
             )
     }

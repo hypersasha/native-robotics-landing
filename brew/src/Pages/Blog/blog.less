@@ -8,24 +8,34 @@
         a {
             text-decoration: none;
             color: #000;
+
+            
         }
     }
     .latest-post {
 
         margin-bottom: 80px;
+        transition: all 0.1s ease-in;
 
         &:hover {
-            box-shadow: 0 0 0 20px #F5F5F5;
-            background: #F5F5F5;
+            box-shadow: 0 0 0 20px #f1f1f1;
+            background: #f1f1f1;
+
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                box-shadow: none;
+                background-color: transparent;
+            }
         }
 
         .cover {
             width: auto;
-            height: 360px;
+            height: 460px;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            border-radius: 2px;
             margin-bottom: 20px;
 
             @media only screen
@@ -39,7 +49,8 @@
 
         .post-title {
             font-family: 'Roboto', sans-serif;
-            font-size: 36px;
+            font-size: 28px;
+            max-width: 660px;
             line-height: 1.3em;
             color: #000000;
             font-weight: 700;
@@ -79,10 +90,19 @@
         .old-post {
             max-width: 440px;
             margin-bottom: 80px;
+            transition: all 0.1s ease-in;
 
             &:hover {
                 box-shadow: 0 0 0 20px #F5F5F5;
                 background: #F5F5F5;
+
+                @media only screen
+                and (min-device-width: 320px)
+                and (max-device-width: 568px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                    box-shadow: none;
+                    background-color: transparent;
+                }
             }
 
             .cover {

@@ -23,9 +23,6 @@ export default function TopBar() {
                 {link: '/omnifit', label: 'OmniFit'}
             ]
         },
-        '/blog': {
-            label: 'Blog'
-        },
         '/#company': {
             label: 'Company'
         },
@@ -34,7 +31,10 @@ export default function TopBar() {
         },
         '/#contacts': {
             label: 'Contacts'
-        }
+        },
+        '/blog': {
+            label: 'Blog'
+        },
     };
 
     // This effect calls every location update.

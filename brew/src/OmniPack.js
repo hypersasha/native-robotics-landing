@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import {Link} from 'react-router-dom';
+
 import './omnipack.less'
 import Title from "./components/OmniPack/Title/Title";
 import Text from "./components/OmniPack/Text/Text";
@@ -145,7 +147,9 @@ class OmniPack extends Component {
                             <Title level={"primary"}>OmniPack</Title>
                             <Text>Reduce your costs and simplify operations with a cutting-edge palletization
                                 software.</Text>
-                            <div className="orange-button" onClick={() => this.navToSection('form')}>Try it for Free</div>
+                            <Link to="#form">
+                                <div className="orange-button">Free demo</div>
+                            </Link>
                         </div>
                         <AppMock image={introScreen}/>
                     </div>
@@ -352,14 +356,13 @@ class OmniPack extends Component {
                         <Text align={'center'}>
                             And is recognized by the Distributors and Integrators all over the world.
                         </Text>
-                        <div className="orange-button" style={{marginTop: 60}}
-                             onClick={() => this.navToSection('form')}>Become a Distributor
-                        </div>
                     </div>
                 </section>
                 <section style={{maxWidth: 940, margin: '-30px auto 20px', padding: 0}}>
                     <Customers />
                 </section>
+
+
 
                 <DistributorsMap />
 
