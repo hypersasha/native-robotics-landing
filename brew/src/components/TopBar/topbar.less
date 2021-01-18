@@ -9,6 +9,18 @@ header {
     backdrop-filter: saturate(180%) blur(20px);
     top: 0;
     z-index: 999999;
+    transition: top ease-in-out 0.15s;
+
+    &.hidden {
+        top: -80px;
+
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            top: -60px;
+        }
+    }
 
     @media only screen
     and (min-device-width: 320px)
@@ -16,6 +28,7 @@ header {
     and (-webkit-min-device-pixel-ratio: 2) {
         background: rgb(255,255,255);
         padding: 0 20px;
+        height: 60px;
         -webkit-backdrop-filter: none;
         backdrop-filter: none;
     }
@@ -32,6 +45,7 @@ header {
         and (max-device-width: 568px)
         and (-webkit-min-device-pixel-ratio: 2) {
             padding: 0;
+            height: 60px;
         }
 
         .nr-top-logo {
@@ -255,7 +269,7 @@ header {
         and (-webkit-min-device-pixel-ratio: 2) {
             position: fixed;
             background: #ffffff;
-            top: 80px;
+            top: 60px;
             bottom: 0;
             left: 0;
             right: 0;

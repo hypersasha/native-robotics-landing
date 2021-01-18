@@ -7,6 +7,8 @@ export default function TopBar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isClose, setIsClose] = useState(false);
     const [webMenu, setWebMenu] = useState([]);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [isHidden, setIsHidden] = useState(false);
 
     let location = useLocation();
 
@@ -32,9 +34,9 @@ export default function TopBar() {
         '/#contacts': {
             label: 'Contacts'
         },
-        '/blog': {
-            label: 'Blog'
-        },
+        // '/blog': {
+        //     label: 'Blog'
+        // },
     };
 
     // This effect calls every location update.
@@ -94,8 +96,27 @@ export default function TopBar() {
             }
         }
 
+        
+
         closeMobileMenu();
     }, [location]);
+
+    useEffect(() => {
+        window.addEventListener('scroll', onPageScroll, {passive: true});
+        return () => {
+            window.removeEventListener('scroll', onPageScroll)
+        }
+    }, [prevScrollPos, isHidden, setIsHidden, setPrevScrollPos])
+
+    function onPageScroll() {
+        let pos = window.scrollY;
+        if (prevScrollPos < pos && pos > 100) {
+            setIsHidden(true);
+        } else if (prevScrollPos > pos) {
+            setIsHidden(false);
+        }
+        setPrevScrollPos(pos);
+    }
 
     /**
      * Triggers, when mobile menu icon tapped.
@@ -128,7 +149,7 @@ export default function TopBar() {
     }
 
     return(
-        <header>
+        <header className={(isHidden ? 'hidden' : '')}>
             <div className="header-content">
                 <div className="open-menu">
                     <div className={"open-menu--icon" + (isOpen ? ' pressed' : '') + (isClose ? ' unpressed' : '')} onTouchEnd={openMobileMenu} />
@@ -187,11 +208,11 @@ export default function TopBar() {
                 </div>
                 <div className="mobile-menu--section">
                     <div className="label">About us</div>
-                    <div className="item">
+                    {/* <div className="item">
                         <Link to="/blog">
                             <div className="item-label">Blog</div>
                         </Link>
-                    </div>
+                    </div> */}
                     <div className="item">
                         <Link to="/#customers">
                             <div className="item-label">Customers</div>

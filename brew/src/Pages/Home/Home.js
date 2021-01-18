@@ -1,33 +1,17 @@
-import React, { useEffect, useReducer, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Customers from '../../components/Customers/Customers';
 import ContactForm from '../../components/ContactForm/ContactForm';
 
 import './home.less';
 
-const opack_vid = require('../../assets/imgs/opack_vid_30fps.mp4'); 
-const armock = require('../../assets/imgs/ar-mock-ofit.jpg');
-const opack_mock = require('../../assets/imgs/omnipack-promo-reduce.jpg');
+const opack_vid = require('../../assets/videos/omnipack-preview.mp4'); 
+const omnifit_preview = require('../../assets/imgs/omnifit-preview.jpg');
+const omnipack_video_poster = require('../../assets/imgs/omnipack-poster.jpg');
+
 
 export default function Home() {
-
-    const [isVideoPlaying, setIsVideoPlayin] = useState(true);
-    const opackVidRef = useRef(null);
-    const robAnimRef = useRef(null);
-
-    function pauseVideo() {
-        if (isVideoPlaying) {
-            opackVidRef.current.pause();
-            setIsVideoPlayin(false);
-        } else {
-            opackVidRef.current.play();
-            setIsVideoPlayin(true);
-        }
-    }
-
     useEffect(() => {
-
-        // opackVidRef.current.play();
 
         document.querySelectorAll('html,body').forEach((element) => {
             element.style.background = "#FFFFFF";
@@ -53,75 +37,78 @@ export default function Home() {
     return(
         <div>
             <div className="page-container">
-                <section className="page-container--section product" id="products">
-                    <div className="video-wrapper">
-                        <video muted playsInline loop preload="none" autoPlay={true} poster={opack_mock} ref={opackVidRef} aria-hidden="false">
-                            <source src={opack_vid} type={'video/mp4'}></source>
-                        </video>
-                        {/* <img src={opack_mock} alt="OmniPack preview image." />   */}
-                    </div>
-                    <Link to="/omnipack">
-                        <div className="product-card omnipack">
-                            <h1 className="product-card--name">
-                                OmniPack
-                            </h1>
-                            <p className="product-card--description">
-                                Increase the ROI on your palletizer by 30% with a cutting-edge software.
-                            </p>
-                            <div className="product-card--actions">
-                                
-                                    <div className="learn-more">
-                                        <span>Learn more </span>
-                                        <div className="arrow">
-                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M9.69832 12L5.2318 17.3599C4.87824 17.7841 4.93556 18.4147 5.35984 18.7683C5.78412 19.1218 6.41468 19.0645 6.76825 18.6402L11.7682 12.6402C12.0773 12.2694 12.0773 11.7307 11.7682 11.3599L6.76825 5.35985C6.41468 4.93557 5.78412 4.87825 5.35984 5.23182C4.93556 5.58538 4.87824 6.21594 5.2318 6.64022L9.69832 12Z" fill="#ff9500"/>
-                                            </svg>
-                                        </div> 
-                                    </div>
-                                <div className="get-demo">Get a demo</div>
+                <div className="link-to-product">
+                    <Link to="/omnipack" onClick={(e,d) => console.log(d)}>
+                        <section className="page-container--section product omnipack" id="products">
+                            <div className="video-wrapper">
+                                <video 
+                                    muted={true} 
+                                    playsInline={true} 
+                                    loop={true}
+                                    preload="metadata" 
+                                    className="opack_preview_vid" 
+                                    controls={false}
+                                    autoPlay={true}
+                                    >
+                                        <source src={opack_vid} type={'video/mp4'}></source>
+                                </video>
+                                <img src={omnipack_video_poster} className="opack_preview_image" alt="OmniPack preview image." />
+                                <div className="video-cover" />
                             </div>
-                        </div>
+                            <div className="product-card omnipack">
+                                <h1 className="product-card--name">
+                                    OmniPack
+                                </h1>
+                                <p className="product-card--description">
+                                    Increase the ROI on your palletizer by&nbsp;30% with a&nbsp;cutting-edge software.
+                                </p>
+                                <div className="product-card--actions">
+                                    
+                                        <div className="learn-more">
+                                            <span>Learn more </span>
+                                            <div className="arrow">
+                                                <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.69832 12L5.2318 17.3599C4.87824 17.7841 4.93556 18.4147 5.35984 18.7683C5.78412 19.1218 6.41468 19.0645 6.76825 18.6402L11.7682 12.6402C12.0773 12.2694 12.0773 11.7307 11.7682 11.3599L6.76825 5.35985C6.41468 4.93557 5.78412 4.87825 5.35984 5.23182C4.93556 5.58538 4.87824 6.21594 5.2318 6.64022L9.69832 12Z" fill="#ff9500"/>
+                                                </svg>
+                                            </div> 
+                                        </div>
+                                    <div className="get-demo">Get a demo</div>
+                                </div>
+                            </div>
+                        </section>
                     </Link>
-                    <div className="video-control" style={{display: 'none'}} onClick={pauseVideo}>
-                        {isVideoPlaying && 
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.375 23.625H8.75C8.51794 23.625 8.29538 23.5328 8.13128 23.3687C7.96719 23.2046 7.875 22.9821 7.875 22.75V5.25C7.875 5.01794 7.96719 4.79538 8.13128 4.63128C8.29538 4.46719 8.51794 4.375 8.75 4.375H11.375C11.6071 4.375 11.8296 4.46719 11.9937 4.63128C12.1578 4.79538 12.25 5.01794 12.25 5.25V22.75C12.25 22.9821 12.1578 23.2046 11.9937 23.3687C11.8296 23.5328 11.6071 23.625 11.375 23.625ZM19.25 23.625H16.625C16.3929 23.625 16.1704 23.5328 16.0063 23.3687C15.8422 23.2046 15.75 22.9821 15.75 22.75V5.25C15.75 5.01794 15.8422 4.79538 16.0063 4.63128C16.1704 4.46719 16.3929 4.375 16.625 4.375H19.25C19.4821 4.375 19.7046 4.46719 19.8687 4.63128C20.0328 4.79538 20.125 5.01794 20.125 5.25V22.75C20.125 22.9821 20.0328 23.2046 19.8687 23.3687C19.7046 23.5328 19.4821 23.625 19.25 23.625Z" fill="white"/>
-                            </svg>                        
-                        }
-                        {!isVideoPlaying && 
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.27345 24.0625C8.93768 24.0619 8.60785 23.9739 8.31642 23.8071C7.66017 23.4353 7.2522 22.7134 7.2522 21.9297V6.07035C7.2522 5.28449 7.66017 4.5648 8.31642 4.19293C8.61479 4.02145 8.95375 3.93326 9.29787 3.93759C9.64198 3.94192 9.97862 4.0386 10.2726 4.21754L23.8269 12.331C24.1094 12.5081 24.3422 12.7541 24.5037 13.0458C24.6651 13.3376 24.7498 13.6655 24.7498 13.9989C24.7498 14.3324 24.6651 14.6603 24.5037 14.9521C24.3422 15.2438 24.1094 15.4898 23.8269 15.6669L10.2704 23.7825C9.96956 23.9644 9.62499 24.0612 9.27345 24.0625Z" fill="white"/>
-                            </svg>                        
-                        }
-                    </div>
-                </section>
-                <section className="page-container--section product mirror">
-                    <div className="video-wrapper">
-                        <img src={armock} alt="OmniFit demonstration image" />
-                    </div>
+                </div>
+                
+                <div className="link-to-product">
                     <Link to="/omnifit">
-                        <div className="product-card">
-                            <h1 className="product-card--name">
-                                OmniFit
-                            </h1>
-                            <p className="product-card--description">
-                                Boost your sales with AR&nbsp;experience.
-                            </p>
-                            <div className="product-card--actions">
-                                
-                                    <div className="learn-more">
-                                        <span>Learn more </span>
-                                        <div className="arrow">
-                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.69832 12L5.2318 17.3599C4.87824 17.7841 4.93556 18.4147 5.35984 18.7683C5.78412 19.1218 6.41468 19.0645 6.76825 18.6402L11.7682 12.6402C12.0773 12.2694 12.0773 11.7307 11.7682 11.3599L6.76825 5.35985C6.41468 4.93557 5.78412 4.87825 5.35984 5.23182C4.93556 5.58538 4.87824 6.21594 5.2318 6.64022L9.69832 12Z" fill="#ff9500"/>
-                                            </svg>
-                                        </div> 
-                                    </div>
-                                <div className="get-demo">Get a demo</div>
+                        <section className="page-container--section product mirror">
+                            <div className="video-wrapper omnifit">
+                                <img src={omnifit_preview} alt="OmniFit demonstration image" />
                             </div>
-                        </div>
+                            <div className="product-card">
+                                <h1 className="product-card--name">
+                                    OmniFit
+                                </h1>
+                                <p className="product-card--description">
+                                    Boost your sales with AR&nbsp;experience.
+                                </p>
+                                <div className="product-card--actions">
+                                    
+                                        <div className="learn-more">
+                                            <span>Learn more</span>
+                                            <div className="arrow">
+                                                <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.69832 12L5.2318 17.3599C4.87824 17.7841 4.93556 18.4147 5.35984 18.7683C5.78412 19.1218 6.41468 19.0645 6.76825 18.6402L11.7682 12.6402C12.0773 12.2694 12.0773 11.7307 11.7682 11.3599L6.76825 5.35985C6.41468 4.93557 5.78412 4.87825 5.35984 5.23182C4.93556 5.58538 4.87824 6.21594 5.2318 6.64022L9.69832 12Z" fill="#ff9500"/>
+                                                </svg>
+                                            </div> 
+                                        </div>
+                                    <div className="get-demo">Get a demo</div>
+                                </div>
+                            </div>
+                        </section>
                     </Link>
-                </section>
+                </div>
+                
                 
                 {/* Company */}
                 <section id="company" className="page-container--section company">
@@ -133,7 +120,7 @@ export default function Home() {
                         </div>
                         <div className="robot-anim">
                         <div className="abstract" />
-                        <div className="robot-steel" ref={robAnimRef} />
+                        <div className="robot-steel" />
                         </div>
                         
                     </div>
@@ -155,9 +142,6 @@ export default function Home() {
                             </div>
                         </div>
                         <Customers />
-                        {/* <div className="call-to-action mobile">
-                            <div className="action-button-orange">Become a distributor</div>
-                        </div> */}
                     </div>
                 </section>
 
@@ -165,7 +149,7 @@ export default function Home() {
                 <section id="contacts" className="page-container--section contacts">
                     <h2 className="subheader">Contacts</h2>
                     <div className="contacts-container">
-                        <ContactForm demoUrl="opackDemo" title="Request a feedback" product="OmniPack" />
+                        <ContactForm demoUrl="opackDemo" title="Request a feedback" product="Homepage" />
                         <div className="map-links">
                             <div className="map">
                                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa3fc5590513f1a4df2a582556a6ea6c8d2c0307220dd5b8e06d7d9d7dc2312ec&amp;source=constructor&amp;lang=en_US" frameBorder="0"></iframe>

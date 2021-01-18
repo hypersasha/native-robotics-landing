@@ -1,8 +1,32 @@
-@product-container-height: 620px;
+@product-container-height: 640px;
 @mobile-video-height: 240px;
+
+.suspense {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
 .page-container {
     padding-top: 80px;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        padding-top: 60px;
+    }
+
+    .link-to-product {
+        a {
+            text-decoration: none;
+            display: block;
+            -webkit-tap-highlight-color: rgba(255,149,0,0.2)
+        }
+    }
+
 
     &--section {
         width: 940px;
@@ -25,9 +49,24 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 10px;
+            transition: opacity 0.12s ease-in;
+
+            &.omnipack {
+                @media only screen
+                and (min-device-width: 320px)
+                and (max-device-width: 568px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                    background-color: #1a1a1a;
+                }
+            }
 
             &.mirror {
                 flex-direction: row-reverse;
+
+                .product-card {
+                    margin-left: 0;
+                    margin-right: -60px;
+                }
 
                 @media only screen
                 and (min-device-width: 320px)
@@ -46,12 +85,7 @@
                 align-items: flex-start;
                 padding: 0;
                 height: auto;
-                margin-bottom: 0;;
             }
-        }
-
-        a {
-            text-decoration: none;
         }
 
         .product-card {
@@ -62,6 +96,7 @@
             display: flex;
             flex-direction: column;
             max-width: 280px;
+            margin-left: -120px;
 
             @media only screen
             and (min-device-width: 320px)
@@ -72,23 +107,38 @@
                 align-items: center;
                 width: 100vw;
                 box-sizing: border-box;
+                margin-left: auto;
+
+                &.omnipack {
+                    padding-top: 60px;
+                }
             }
 
-            &.omnipack {
                 @media only screen
                 and (min-device-width: 320px)
                 and (max-device-width: 568px)
                 and (-webkit-min-device-pixel-ratio: 2) {
-                    background: #f5f5f5;
+                    background: #ffffff;
+
+                    &.omnipack {
+                        background-color: #1a1a1a;
+
+                        .product-card--name {
+                            color: #ffffff;
+                        }
+
+                        .product-card--description {
+                            color: #eeeeee;
+                        }
+                    }
 
                     .product-card--name {
                         color: #000000;
                     }
                     .product-card--description {
-                        color: #000000;
+                        color: #3c3c3c;
                     }
                 }
-            }
 
             &--name {
                 font-family: 'Montserrat', sans-serif;
@@ -100,8 +150,7 @@
 
                 @media only screen
                 and (min-device-width: 320px)
-                and (max-device-width: 568px)
-                and (-webkit-min-device-pixel-ratio: 2) {
+                and (max-device-width: 568px) {
                     font-size: 32px;
                 }
             }
@@ -119,9 +168,7 @@
                 and (max-device-width: 568px)
                 and (-webkit-min-device-pixel-ratio: 2) {
                     text-align: center;
-                    padding-top: 0;
                     font-size: 21px;
-                    line-height: 1.5em;
                 }
             }
 
@@ -198,6 +245,28 @@
             height: @product-container-height;
             z-index: 1;
 
+            .opack_preview_image {
+                display: none;
+            }
+
+            .video-cover {
+                display: block;
+                position: absolute;
+                left:0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background: rgba(0,0,0,0.30);
+
+                @media only screen
+                and (min-device-width: 320px)
+                and (max-device-width: 568px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                    display: none;
+                } 
+                
+            }
+
             @media only screen
             and (min-device-width: 320px)
             and (max-device-width: 568px)
@@ -205,6 +274,32 @@
                 position: relative;
                 width: auto;
                 height: @mobile-video-height;
+
+                .opack_preview_vid {
+                    display: none;
+                }
+
+                .opack_preview_image {
+                    display: block;
+                }
+            }
+
+            &.omnifit {
+                @media only screen
+                and (min-device-width: 320px)
+                and (max-device-width: 568px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                    height: 340px;
+                }
+
+                img {
+                    @media only screen
+                    and (min-device-width: 320px)
+                    and (max-device-width: 568px)
+                    and (-webkit-min-device-pixel-ratio: 2) {
+                        height: 340px;
+                    }
+                }
             }
 
             video, img {
@@ -320,26 +415,6 @@
                     }
                 }
 
-                .abstract {
-                    width: 440px;
-                    height: 526px;
-                    position: absolute;
-                    display: block;
-                    background: url(../../assets/imgs/abstract.jpg);
-                    background-size: cover;
-                    z-index: 1;
-                    display: none;
-
-                    @media only screen
-                    and (min-device-width: 320px)
-                    and (max-device-width: 568px)
-                    and (-webkit-min-device-pixel-ratio: 2) {
-                        left: 50%;
-                        margin-left: -220px;
-                        bottom: 0;
-                    }
-                }
-
 
                 .robot-steel {
                     width: 440px;
@@ -436,6 +511,10 @@
                         flex-direction: column;
                         justify-content: stretch;
                         width: 220px;
+
+                        a {
+                            text-decoration: none;
+                        }
 
                         @media only screen
                         and (min-device-width: 320px)
