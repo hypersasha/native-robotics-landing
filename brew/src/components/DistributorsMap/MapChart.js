@@ -102,7 +102,9 @@ const MapChart = (props) => {
                         geo.properties.NAME === "Belarus" ||
                         geo.properties.NAME === "Turkey" ||
                         geo.properties.NAME === "Russia" ||
-                        geo.properties.NAME === "Mexico"
+                        geo.properties.NAME === "Mexico" ||
+                        geo.properties.NAME === "Denmark" ||
+                        geo.properties.NAME === "Italy"
                           ? "#DDECB2"
                           : themes[theme].fill
                       }
@@ -178,6 +180,18 @@ const MapChart = (props) => {
             zoom={props.zoom}
             coordinates={[-102.471382, 23.805431]}
             label="Mexico"
+          />
+
+          <CountryLabel
+            zoom={props.zoom}
+            coordinates={[10.995244, 44.211330]}
+            label="Italy"
+          />
+
+          <CountryLabel
+            zoom={props.zoom}
+            coordinates={[8.618484, 55.931419]}
+            label="Denmark"
           />
 
           {markers.map((marker) => {

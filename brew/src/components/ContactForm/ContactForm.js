@@ -73,9 +73,9 @@ const ContactForm = (props) => {
     return(
         <section className={"contact-form" + (formSent ? ' sent' : '')}>
             <div className="form-container" id="form">
-                <h1 className="form-title">{!formSent ?  (props.title || "Free demo.") : "Thank you."}</h1>
+                <h1 className="form-title">{!formSent ?  (props.title || "Request feedback") : "Thank you."}</h1>
                 <p className="form-text">
-                    {!formSent ? "We will be happy to meet you online, showcase our solutions and perform remote demo even on your robot." : "We will contact you as soon as possible."}</p>
+                    {!formSent ? `We will be happy to meet you online and showcase our solutions.` : "We will contact you as soon as possible."}</p>
                 {!formSent &&
                 <div className="form-inputs">
                     <div className={"input" + (isNameValid ? '' : ' error')}>

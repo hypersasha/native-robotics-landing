@@ -60,7 +60,7 @@ export default function Home() {
                                     OmniPack
                                 </h1>
                                 <p className="product-card--description">
-                                    Increase the ROI on your palletizer by&nbsp;30% with a&nbsp;cutting-edge software.
+                                    Increase ROI on your palletizer by&nbsp;30% with cutting-edge software.
                                 </p>
                                 <div className="product-card--actions">
                                     
@@ -116,7 +116,7 @@ export default function Home() {
                         <div className="company-short-description">
                             <h2 className="subheader">Native Robotics company</h2>
                             <h1 className="mainheader">Perfect apps for&nbsp;robots</h1>
-                            <p>With our apps anyone in your team can configure a robot from zero in 10 minutes.<br/><br/>Our algorithms will automatically calculate optimal trajectories for every robot move. This will increase your robot’s life by up to 30%.</p>
+                            <p>With our apps anyone in your team can configure a robot in 10 minutes, straight out of the box.<br/><br/>Our algorithms will automatically calculate optimal trajectories for every robot move. This will increase your robot’s life by up to 30%.</p>
                         </div>
                         <div className="robot-anim">
                         <div className="abstract" />
@@ -126,10 +126,10 @@ export default function Home() {
                     </div>
                 </section>
                 
-                {/* Customers */}
-                <section id="customers" className="page-container--section customers">
+                {/* Distributors */}
+                <section id="distributors" className="page-container--section customers">
                     <div className="customers-container">
-                        <h2 className="subheader">Customers</h2>
+                        <h2 className="subheader">Distributors</h2>
                         <div className="description-map">
                             <div className="description">
                                 <h1 className="mainheader">All over the world</h1>
@@ -149,7 +149,7 @@ export default function Home() {
                 <section id="contacts" className="page-container--section contacts">
                     <h2 className="subheader">Contacts</h2>
                     <div className="contacts-container">
-                        <ContactForm demoUrl="opackDemo" title="Request a feedback" product="Homepage" />
+                        <ContactForm demoUrl="opackDemo" title="Request feedback" product="Homepage" />
                         <div className="map-links">
                             <div className="map">
                                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa3fc5590513f1a4df2a582556a6ea6c8d2c0307220dd5b8e06d7d9d7dc2312ec&amp;source=constructor&amp;lang=en_US" frameBorder="0"></iframe>

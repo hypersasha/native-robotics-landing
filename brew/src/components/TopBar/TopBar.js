@@ -28,8 +28,8 @@ export default function TopBar() {
         '/#company': {
             label: 'Company'
         },
-        '/#customers': {
-            label: 'Customers'
+        '/#distributors': {
+            label: 'Distributors'
         },
         '/#contacts': {
             label: 'Contacts'
@@ -215,7 +215,7 @@ export default function TopBar() {
                     </div> */}
                     <div className="item">
                         <Link to="/#customers">
-                            <div className="item-label">Customers</div>
+                            <div className="item-label">Distributors</div>
                         </Link>
                     </div>
                     <div className="item">

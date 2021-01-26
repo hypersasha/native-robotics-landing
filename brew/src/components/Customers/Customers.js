@@ -56,6 +56,10 @@ const logos = {
     pst: {
         width: 138,
         url: require('../../assets/imgs/logos/psts.jpg')
+    },
+    technicon: {
+        width: 138,
+        url: require('../../assets/imgs/logos/technicon.jpg')
     }
 }
 
