@@ -718,11 +718,12 @@ section .section-text.centered {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 28px;
+  line-height: 32px;
   color: #000000;
   margin: 0;
   padding-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 .contact-form .form-container .form-text {
   font-family: 'Roboto', sans-serif;
