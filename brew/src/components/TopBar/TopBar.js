@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link, useLocation, useRouteMatch} from 'react-router-dom';
 import './topbar.less';
 
@@ -9,8 +9,11 @@ export default function TopBar() {
     const [webMenu, setWebMenu] = useState([]);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [isHidden, setIsHidden] = useState(false);
+    const [headerHeight, setHeaderHeight] = useState(80);
 
     let location = useLocation();
+
+    const headerRef = useRef(null);
 
     let { path, url } = useRouteMatch();
 
@@ -38,6 +41,10 @@ export default function TopBar() {
         //     label: 'Blog'
         // },
     };
+
+    useEffect(() => {
+        setHeaderHeight(headerRef.current.clientHeight);
+    }, [headerHeight, setHeaderHeight])
 
     // This effect calls every location update.
     
@@ -108,15 +115,39 @@ export default function TopBar() {
         }
     }, [prevScrollPos, isHidden, setIsHidden, setPrevScrollPos])
 
-    function onPageScroll() {
+    function onPageScroll(e) {
         let pos = window.scrollY;
         if (prevScrollPos < pos && pos > 100) {
             setIsHidden(true);
         } else if (prevScrollPos > pos) {
             setIsHidden(false);
         }
-        setPrevScrollPos(pos);
+        setPrevScrollPos(pos); 
+        if (window.scrollY >= 0) {
+            let top = headerRef.current.style.top || 0;
+            headerRef.current.style.top = Math.min(Math.max((parseFloat(top) + (prevScrollPos - pos)), headerHeight * -1), 0) + 'px';
+            setPrevScrollPos(pos);
+        }
+        // if (window.scrollY >= 200) {
+
+            
+        //     let clientRect = headerRef.current.getBoundingClientRect();
+
+        //     if (prevScrollPos < pos) {
+        //         if (headerRef.current.style.position !== 'absolute') {
+        //             headerRef.current.style.top = window.scrollY + 'px';
+        //             headerRef.current.style.position = 'absolute';
+        //         }
+        //     } else {
+        //         if (clientRect.top >= 0) {
+        //             headerRef.current.style.top = 0;
+        //             headerRef.current.style.position = 'fixed';
+        //         }
+        //     }
+        //     setPrevScrollPos(pos);
+        // }
     }
+
 
     /**
      * Triggers, when mobile menu icon tapped.
@@ -149,7 +180,8 @@ export default function TopBar() {
     }
 
     return(
-        <header className={(isHidden ? 'hidden' : '')}>
+        <header ref={headerRef} className={(isHidden ? 'hidden' : '')}>
+            
             <div className="header-content">
                 <div className="open-menu">
                     <div className={"open-menu--icon" + (isOpen ? ' pressed' : '') + (isClose ? ' unpressed' : '')} onTouchEnd={openMobileMenu} />
@@ -184,7 +216,7 @@ export default function TopBar() {
                     {webMenu}
                 </div>
             </div>
-            
+
             <div className={"mobile-menu" + (isMenu ? ' opened' : '')}>
                 <div className="mobile-menu--section">
                     <div className="item">
@@ -214,7 +246,7 @@ export default function TopBar() {
                         </Link>
                     </div> */}
                     <div className="item">
-                        <Link to="/#customers">
+                        <Link to="/#distributors">
                             <div className="item-label">Distributors</div>
                         </Link>
                     </div>

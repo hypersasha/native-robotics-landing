@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css'; // This is IMPORTANT import.
+import './App.css';
 import AppRouter from './Router';
 import * as serviceWorker from './serviceWorker';
 

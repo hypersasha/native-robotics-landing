@@ -6,6 +6,7 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import './home.less';
 
 const opack_vid = require('../../assets/videos/omnipack-preview.mp4'); 
+const opack_vid_new = require('../../assets/videos/omnipack-intro_1080.mp4'); 
 const omnifit_preview = require('../../assets/imgs/omnifit-preview.jpg');
 const omnipack_video_poster = require('../../assets/imgs/omnipack-poster.jpg');
 
@@ -50,7 +51,7 @@ export default function Home() {
                                     controls={false}
                                     autoPlay={true}
                                     >
-                                        <source src={opack_vid} type={'video/mp4'}></source>
+                                        <source src={opack_vid_new} type={'video/mp4'}></source>
                                 </video>
                                 <img src={omnipack_video_poster} className="opack_preview_image" alt="OmniPack preview image." />
                                 <div className="video-cover" />
@@ -147,7 +148,7 @@ export default function Home() {
 
                 {/* Contacts */}
                 <section id="contacts" className="page-container--section contacts">
-                    <h2 className="subheader">Contacts</h2>
+                    <h2 className="subheader" style={{paddingBottom: 10}}>Contacts</h2>
                     <div className="contacts-container">
                         <ContactForm demoUrl="opackDemo" title="Request feedback" product="Homepage" />
                         <div className="map-links">

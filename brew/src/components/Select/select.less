@@ -1,0 +1,90 @@
+.select {
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    &-label {
+        font-family: var(--roboto);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 0;
+        margin: 0;
+        color: #8E8E93;
+    }
+
+    &-pole {
+        margin-top: 10px;
+        background: #FFFFFF;
+        border: 1px solid #D2D2D4;
+        border-radius: 10px;
+        width: 300px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding: 13px 12px 13px 16px;
+        transition: border-color 0.12s ease-out;
+        overflow: visible;
+
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            width: auto;
+        }
+
+        &:hover {
+            cursor: pointer;
+            // background: #f7f7f7;
+        }
+
+        .hidden-select {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            border-radius: 10px;
+            opacity: 0;
+        }
+
+        &--value {
+            margin: 0;
+            padding: 0;
+            font-family: var(--roboto);
+            font-style: normal;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 14px;
+            color: #000000;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+
+            &.placeholder {
+                color: #8E8E93;
+            }
+        }
+
+        .icon-arrow {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &.focused {
+        .select-pole {
+            border-color: var(--orange);
+            box-shadow: 0px 0px 0px 4px rgba(255, 149, 0, 0.1);
+        }
+    }
+}

@@ -14,6 +14,8 @@ const Editor = lazy(() => import('./pages/Blog/Editor/Editor'));
 const Privacy = lazy(() => import('./pages/Privacy/Privacy'));
 const Footer = lazy(() => import('./components/Footer/NewFooter'));
 
+const OmniPackNew = lazy(() => import('./pages/OmniPack/OmniPackNew'));
+
 class AppRouter extends Component {
 
     render() {
@@ -24,9 +26,10 @@ class AppRouter extends Component {
                     <Switch>
                         <Route exact path={'/'} component={Home} />
                         <Route path={'/omnifit'} component={Omnifit} />
-                        <Route path={'/omnipack'} component={OmniPack} />
+                        <Route path={'/omnipack'} component={OmniPackNew} />
                         <Route path={'/native-blog/editor'} component={Editor} />
                         <Route path={'/privacy'} component={Privacy} />
+                        <Route path={'/omnipack-new'} component={OmniPackNew} />
                         <Route component={NotFound} />
                     </Switch>
                     <Footer />

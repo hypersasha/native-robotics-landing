@@ -12,4 +12,8 @@ body {
 
 :root {
   --common-text-color: #37352F;
+  --orange: #FF9500;
+  --orange-hover: #FF7A00;
+  --pearl: #F5F5F7;
+  --roboto: 'Roboto', sans-serif;
 }

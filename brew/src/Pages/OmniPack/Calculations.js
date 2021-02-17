@@ -1,0 +1,194 @@
+import React, {useEffect, useState, useRef} from 'react';
+import './calculations-table.less';
+
+export default function Calculations(props) {
+    return (
+        <div className="calculations-table">
+            <div className="table-container">
+                <h1>Cost reduction calculations</h1>
+                <h3>'000 EUR, no VAT</h3>
+                <div className="close-button" onClick={props.onClose}>
+                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.36 16.78L13.58 12l4.78-4.78c.44-.44.44-1.15 0-1.58a1.12 1.12 0 00-1.58 0L12 10.42 7.22 5.64a1.12 1.12 0 00-1.91.79c0 .29.1.57.33.8L10.42 12l-4.78 4.78a1.12 1.12 0 000 1.58c.43.44 1.14.44 1.58 0L12 13.58l4.78 4.78c.43.44 1.15.44 1.58 0 .44-.43.44-1.15 0-1.58z" fill="#FF9500" /></svg>
+                </div>
+                <div className="table">
+                    <div className="table-row">
+                        <div className="table-cell"></div>
+                        <div className="table-cell">
+                            <h1>UR10e<br />without OmniPack</h1>
+                        </div>
+                        <div className="table-cell">
+                            <h1>UR10e<br />with OmniPack</h1>
+                        </div>
+                    </div>
+                    <div className="table-row spacer">
+                        <div className="table-cell">
+                            <p>Palletizer lifetime, years</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>7</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>9.1</p>
+                        </div>
+                    </div>
+                    <div className="table-row">
+                        <div className="table-cell">
+                            <h3>Initital investments</h3>
+                        </div>
+                        <div className="table-cell">
+                            <h4>70</h4>
+                        </div>
+                        <div className="table-cell">
+                            <h4>75</h4>
+                        </div>
+                    </div>
+                    <div className="table-row spacer">
+                        <div className="table-cell">
+                            <p>Hardware & installation</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>70</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>75</p>
+                        </div>
+                    </div>
+                    <div className="table-row">
+                        <div className="table-cell">
+                            <h3>Operational costs (per year)</h3>
+                        </div>
+                        <div className="table-cell">
+                            <h4>6.5</h4>
+                        </div>
+                        <div className="table-cell">
+                            <h4>1.8</h4>
+                        </div>
+                    </div>
+                    <div className="table-row">
+                        <div className="table-cell">
+                            <p>Reprogramming and reconfiguration</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>4</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div className="table-row">
+                        <div className="table-cell">
+                            <p>Robot maintenance</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>1</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>0.5</p>
+                        </div>
+                    </div>
+                    <div className="table-row">
+                        <div className="table-cell">
+                            <p>Other equipment maintenance</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>1</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div className="table-row spacer">
+                        <div className="table-cell">
+                            <p>Power supply</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>0.5</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>0.3</p>
+                        </div>
+                    </div>
+                    <div className="table-row spacer">
+                        <div className="table-cell">
+                            <p>Operational costs during lifetime</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>45.0</p>
+                        </div>
+                        <div className="table-cell">
+                            <p>16.4</p>
+                        </div>
+                    </div>
+                    <div className="table-row spacer">
+                        <div className="table-cell">
+                            <h2>Total investments</h2>
+                        </div>
+                        <div className="table-cell">
+                            <h2>115.0</h2>
+                        </div>
+                        <div className="table-cell">
+                            <h2>91.4</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="table-row">
+                            <div className="table-cell">
+                                <h2>Your value</h2>
+                            </div>
+                            <div className="table-cell">
+                                <h2></h2>
+                            </div>
+                            <div className="table-cell">
+                                <h2></h2>
+                            </div>
+                        </div>
+                        <div className="table-row">
+                            <div className="table-cell">
+                                <p>Savings, EUR</p>
+                            </div>
+                            <div className="table-cell">
+                                <p></p>
+                            </div>
+                            <div className="table-cell">
+                                <p>23.4</p>
+                            </div>
+                        </div>
+                        <div className="table-row">
+                            <div className="table-cell">
+                                <p>Savings, %</p>
+                            </div>
+                            <div className="table-cell">
+                                <p></p>
+                            </div>
+                            <div className="table-cell">
+                                <p>20%</p>
+                            </div>
+                        </div>
+                        <div className="table-row">
+                            <div className="table-cell">
+                                <p>Lifetime increase, years</p>
+                            </div>
+                            <div className="table-cell">
+                                <p></p>
+                            </div>
+                            <div className="table-cell">
+                                <p>2.1</p>
+                            </div>
+                        </div>
+                        <div className="table-row">
+                            <div className="table-cell">
+                                <p>Lifetime increase, %</p>
+                            </div>
+                            <div className="table-cell">
+                                <p></p>
+                            </div>
+                            <div className="table-cell">
+                                <p>30%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
