@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="left-side">
                 <div className="icon-links">
                     <div className="link">
-                        <a href="https://linkedin.com/company/native-robotics/" target="_blank"/>
+                        <a href="https://linkedin.com/company/native-robotics/" target="_blank" rel="noreferrer" />
                         <div className="link-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.8205 1.5H3.29437C2.33672 1.5 1.5 2.18906 1.5 3.13547V20.7005C1.5 21.652 2.33672 22.5 3.29437 22.5H20.8153C21.7781 22.5 22.5 21.6464 22.5 20.7005V3.13547C22.5056 2.18906 21.7781 1.5 20.8205 1.5ZM8.00953 19.0045H5.00109V9.65063H8.00953V19.0045ZM6.60938 8.22844H6.58781C5.625 8.22844 5.00156 7.51172 5.00156 6.61453C5.00156 5.70094 5.64141 5.00109 6.62578 5.00109C7.61016 5.00109 8.2125 5.69578 8.23406 6.61453C8.23359 7.51172 7.61016 8.22844 6.60938 8.22844ZM19.0045 19.0045H15.9961V13.89C15.9961 12.6647 15.5583 11.8275 14.4698 11.8275C13.6383 11.8275 13.1461 12.39 12.9272 12.938C12.8452 13.1348 12.8231 13.403 12.8231 13.6767V19.0045H9.81469V9.65063H12.8231V10.9523C13.2609 10.3289 13.9448 9.43172 15.5363 9.43172C17.5111 9.43172 19.005 10.7334 19.005 13.5398L19.0045 19.0045Z" fill="#BEBEBE"/>
@@ -16,7 +16,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="link">
-                        <a href="https://www.youtube.com/channel/UCmtHDIOCGN8Nh0hhXf407cw" target="_blank" />
+                        <a href="https://www.youtube.com/channel/UCmtHDIOCGN8Nh0hhXf407cw" target="_blank" rel="noreferrer" />
                         <div className="link-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0)">
@@ -31,7 +31,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="link">
-                        <a href="https://www.instagram.com/native.robotics/" target="_blank" />
+                        <a href="https://www.instagram.com/native.robotics/" target="_blank" rel="noreferrer" />
                         <div className="link-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.3748 3.24984C17.5342 3.25331 18.6451 3.71539 19.4648 4.53517C20.2846 5.35495 20.7467 6.46582 20.7502 7.62516V16.3748C20.7467 17.5342 20.2846 18.6451 19.4648 19.4648C18.6451 20.2846 17.5342 20.7467 16.3748 20.7502H7.62516C6.46582 20.7467 5.35495 20.2846 4.53517 19.4648C3.71539 18.6451 3.25331 17.5342 3.24984 16.3748V7.62516C3.25331 6.46582 3.71539 5.35495 4.53517 4.53517C5.35495 3.71539 6.46582 3.25331 7.62516 3.24984H16.3748ZM16.3748 1.5H7.62516C4.25625 1.5 1.5 4.25625 1.5 7.62516V16.3748C1.5 19.7437 4.25625 22.5 7.62516 22.5H16.3748C19.7437 22.5 22.5 19.7437 22.5 16.3748V7.62516C22.5 4.25625 19.7437 1.5 16.3748 1.5Z" fill="#BEBEBE"/>
@@ -40,7 +40,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="link">
-                        <a href="https://www.facebook.com/native.robotics" target="_blank" />
+                        <a href="https://www.facebook.com/native.robotics" target="_blank" rel="noreferrer" />
                         <div className="link-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M22.5 12.0633C22.5 6.26486 17.7984 1.56329 12 1.56329C6.20156 1.56329 1.5 6.26486 1.5 12.0633C1.5 17.3039 5.33906 21.6478 10.3594 22.4363V15.0994H7.69266V12.0633H10.3594V9.75001C10.3594 7.11892 11.9273 5.66439 14.3255 5.66439C15.4744 5.66439 16.6763 5.8697 16.6763 5.8697V8.45392H15.3516C14.048 8.45392 13.6402 9.26298 13.6402 10.0945V12.0633H16.552L16.087 15.0994H13.6406V22.4372C18.6609 21.6492 22.5 17.3053 22.5 12.0633V12.0633Z" fill="#BEBEBE"/>

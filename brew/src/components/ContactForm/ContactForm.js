@@ -78,7 +78,7 @@ const ContactForm = (props) => {
             <div className="form-container" id="form">
                 <h1 className="form-title">{!formSent ?  (props.title || "Request feedback") : "Thank you."}</h1>
                 <p className="form-text">
-                    {!formSent ? formDescription : "We will contact you as soon as possible."}</p>
+                    {!formSent ? formDescription : "Our managers will contact you as soon as possible to showcase our solutions."}</p>
                 {!formSent &&
                 <div className="form-inputs">
                     <div className={"input" + (isNameValid ? '' : ' error')}>

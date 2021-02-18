@@ -91,7 +91,7 @@ export default function OmniPackNew() {
                             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.36 16.78L13.58 12l4.78-4.78c.44-.43.44-1.15 0-1.58a1.12 1.12 0 00-1.58 0L12 10.42 7.22 5.64a1.12 1.12 0 00-1.91.79c0 .29.1.57.33.8L10.42 12l-4.78 4.78a1.12 1.12 0 000 1.58c.43.44 1.15.44 1.58 0L12 13.58l4.78 4.78c.43.44 1.15.44 1.58 0 .44-.43.44-1.14 0-1.58z" fill="#8e8e83"/></svg>
                         </div>
                         <div>
-                            <iframe width="720" height="415" src="https://www.youtube.com/embed/tLvODPdzW_8?controls=1&autoplay=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&color=white" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="840" height="475" src="https://www.youtube.com/embed/tLvODPdzW_8?controls=1&autoplay=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&color=white" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -173,15 +173,6 @@ export default function OmniPackNew() {
                         </div>
                     </div>
                     <div className="motion-planning-video">
-                        {/* <video 
-                            muted={true} 
-                            playsInline={true}
-                            preload="none"
-                            loop
-                            autoPlay
-                            >
-                                <source src={motion_plan_video} type={'video/mp4'}></source>
-                        </video> */}
                         <img src={motion_planning} />
                     </div>
                     <div className="compare-info-rows">
@@ -204,12 +195,12 @@ export default function OmniPackNew() {
             <section id="protected" className="omnipack-bordered">
                 <div className="content">
                     <div className="content-text">
-                        <h2>Nothing will halt your production.</h2>
+                        <h2>Nothing will stop<br />your production.</h2>
                         <p>A comprehensive error handling system enables you to quickly resolve issues. Anyone at your plant can troubleshoot and resume the robot's operation. </p>
                     </div>
                     <div className="content-image protection" />
                 </div>
-            </section>
+            </section>  
             <section id="one-app" className="omnipack-fullscreen-title">
                 <div className="image-cover" />
                 <div className="dark-cover">
@@ -358,7 +349,7 @@ export default function OmniPackNew() {
                         <h2 className="trusted-tab-subhead">Supporting third party products</h2>
                         <div className="trusted-content">
                             <h1 className="trusted-content--title">Work the way you like.</h1>
-                            <p className="gray">OmniPack has advanced settings and callback functionality, and also supports Modbus TCP and Ethernet IP protocols, as well as Omron and Siemens PLC communication. We can include you custom hardware in OmniPack.</p>
+                            <p className="gray">OmniPack has advanced settings and callback functionality, and also supports Modbus TCP and Ethernet IP protocols, as well as Omron and Siemens PLC communication. We can include your custom hardware in OmniPack.</p>
                             <figure className="third-parties-image"></figure>
                         </div>
                     </div>

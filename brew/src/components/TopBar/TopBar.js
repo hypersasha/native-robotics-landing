@@ -103,7 +103,17 @@ export default function TopBar() {
             }
         }
 
-        
+        // Change document title.
+        switch(window.location.pathname) {
+            case '/omnipack': 
+                document.title = 'OmniPack | Native Robotics'
+            break;
+            case '/omnifit':
+                document.title = 'OmniFit | Native Robotics'
+            break;
+            default:
+                document.title = 'Native Robotics';
+        }
 
         closeMobileMenu();
     }, [location]);
@@ -115,37 +125,14 @@ export default function TopBar() {
         }
     }, [prevScrollPos, isHidden, setIsHidden, setPrevScrollPos])
 
-    function onPageScroll(e) {
+    function onPageScroll() {
         let pos = window.scrollY;
-        if (prevScrollPos < pos && pos > 100) {
-            setIsHidden(true);
-        } else if (prevScrollPos > pos) {
-            setIsHidden(false);
-        }
         setPrevScrollPos(pos); 
         if (window.scrollY >= 0) {
             let top = headerRef.current.style.top || 0;
             headerRef.current.style.top = Math.min(Math.max((parseFloat(top) + (prevScrollPos - pos)), headerHeight * -1), 0) + 'px';
             setPrevScrollPos(pos);
         }
-        // if (window.scrollY >= 200) {
-
-            
-        //     let clientRect = headerRef.current.getBoundingClientRect();
-
-        //     if (prevScrollPos < pos) {
-        //         if (headerRef.current.style.position !== 'absolute') {
-        //             headerRef.current.style.top = window.scrollY + 'px';
-        //             headerRef.current.style.position = 'absolute';
-        //         }
-        //     } else {
-        //         if (clientRect.top >= 0) {
-        //             headerRef.current.style.top = 0;
-        //             headerRef.current.style.position = 'fixed';
-        //         }
-        //     }
-        //     setPrevScrollPos(pos);
-        // }
     }
 
 

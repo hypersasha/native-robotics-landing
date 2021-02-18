@@ -16,7 +16,7 @@
     z-index: 999999;
 
     .video-frame {
-        width: 720px;
+        width: 840px;
         display: flex;
         flex-direction: column;
 
@@ -330,7 +330,7 @@
                 font-weight: normal;
                 font-size: 24px;
                 line-height: 1.4em;
-                color: #1D1D1F;
+                color: #2D2D2D;
                 margin: 0;
                 padding-top: 30px;
 
@@ -382,7 +382,7 @@
 }
 
 .omnipack-noborders {
-    margin: 160px 0;
+    margin: 100px 0;
     background: #ffffff;
 
     @media only screen
@@ -391,23 +391,24 @@
     and (-webkit-min-device-pixel-ratio: 2) {
         flex-direction: column;
         margin: 0;
-        padding-bottom: 60px;;
+        padding-bottom: 60px;
     }
 
     .content {
         flex-direction: row-reverse;
+        padding-top: 60px;
 
         @media only screen
         and (min-device-width: 320px)
         and (max-device-width: 568px)
         and (-webkit-min-device-pixel-ratio: 2) {
             flex-direction: column;
-            padding-top: 60px;
-            
+            padding-top: 60px;  
             align-items: flex-start;
         }
 
         .content-text {
+            margin-bottom: 60px;
             .compare-table {
                 padding-top: 60px;
 
@@ -422,16 +423,25 @@
                     font-family: 'Montserrat', sans-serif;
                     font-style: normal;
                     font-weight: 600;
-                    font-size: 19px;
-                    line-height: 23px;
+                    font-size: 17px;
+                    line-height: 130%;
                     letter-spacing: -0.03em;
                     text-align: left;
                     color: #000000;
-                    border-bottom: 1px solid #EAEAEA;
-                    padding-bottom: 12px;
+                    padding: 12px;
+                    border: 1px solid #EAEAEA;
+
+                    &:not(:first-child) {
+                        border-left: none;
+                    }
 
                     &:first-child {
-                        padding-right: 24px;
+                        border-radius: 4px 0 0 0;
+                        min-width: 260px;
+                    }
+
+                    &:last-child {
+                        border-radius: 0 4px 0 0;
                     }
                 }
 
@@ -443,18 +453,24 @@
                             font-weight: normal;
                             font-size: 15px;
                             line-height: 21px;
-                            color: #626264;
-                            padding-right: 24px;
+                            color: #2D2D2D;
+                            padding: 12px;
                         }
     
                         td {
-                            padding: 12px 0;
                             font-family: var(--roboto);
                             font-style: normal;
                             font-weight: normal;
                             font-size: 15px;
                             line-height: 21px;
                             color: #2D2D2D;
+                            padding: 12px;
+                            border: 1px solid #EAEAEA;
+                            border-top: none;
+
+                            &:not(:first-child) {
+                                border-left: none;
+                            }
 
                             @media only screen
                             and (min-device-width: 320px)
@@ -462,6 +478,22 @@
                             and (-webkit-min-device-pixel-ratio: 2) {
                                 width: auto;
                             }
+                        }
+
+                        &:last-child {
+                            td {
+                                &:first-child {
+                                    border-radius: 0 0 0 4px;
+                                }
+
+                                &:last-child {
+                                    border-radius: 0 0 4px 0;
+                                }
+                            }
+                        }
+
+                        &:nth-child(odd) {
+                            background: #f5f5f7;
                         }
                     }
                 }
@@ -484,7 +516,7 @@
                 font-family: 'Montserrat', sans-serif;
                 font-style: normal;
                 font-weight: 600;
-                font-size: 17px;
+                font-size: 19px;
                 line-height: 1.3em;
                 letter-spacing: -0.03em;
                 color: #000000;
@@ -566,7 +598,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: url('../../assets/imgs/omnipack/pallet-screen-cover.png');
+        background-image: url('../../assets/imgs/omnipack/simulation-cover.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -676,7 +708,8 @@
             and (min-device-width: 320px)
             and (max-device-width: 568px)
             and (-webkit-min-device-pixel-ratio: 2) {
-                font-size: 21px;
+                font-size: 24px;
+                line-height: 1.2em;
             }
         }
 
@@ -1065,7 +1098,7 @@
 
                 .clickable {
                     font-family: var(--roboto);
-                    font-size: 19px;
+                    font-size: 17px;
                     color: #ffffff;
                     font-weight: 500;
                     background: rgba(0,0,0,0.32);
@@ -1073,10 +1106,11 @@
                     position: absolute;
                     z-index: 10;
                     border-radius: 26px;
-                    line-height: 19px;
+                    line-height: 17px;
                     cursor: pointer;
                     padding: 10px 14px;
                     transition: background 0.12s ease-out;
+                    border: 1px solid rgba(255,255,255,0.18);
 
                     @media only screen
                     and (min-device-width: 320px)
@@ -1086,7 +1120,7 @@
                     }
 
                     &:hover {
-                        background: rgba(0,0,0,0.92);
+                        background: rgba(0,0,0,0.7);
                     }
 
                     &.nuc {
@@ -1195,6 +1229,13 @@
 
 .omnipack-distributors {
     padding: 80px 0 0 0;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        padding: 40px 0 0 0;
+    }
 
     .content {
         max-width: 1260px;

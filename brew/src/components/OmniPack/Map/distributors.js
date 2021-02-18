@@ -42,7 +42,7 @@ export const DISTRIBUTORS = Object.create({
         value: [
             {
                 name: "ANT Company",
-                address: " г. Санкт-Петербург, ул. Глиняная, д.5, корп. 1, офис 308.",
+                address: "Saint Perersburg, Glinyanaya st., b .5/1, office 308.",
                 url: "http://ant-company.ru/",
                 coordinates: { lat: 59.91449926845972, lng: 30.386844974099507 },
                 robots: ["UR", "Doosan"]
