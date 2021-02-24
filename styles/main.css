@@ -5,13 +5,17 @@
 body {
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased; /* antialiased */
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 :root {
   --common-text-color: #37352F;
+  --orange: #FF9500;
+  --orange-hover: #FF7A00;
+  --pearl: #F5F5F7;
+  --roboto: 'Roboto', sans-serif;
 }
 .notfound {
   width: 100%;
@@ -107,9 +111,8 @@ header {
   background: linear-gradient(270deg, rgba(255, 255, 255, 0.8) 0%, #FFFFFF 54%);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
-  top: 0;
   z-index: 999999;
-  transition: top ease-in-out 0.15s;
+  transition: none;
 }
 header.hidden {
   top: -80px;

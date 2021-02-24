@@ -688,6 +688,7 @@ section.opack-container {
     justify-content: stretch;
     padding-top: 20px;
     padding-bottom: 32px;
+    width: 100%;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -700,7 +701,7 @@ section.opack-container {
 .contact-form .form-container {
   padding: 42px 32px;
   border-radius: 10px;
-  background: #F6F6F6;
+  background: #F5F5F7;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .contact-form .form-container {
@@ -717,22 +718,23 @@ section.opack-container {
   line-height: 32px;
   color: #000000;
   margin: 0;
-  padding-bottom: 12px;
+  padding-bottom: 24px;
   letter-spacing: -0.02em;
 }
 .contact-form .form-container .form-text {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--roboto);
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
-  line-height: 26px;
-  color: #000000;
+  line-height: 1.3em;
+  color: #2d2d2d;
   width: 392px;
   margin: 0;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .contact-form .form-container .form-text {
     width: auto;
+    font-size: 19px;
   }
 }
 .contact-form .form-container .form-inputs {
@@ -806,6 +808,11 @@ section.opack-container {
   opacity: 0.9;
   cursor: pointer;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact-form .form-container .form-button {
+    width: auto;
+  }
+}
 .button-loader {
   display: flex;
   flex-direction: row;
@@ -845,7 +852,7 @@ section.opack-container {
   }
 }
 .action-button-orange {
-  padding: 14px 16px;
+  padding: 16px 16px;
   border-radius: 10px;
   text-align: center;
   background: #ff9500;
@@ -855,6 +862,12 @@ section.opack-container {
   color: #ffffff;
   font-weight: 500;
   letter-spacing: 0.01em;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .action-button-orange {
+    font-size: 17px;
+    letter-spacing: 0;
+  }
 }
 .action-button-orange.grey {
   background: #DCDCDC;
