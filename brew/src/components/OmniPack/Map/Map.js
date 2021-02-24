@@ -25,7 +25,7 @@ export default function Map(props) {
             // If this is a first load of Google maps.
             if (!isMapLoaded) {
                 const loader = new Loader({
-                    apiKey: 'AIzaSyA1_5iRUBoj2zt6O9lfEh9r5sxEZfcoxFY',
+                    apiKey: 'AIzaSyAgVj7nsWNGkQhm7xkIvMHzNcFKAPdf2J0',
                     version: 'weekly',
                     mapIds: ['130ede963d80b374'],
                     region: 'US',

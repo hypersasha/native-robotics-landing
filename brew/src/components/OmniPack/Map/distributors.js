@@ -35,6 +35,14 @@ export const DISTRIBUTORS = Object.create({
                 robots: ["UR"],
                 logo: 'logo-itsme-elektres.png'
             },
+            {
+                name: "Fluitronic",
+                address: "C. Gabriel Ramos Bejarano, Parcela 233E, C.P 14014, Cordoba, Spain",
+                url: 'https://www.fluitronic.es/',
+                coordinates: {lat: 37.90173882388097, lng: -4.708789286310357},
+                robots: ['UR'],
+                logo: 'fluitronic-map.png'
+            }
         ],
         enumerable: true
     },
