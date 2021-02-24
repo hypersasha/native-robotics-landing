@@ -1,9 +1,27 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect} from 'react';
 import './calculations-table.less';
 
 export default function Calculations(props) {
+
+    useEffect(() => {
+        document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+        document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+        return () => {
+            document.getElementsByTagName('body')[0].removeAttribute('style');
+            document.getElementsByTagName('html')[0].removeAttribute('style');
+        }
+    }, [])
+
+    function onDarkerClose(e) {
+        if (e.target && e.target.className === 'calculations-table') {
+            if (props.onClose && typeof props.onClose === 'function') {
+                props.onClose();
+            }
+        }
+    }
+
     return (
-        <div className="calculations-table">
+        <div className="calculations-table" onClick={onDarkerClose}>
             <div className="table-container">
                 <h1>Cost reduction calculations</h1>
                 <h3>'000 EUR, no VAT</h3>

@@ -41,10 +41,16 @@ export default function OmniPackNew() {
             element.style.background = "#FFFFFF";
         });
 
+        // document.addEventListener('maploaded', onMapLoaded);
         return () => {
             introVideoRef.current.removeEventListener('ended', onIntroEnd);
+            // document.removeEventListener('maploaded', onMapLoaded);
         }
-    }, [])
+    }, []);
+
+    function onMapLoaded() {
+        console.log('Google Maps JS API loaded.');
+    }
 
     function onIntroStart() {
         clearInterval(lastFrameTimer);
@@ -85,13 +91,13 @@ export default function OmniPackNew() {
         <div className='page-container'>
             <PageNav />
             {isPresentation && 
-                <div className="presentation">
+                <div className="presentation" onClick={() => setIsPresentation(false)}>
                     <div className="video-frame">
                         <div className="close-video" onClick={() => setIsPresentation(false)}>
                             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.36 16.78L13.58 12l4.78-4.78c.44-.43.44-1.15 0-1.58a1.12 1.12 0 00-1.58 0L12 10.42 7.22 5.64a1.12 1.12 0 00-1.91.79c0 .29.1.57.33.8L10.42 12l-4.78 4.78a1.12 1.12 0 000 1.58c.43.44 1.15.44 1.58 0L12 13.58l4.78 4.78c.43.44 1.15.44 1.58 0 .44-.43.44-1.14 0-1.58z" fill="#8e8e83"/></svg>
                         </div>
                         <div>
-                            <iframe width="840" height="475" src="https://www.youtube.com/embed/tLvODPdzW_8?controls=1&autoplay=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&color=white" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="840" height="475" src="https://www.youtube.com/embed/tLvODPdzW_8?controls=1&autoplay=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&color=white" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -99,7 +105,7 @@ export default function OmniPackNew() {
 
             {isCalcs && <Calculations onClose={closeCalcs} />}
 
-            <section id="intro" className="opack-intro">
+            <section id="intro" className="opack-intro stable">
                 <div className={"video-wrapper" + (introEnded ? ' end' : '')}>
                     <video 
                         muted={true} 
@@ -129,7 +135,7 @@ export default function OmniPackNew() {
                     </div>
                 </div>
             </section>
-            <section id="overview" className="omnipack-bordered">
+            <section id="overview" className="omnipack-bordered stable">
                 <div className="content">
                     <div className="content-text">
                         <h2>Easy. Intuitive.<br />Just like you want it.</h2>
@@ -138,7 +144,7 @@ export default function OmniPackNew() {
                     <div className="content-image" />
                 </div>
             </section>
-            <section id="runup" className="omnipack-noborders">
+            <section id="runup" className="omnipack-noborders stable">
                 <div className="content">
                     <div className="content-text">
                         <h2>Low effort.<br />High performance.</h2>
@@ -165,8 +171,8 @@ export default function OmniPackNew() {
                                     </tr>
                                     <tr>
                                         <td>Distance traveled by the robot’s TCP</td>
-                                        <td>TBD</td>
-                                        <td>TBD</td>
+                                        <td>1470 m</td>
+                                        <td>1920 m</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -176,7 +182,7 @@ export default function OmniPackNew() {
                         <img src={motion_planning} />
                     </div>
                     <div className="compare-info-rows">
-                        <div className="inforow-title">Motion planning algorithm (On / Off)</div>
+                        <div className="inforow-title">Motion planning algorithm<br />(On / Off)</div>
                         <div className="inforow">
                             <h2 className='inforow-label'>Time required to complete the first layer</h2>
                             <p className='inforow-value'>1 min 20 sec / 1 min 46 sec</p>
@@ -192,7 +198,7 @@ export default function OmniPackNew() {
                     </div>
                 </div>
             </section>
-            <section id="protected" className="omnipack-bordered">
+            <section id="protected"  className="omnipack-bordered rose stable">
                 <div className="content">
                     <div className="content-text">
                         <h2>Nothing will stop<br />your production.</h2>
@@ -201,13 +207,13 @@ export default function OmniPackNew() {
                     <div className="content-image protection" />
                 </div>
             </section>  
-            <section id="one-app" className="omnipack-fullscreen-title">
+            <section id="one-app" className="omnipack-fullscreen-title stable">
                 <div className="image-cover" />
                 <div className="dark-cover">
                     <h1>One little app.<br />Great many benefits.</h1>
                 </div>
             </section>
-            <section className="percent">
+            <section className="percent stick">
                 <div className="percentage-description">
                     <h1 className="percentage">50%</h1>
                     <h2 className="description">
@@ -265,7 +271,8 @@ export default function OmniPackNew() {
                     </div>
                 </div>
             </section>
-            <section id="installation" className="omnipack-installation">
+                        
+            <section id="installation" className="omnipack-installation stable">
                 <div className="installation-container">
                     <div className="left-side">
                         <div>
@@ -329,7 +336,7 @@ export default function OmniPackNew() {
                     <p>A demo unit is free for the first month for any tests outside of production.</p>
                 </div>
             </section>
-            <section id="trusted" className="omnipack-trusted">
+            <section id="trusted" className="omnipack-trusted stable">
                 <div className="omnipack-trusted--container">
                     <div className="trusted-tab ur-plus">
                         <h2 className="trusted-tab-subhead">Universal Robots+</h2>
@@ -355,7 +362,7 @@ export default function OmniPackNew() {
                     </div>
                 </div>
             </section>
-            <section id="distributors" className="omnipack-distributors">
+            <section id="distributors" className="omnipack-distributors stable">
                 <div className="content">
                     <div className="intro-filters">
                         <h1>Find distributor.</h1>
@@ -377,11 +384,11 @@ export default function OmniPackNew() {
                     <Map country={distributorsCountry} robot={distributorsRobot} />
                 </div>
             </section>
-            <section id="get-omnipack" className="omnipack-begin">
+            <section id="get-omnipack" className="omnipack-begin stable">
                 <div className="container">
                     <ContactForm demoUrl="opackDemo" description={"You can get a one month OmniPack demo for free. Drop us a message - we will be happy to speak with you and showcase our solutions."} title="Begin for free" product="OmniPack" />
                     <div className="what-in-box">
-                        <h1>What's in the Box.</h1>
+                        <h1>What's in the Box</h1>
                         <div className="box-content">
                             <div className="box-content--item">
                                 <figure className="item-cover omnipack"></figure>

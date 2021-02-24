@@ -263,6 +263,10 @@
     overflow: hidden;
     margin: 0 40px;
 
+    &.rose {
+        background: #FAF4EE;
+    }
+
     @media only screen
     and (min-device-width: 320px)
     and (max-device-width: 568px)
@@ -353,7 +357,7 @@
             margin-left: 40px;
 
             &.protection {
-                background-image: url('../../assets/imgs/omnipack/antpc.jpg');
+                background-image: url('../../assets/imgs/omnipack/antpc_red.jpg');
                 width: 761px;
                 height: 684px;
 
@@ -433,6 +437,7 @@
 
                     &:not(:first-child) {
                         border-left: none;
+                        text-align: right;
                     }
 
                     &:first-child {
@@ -470,6 +475,7 @@
 
                             &:not(:first-child) {
                                 border-left: none;
+                                text-align: right;
                             }
 
                             @media only screen
@@ -526,7 +532,12 @@
             }
 
             .inforow {
-                margin-bottom: 16px;                
+                margin-bottom: 16px;  
+                
+                &:last-child {
+                    margin: 0;
+                }
+                
                 &-label {
                     margin: 0;
                     padding: 12px 0 6px;
@@ -654,6 +665,7 @@
     and (max-device-width: 568px)
     and (-webkit-min-device-pixel-ratio: 2) {
         padding: 60px 0;
+        min-height: none;
     }
 
     .percentage-description {
@@ -674,7 +686,7 @@
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
             font-weight: bold;
-            font-size: 196px;
+            font-size: 164px;
             line-height: 1em;
             text-align: center;
             background: radial-gradient(74.76% 135.05% at 21.23% 25.24%, #FFA800 0%, #FF7337 100%);
@@ -701,6 +713,7 @@
             font-size: 48px;
             line-height: 1.1em;
             text-align: center;
+            letter-spacing: -0.01em;
             color: #FFFFFF;
             margin: 0;
 
@@ -1569,12 +1582,12 @@
             h1 {
                 font-family: 'Montserrat', sans-serif;
                 font-style: normal;
-                font-weight: 600;
+                font-weight: 700;
                 font-size: 32px;
                 line-height: 120%;
                 text-align: center;
                 letter-spacing: -0.03em;
-                margin: 0 0 40px;
+                margin: 0 0 24px;
 
                 @media only screen
                 and (min-device-width: 320px)

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Loader } from "@googlemaps/js-api-loader"
 
 import DistributorCard from '../../../components/OmniPack/DistributorCard/DistributorCard';
 import { DISTRIBUTORS } from './distributors';
@@ -8,19 +9,36 @@ import './map.less';
 
 export default function Map(props) {
 
-
+    let isMapLoaded = false;
     const [results, setResults] = useState([]);
 
     let map = null;
     let markers = [];
 
     useEffect(() => {
-        console.log(DISTRIBUTORS);
+        // console.log(DISTRIBUTORS);
     }, []);
 
     useEffect(() => {
         if (props.country && props.robot) {
-            initMap();
+            
+            // If this is a first load of Google maps.
+            if (!isMapLoaded) {
+                const loader = new Loader({
+                    apiKey: 'AIzaSyA1_5iRUBoj2zt6O9lfEh9r5sxEZfcoxFY',
+                    version: 'weekly',
+                    mapIds: ['130ede963d80b374'],
+                    region: 'US',
+                    language: 'en'
+                });
+
+                loader.load().then(() => {
+                    initMap();
+                    isMapLoaded = true;
+                });
+            } else {
+                initMap();
+            }
         }
     }, [props.country, props.robot])
 

@@ -15,10 +15,23 @@
     <title>Native Robotics</title>
     <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1_5iRUBoj2zt6O9lfEh9r5sxEZfcoxFY&map_ids=130ede963d80b374&libraries=&v=weekly&region=US&language=en"
-      defer
-    ></script>
+    <script>
+      // Custom event support.
+      if (!window.CustomEvent) {
+        (() => {
+            const CustomEvent = (event, params) => {
+                const evt = document.createEvent('CustomEvent');
+                params = params || { bubbles: false, cancelable: false, detail: undefined };
+                evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+                return evt;
+            };
+
+            CustomEvent.prototype = window.Event.prototype;
+
+            window.CustomEvent = CustomEvent;
+        })();
+      }
+    </script>
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
