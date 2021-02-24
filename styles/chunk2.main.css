@@ -760,7 +760,7 @@ section.opack-container {
 .contact-form .form-container .form-inputs .input textarea {
   margin-top: 12px;
   padding: 16px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -781,6 +781,13 @@ section.opack-container {
 .contact-form .form-container .form-inputs .input textarea:focus {
   border: 1px solid #ff9500 !important;
   box-shadow: 0px 0px 0px 4px rgba(255, 149, 0, 0.1);
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact-form .form-container .form-inputs .input input,
+  .contact-form .form-container .form-inputs .input textarea {
+    font-size: 17px;
+    padding: 18px 12px;
+  }
 }
 .contact-form .form-container .form-inputs .input textarea {
   min-height: 80px;
