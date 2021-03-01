@@ -1271,7 +1271,7 @@
   align-items: flex-start;
   justify-content: space-between;
   position: relative;
-  border-radius: 20px;
+  border-radius: 16px;
   background: #202020;
   max-width: 1260px;
   margin: 0 auto;
@@ -1287,7 +1287,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  height: calc(742px - 120px);
+  z-index: 5;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .omnipack-installation .installation-container .left-side {
@@ -1343,19 +1343,55 @@
   }
 }
 .omnipack-installation .installation-container .left-side .description-content .accordion {
-  margin-top: 24px;
+  margin-top: 52px;
+}
+.omnipack-installation .installation-container .left-side .description-content .accordion-section {
+  margin-bottom: 40px;
+  transition: all 0.12s ease-out;
+  z-index: 999;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-installation .installation-container .left-side .description-content .accordion-section {
+    pointer-events: none;
+  }
+}
+.omnipack-installation .installation-container .left-side .description-content .accordion-section:hover {
+  background: #282828;
+  border-radius: 1px;
+  box-shadow: 0px 0px 0px 16px #282828, 0px 16px 24px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-installation .installation-container .left-side .description-content .accordion-section:hover {
+    box-shadow: none;
+    background: transparent;
+  }
+}
+.omnipack-installation .installation-container .left-side .description-content .accordion-section:last-child {
+  margin-bottom: 0;
 }
 .omnipack-installation .installation-container .left-side .description-content .accordion-section--item {
   display: flex;
-  padding: 16px 0;
+  padding: 0;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  justify-content: flex-start;
 }
-.omnipack-installation .installation-container .left-side .description-content .accordion-section--item:hover {
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.12);
+.omnipack-installation .installation-container .left-side .description-content .accordion-section--item .item-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  font-family: var(--roboto);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  color: #FFFFFF;
 }
 .omnipack-installation .installation-container .left-side .description-content .accordion-section--item p {
   font-family: var(--roboto);
@@ -1367,17 +1403,14 @@
   padding: 0;
   margin: 0;
 }
-.omnipack-installation .installation-container .left-side .description-content .accordion-section--content {
-  display: none;
-}
 .omnipack-installation .installation-container .left-side .description-content .accordion-section--content p {
   font-family: var(--roboto);
   font-style: normal;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.4em;
-  color: #F5F5F7;
-  padding: 12px 0;
+  color: #eaeaee;
+  padding: 16px 0 0 0;
   margin: 0;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -1385,21 +1418,29 @@
     padding: 16px 0 24px;
   }
 }
+.omnipack-installation .installation-container .left-side .description-content .accordion-section .installation-pic--mobile {
+  margin: 0 -24px 0 0;
+  display: none;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .omnipack-installation .installation-container .left-side .description-content .accordion-section .installation-pic--mobile {
+    display: block;
+  }
+}
+.omnipack-installation .installation-container .left-side .description-content .accordion-section .installation-pic--mobile img {
+  width: 100%;
+}
 .omnipack-installation .installation-container .left-side .description-content .accordion-section.active .accordion-section--item {
   border-bottom-color: transparent;
 }
-.omnipack-installation .installation-container .left-side .description-content .accordion-section.active .accordion-section--item p {
-  color: var(--orange);
+.omnipack-installation .installation-container .left-side .description-content .accordion-section.active .accordion-section--item .item-number {
+  background: var(--orange);
 }
 .omnipack-installation .installation-container .left-side .description-content .accordion-section.active .accordion-section--item .arrow-icon {
   transform: scaleY(-1);
 }
 .omnipack-installation .installation-container .left-side .description-content .accordion-section.active .accordion-section--item svg path {
   fill: var(--orange);
-}
-.omnipack-installation .installation-container .left-side .description-content .accordion-section.active .accordion-section--content {
-  display: block;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .omnipack-installation .installation-container .left-side .begin-section {
   display: flex;
@@ -1443,11 +1484,13 @@
 }
 .omnipack-installation .installation-container .right-side {
   flex-shrink: 0;
+  z-index: 3;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .omnipack-installation .installation-container .right-side {
     width: 100%;
     height: 40vh;
+    display: none;
   }
 }
 .omnipack-installation .installation-container .right-side .image-container {
@@ -1470,7 +1513,7 @@
   font-size: 17px;
   color: #ffffff;
   font-weight: 500;
-  background: rgba(0, 0, 0, 0.32);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   position: absolute;
   z-index: 10;
@@ -1479,7 +1522,7 @@
   cursor: pointer;
   padding: 10px 14px;
   transition: background 0.12s ease-out;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 149, 0, 0.9);
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .omnipack-installation .installation-container .right-side .image-container .clickable {
@@ -1487,7 +1530,7 @@
   }
 }
 .omnipack-installation .installation-container .right-side .image-container .clickable:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 149, 0, 0.6);
 }
 .omnipack-installation .installation-container .right-side .image-container .clickable.nuc {
   bottom: 150px;
