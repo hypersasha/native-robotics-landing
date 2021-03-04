@@ -1784,12 +1784,12 @@
   }
 }
 .omnipack-trusted--container .trusted-tab .trusted-content .ur-plus-image {
-  width: 492px;
-  height: 185px;
+  width: 395px;
+  height: 148px;
   background-image: url(/assets/images/ur_plus_image.png);
   background-size: contain;
   background-position: center;
-  margin: 44px 0 0 0;
+  margin: 44px auto 0 auto;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .omnipack-trusted--container .trusted-tab .trusted-content .ur-plus-image {
@@ -1804,7 +1804,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 31px;
 }
 .omnipack-trusted--container .trusted-tab .trusted-content .ur-link a {
   font-family: var(--roboto);
@@ -1814,6 +1814,9 @@
   line-height: 1.4em;
   color: #2A475B;
   padding-right: 12px;
+}
+.omnipack-trusted--container .trusted-tab .trusted-content .ur-link a:hover {
+  color: #3A6888;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .omnipack-trusted--container .trusted-tab .trusted-content .ur-link a {
@@ -1825,8 +1828,8 @@
   height: 24px;
 }
 .omnipack-trusted--container .trusted-tab .trusted-content .third-parties-image {
-  width: 492px;
-  height: 210px;
+  width: 540px;
+  height: 230px;
   background-image: url(/assets/images/partners-logos.png);
   background-size: contain;
   margin: 44px 0 0 0;
@@ -1848,6 +1851,8 @@
 }
 .omnipack-trusted--container .trusted-tab.gray p {
   color: #1D1D1F;
+  font-size: 20px;
+  margin-bottom: 0;
 }
 .omnipack-trusted--container .trusted-tab.gray .trusted-content--title {
   color: #000000;
