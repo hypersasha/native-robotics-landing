@@ -1643,6 +1643,7 @@
   font-weight: bold;
   font-size: 36px;
   line-height: 130%;
+  letter-spacing: -0.02em;
   text-align: center;
   color: #000000;
 }
