@@ -36,10 +36,7 @@ export default function TopBar() {
         },
         '/#contacts': {
             label: 'Contacts'
-        },
-        // '/blog': {
-        //     label: 'Blog'
-        // },
+        }
     };
 
     useEffect(() => {
@@ -88,21 +85,8 @@ export default function TopBar() {
         }
         setWebMenu(menuLinks);
 
-        // If we need some navigation via hash-tags # 
-        if (window.location.hash.length > 0) {
-            let elem_id = window.location.hash.replace('#', '');
-            let elem = document.getElementById(elem_id);
-            if (elem !== null) {
-                window.scrollTo(0, elem.offsetTop)
-            } else {
-                console.log('no element', elem_id)
-            }
-        } else {
-            if (window.location.pathname === '/') {
-                window.scrollTo(0,0);
-            }
-        }
-
+        scrollToHash();
+        
         // Change document title.
         switch(window.location.pathname) {
             case '/omnipack': 
@@ -124,6 +108,25 @@ export default function TopBar() {
             window.removeEventListener('scroll', onPageScroll)
         }
     }, [prevScrollPos, isHidden, setIsHidden, setPrevScrollPos])
+
+
+    function scrollToHash() {
+        // If we need some navigation via hash-tags # 
+        if (window.location.hash.length > 0) {
+            let elem_id = window.location.hash.replace('#', '');
+            let elem = document.getElementById(elem_id);
+            if (elem !== null) {
+                window.scrollTo(0, elem.offsetTop)
+            } else {
+                // console.log('no element', elem_id);
+                setTimeout(() => scrollToHash(), 0)
+            }
+        } else {
+            if (window.location.pathname === '/') {
+                window.scrollTo(0,0);
+            }
+        }
+    }
 
     function onPageScroll() {
         let pos = window.scrollY;

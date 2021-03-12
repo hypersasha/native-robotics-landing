@@ -41,16 +41,10 @@ export default function OmniPackNew() {
             element.style.background = "#FFFFFF";
         });
 
-        // document.addEventListener('maploaded', onMapLoaded);
         return () => {
             introVideoRef.current.removeEventListener('ended', onIntroEnd);
-            // document.removeEventListener('maploaded', onMapLoaded);
         }
     }, []);
-
-    function onMapLoaded() {
-        console.log('Google Maps JS API loaded.');
-    }
 
     function onIntroStart() {
         clearInterval(lastFrameTimer);
@@ -105,7 +99,7 @@ export default function OmniPackNew() {
 
             {isCalcs && <Calculations onClose={closeCalcs} />}
 
-            <section id="intro" className="opack-intro stable">
+            <section id="intro" className="opack-intro">
                 <div className={"video-wrapper" + (introEnded ? ' end' : '')}>
                     <video 
                         muted={true} 
@@ -135,7 +129,7 @@ export default function OmniPackNew() {
                     </div>
                 </div>
             </section>
-            <section id="overview" className="omnipack-bordered stable">
+            <section id="overview" className="omnipack-bordered">
                 <div className="content">
                     <div className="content-text">
                         <h2>Easy. Intuitive.<br />Just like you want it.</h2>
@@ -144,7 +138,7 @@ export default function OmniPackNew() {
                     <div className="content-image" />
                 </div>
             </section>
-            <section id="runup" className="omnipack-noborders stable">
+            <section id="runup" className="omnipack-noborders">
                 <div className="content">
                     <div className="content-text">
                         <h2>Low effort.<br />High performance.</h2>
@@ -193,12 +187,12 @@ export default function OmniPackNew() {
                         </div>
                         <div className="inforow">
                             <h2 className='inforow-label'>Distance traveled by the robot’s TCP</h2>
-                            <p className='inforow-value'>TBD / TBD</p>
+                            <p className='inforow-value'>1470 m / 1920 m</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="protected"  className="omnipack-bordered rose stable">
+            <section id="protected"  className="omnipack-bordered rose">
                 <div className="content">
                     <div className="content-text">
                         <h2>Nothing will stop<br />your production.</h2>
@@ -207,13 +201,13 @@ export default function OmniPackNew() {
                     <div className="content-image protection" />
                 </div>
             </section>  
-            <section id="one-app" className="omnipack-fullscreen-title stable">
+            <section id="one-app" className="omnipack-fullscreen-title">
                 <div className="image-cover" />
                 <div className="dark-cover">
                     <h1>One little app.<br />Great many benefits.</h1>
                 </div>
             </section>
-            <section className="percent stick">
+            <section className="percent">
                 <div className="percentage-description">
                     <h1 className="percentage">50%</h1>
                     <h2 className="description">
@@ -272,7 +266,7 @@ export default function OmniPackNew() {
                 </div>
             </section>
                         
-            <section id="installation" className="omnipack-installation stable">
+            <section id="installation" className="omnipack-installation">
                 <div className="installation-container">
                     <div className="left-side">
                         <div>
@@ -283,40 +277,36 @@ export default function OmniPackNew() {
                                     To set everything up, we use a Full HD touchscreen and a super fast Intel NUC with OmniPack installed.
                                 </p>
                                 <div className="accordion">
-                                    <div className={"accordion-section" + (activeAccordionSection === 1 ? ' active' : '')}>
-                                        <div className="accordion-section--item" onClick={() => toggleAccordionSection(1)}>
+                                    <div className={"accordion-section" + (activeAccordionSection === 1 ? ' active' : '')} onClick={() => toggleAccordionSection(1)} >
+                                        <div className="accordion-section--item">
+                                            <div className="item-number">1</div>
                                             <p>Full HD touchscreen</p>
-                                            <div className="arrow-icon">
-                                                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.2L6.64 9.73a1 1 0 00-1.28 1.54l6 5a1 1 0 001.28 0l6-5a1 1 0 10-1.28-1.54L12 14.2z" fill="#8E8E93"/></svg>
-                                            </div>
                                         </div>
-                                        <div className="accordion-section--content" onClick={() => toggleAccordionSection(1)}>
+                                        <div className="accordion-section--content">
                                             <p>
                                                 Get a 15" Full HD touchscreen to connect to the Intel NUC via HDMI. We provide an intuitive interface, crisp animations, and exceptional user experience.
                                             </p>
                                         </div>
+                                        <figure className='installation-pic--mobile'>
+                                            <img src={setup_pic_2} alt="OmniPack setup image. 2 of 3" />
+                                        </figure>
                                     </div>
-                                    <div className={"accordion-section" + (activeAccordionSection === 2 ? ' active' : '')}>
-                                        <div className="accordion-section--item" onClick={() => toggleAccordionSection(2)}>
+                                    <div className={"accordion-section " + (activeAccordionSection === 2 ? ' active' : '')} onClick={() => toggleAccordionSection(2)}>
+                                        <div className="accordion-section--item">
+                                            <div className="item-number">2</div>
                                             <p>Intel NUC with OmniPack</p>
-                                            <div className="arrow-icon">
-                                                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.2L6.64 9.73a1 1 0 00-1.28 1.54l6 5a1 1 0 001.28 0l6-5a1 1 0 10-1.28-1.54L12 14.2z" fill="#8E8E93"/></svg>
-                                            </div>
                                         </div>
-                                        <div className="accordion-section--content" onClick={() => toggleAccordionSection(2)}>
+                                        <div className="accordion-section--content">
                                             <p>
                                             OmniPack runs on a powerful Intel NUC computer. This beast has a top-level processor inside, a 128 GB SSD for all your different layouts and a 16 GB RAM to achieve the best performance. Intel NUC is connected to the robot via Ethernet.  
                                             </p>
                                         </div>
+                                        <figure className='installation-pic--mobile'>
+                                            <img src={setup_pic_3} alt="OmniPack setup image. 3 of 3" style={{borderRadius: 16}} />
+                                        </figure>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="begin-section">
-                            <Link to="#get-omnipack">
-                                <div className="begin-button">Begin for free</div>
-                            </Link>
-                            <p>A demo unit is free for the first month for any tests outside of production.</p>
                         </div>
                     </div>
                     <div className="right-side">
@@ -336,7 +326,7 @@ export default function OmniPackNew() {
                     <p>A demo unit is free for the first month for any tests outside of production.</p>
                 </div>
             </section>
-            <section id="trusted" className="omnipack-trusted stable">
+            <section id="trusted" className="omnipack-trusted">
                 <div className="omnipack-trusted--container">
                     <div className="trusted-tab ur-plus">
                         <h2 className="trusted-tab-subhead">Universal Robots+</h2>
@@ -362,7 +352,7 @@ export default function OmniPackNew() {
                     </div>
                 </div>
             </section>
-            <section id="distributors" className="omnipack-distributors stable">
+            <section id="distributors" className="omnipack-distributors">
                 <div className="content">
                     <div className="intro-filters">
                         <h1>Find distributor.</h1>
@@ -384,7 +374,7 @@ export default function OmniPackNew() {
                     <Map country={distributorsCountry} robot={distributorsRobot} />
                 </div>
             </section>
-            <section id="get-omnipack" className="omnipack-begin stable">
+            <section id="get-omnipack" className="omnipack-begin">
                 <div className="container">
                     <ContactForm demoUrl="opackDemo" description={"You can get a one month OmniPack demo for free. Drop us a message - we will be happy to speak with you and showcase our solutions."} title="Begin for free" product="OmniPack" />
                     <div className="what-in-box">
