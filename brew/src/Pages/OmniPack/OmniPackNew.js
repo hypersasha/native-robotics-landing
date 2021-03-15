@@ -163,11 +163,6 @@ export default function OmniPackNew() {
                                         <td>84</td>
                                         <td>72</td>
                                     </tr>
-                                    <tr>
-                                        <td>Distance traveled by the robot’s TCP</td>
-                                        <td>1470 m</td>
-                                        <td>1920 m</td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -184,10 +179,6 @@ export default function OmniPackNew() {
                         <div className="inforow">
                             <h2 className='inforow-label'>Count of completed 2 meter pallets per 24 hours using Ewellix column</h2>
                             <p className='inforow-value'>84 / 72</p>
-                        </div>
-                        <div className="inforow">
-                            <h2 className='inforow-label'>Distance traveled by the robot’s TCP</h2>
-                            <p className='inforow-value'>1470 m / 1920 m</p>
                         </div>
                     </div>
                 </div>
