@@ -71,6 +71,14 @@ export const MAP_BOUNDS = {
         center: { lat: 53.904209, lng: 27.560622 },
         zoom: 6
     },
+    "Lithuania": {
+        norh: 57.9,
+        south: 52.09,
+        west: 18.49,
+        east: 31.04,
+        center: { lat: 55.054716980254646, lng: 24.430052273864824 },
+        zoom: 6
+    },
     "Turkey": {
         north: 43.15,
         south: 34.29,

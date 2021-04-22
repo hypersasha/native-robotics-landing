@@ -11,7 +11,7 @@ export default function DistributorCard(props) {
                 <div className="dist-info">
                     {props.logo &&
                         <figure className="dist-info--logo">
-                            <img src={'assets/images/' + props.logo} alt="Company logo" />
+                            <img src={'assets/images/' + props.logo} style={{maxWidth: 186}} alt="Company logo" />
                         </figure>
                     }
                     <div className="title-address">

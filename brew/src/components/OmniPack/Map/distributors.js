@@ -28,6 +28,14 @@ export const DISTRIBUTORS = Object.create({
                 logo: 'logo-cfz-robots.png'
             },
             {
+                name: "Vicosystems",
+                address: "Ronda de Ponent, 116, 08201 Sabadell, Barcelona",
+                url: "https://vicosystems.com/",
+                coordinates: {lat: 41.54754729069235, lng: 2.0992526561056764},
+                robots: ["UR"],
+                logo: 'logo-vicosystems.png'
+            },
+            {
                 name: "ELEKTRES",
                 address: "Crta.Sta.Coloma 82 2b | 17005 Girona",
                 url: "https://www.elektres.es/",
@@ -168,6 +176,18 @@ export const DISTRIBUTORS = Object.create({
             }
         ],
         enumerable: true
+    },
+    Lithuania: {
+        value: [
+            {
+                name: "Techvitas",
+                address: "Naujoji Riovonių g. 25B, LT-03153 Vilnius",
+                coordinates: {lat:54.65176379144168, lng: 25.225296142047103},
+                robots: ['UR'],
+                url: 'https://www.techvitas.com/',
+                logo: 'techvitas.png'
+            }
+        ]
     },
     Turkey: {
         value: [

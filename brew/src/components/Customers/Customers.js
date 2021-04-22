@@ -60,6 +60,10 @@ const logos = {
     technicon: {
         width: 138,
         url: require('../../assets/imgs/logos/technicon.jpg')
+    },
+    techvitas: {
+        width: 164,
+        url: require('../../assets/imgs/logos/techvitas.png')
     }
 }
 

@@ -43,10 +43,10 @@ export default function Calculations(props) {
                             <p>Palletizer lifetime, years</p>
                         </div>
                         <div className="table-cell">
-                            <p>7</p>
+                            <p>10</p>
                         </div>
                         <div className="table-cell">
-                            <p>9.1</p>
+                            <p>10</p>
                         </div>
                     </div>
                     <div className="table-row">
@@ -57,7 +57,7 @@ export default function Calculations(props) {
                             <h4>70</h4>
                         </div>
                         <div className="table-cell">
-                            <h4>75</h4>
+                            <h4>72</h4>
                         </div>
                     </div>
                     <div className="table-row spacer">
@@ -68,7 +68,7 @@ export default function Calculations(props) {
                             <p>70</p>
                         </div>
                         <div className="table-cell">
-                            <p>75</p>
+                            <p>72</p>
                         </div>
                     </div>
                     <div className="table-row">
@@ -87,10 +87,10 @@ export default function Calculations(props) {
                             <p>Reprogramming and reconfiguration</p>
                         </div>
                         <div className="table-cell">
-                            <p>4</p>
+                            <p>3</p>
                         </div>
                         <div className="table-cell">
-                            <p>0</p>
+                            <p>—</p>
                         </div>
                     </div>
                     <div className="table-row">
@@ -98,10 +98,10 @@ export default function Calculations(props) {
                             <p>Robot maintenance</p>
                         </div>
                         <div className="table-cell">
-                            <p>1</p>
+                            <p>6.5</p>
                         </div>
                         <div className="table-cell">
-                            <p>0.5</p>
+                            <p>3</p>
                         </div>
                     </div>
                     <div className="table-row">
@@ -109,10 +109,10 @@ export default function Calculations(props) {
                             <p>Other equipment maintenance</p>
                         </div>
                         <div className="table-cell">
-                            <p>1</p>
+                            <p>5</p>
                         </div>
                         <div className="table-cell">
-                            <p>1</p>
+                            <p>4</p>
                         </div>
                     </div>
                     <div className="table-row spacer">
@@ -131,10 +131,10 @@ export default function Calculations(props) {
                             <p>Operational costs during lifetime</p>
                         </div>
                         <div className="table-cell">
-                            <p>45.0</p>
+                            <p>14</p>
                         </div>
                         <div className="table-cell">
-                            <p>16.4</p>
+                            <p>7.3</p>
                         </div>
                     </div>
                     <div className="table-row spacer">
@@ -142,10 +142,10 @@ export default function Calculations(props) {
                             <h2>Total investments</h2>
                         </div>
                         <div className="table-cell">
-                            <h2>115.0</h2>
+                            <h2>~200</h2>
                         </div>
                         <div className="table-cell">
-                            <h2>91.4</h2>
+                            <h2>~140</h2>
                         </div>
                     </div>
                     <div>
@@ -168,7 +168,7 @@ export default function Calculations(props) {
                                 <p></p>
                             </div>
                             <div className="table-cell">
-                                <p>23.4</p>
+                                <p>60</p>
                             </div>
                         </div>
                         <div className="table-row">
@@ -179,10 +179,10 @@ export default function Calculations(props) {
                                 <p></p>
                             </div>
                             <div className="table-cell">
-                                <p>20%</p>
+                                <p>33%</p>
                             </div>
                         </div>
-                        <div className="table-row">
+                        {/* <div className="table-row">
                             <div className="table-cell">
                                 <p>Lifetime increase, years</p>
                             </div>
@@ -192,8 +192,8 @@ export default function Calculations(props) {
                             <div className="table-cell">
                                 <p>2.1</p>
                             </div>
-                        </div>
-                        <div className="table-row">
+                        </div> */}
+                        {/* <div className="table-row">
                             <div className="table-cell">
                                 <p>Lifetime increase, %</p>
                             </div>
@@ -203,7 +203,7 @@ export default function Calculations(props) {
                             <div className="table-cell">
                                 <p>30%</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

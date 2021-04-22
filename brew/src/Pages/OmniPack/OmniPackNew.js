@@ -7,7 +7,7 @@ import {MAP_BOUNDS} from '../../components/OmniPack/Map/mapbounds';
 import { Link } from 'react-router-dom';
 
 const opack_vid_intro = require('../../assets/videos/intro-940-trim.mp4');
-const motion_planning = require('../../assets/imgs/omnipack/trajectories.jpg')
+const motion_planning = require('../../assets/imgs/omnipack/mp_image.jpg')
 const opack_vid_intro_endframe = require('../../assets/imgs/omnipack/intro-end-frame.jpg');
 
 const setup_pic_1 = require('../../assets/imgs/omnipack/setup_pic_1.jpg');
@@ -142,7 +142,7 @@ export default function OmniPackNew() {
                 <div className="content">
                     <div className="content-text">
                         <h2>Low effort.<br />High performance.</h2>
-                        <p>An advanced motion planning algorithm increases robot speed by 20% and smoothens out motion by 30%. Don't take our word for it. See for your self.</p>
+                        <p>An advanced motion planning algorithm increases robot speed by 20% and smoothens out motion by 30%. Don't take our word for it. See for yourself.</p>
                         <div className="compare-table">
                             <table cellSpacing="0" frame="void" width="100%">
                                 <thead>
