@@ -1,0 +1,35 @@
+.privacy {
+  max-width: 680px;
+  padding: 20px 16px;
+  margin: 0 auto;
+}
+.privacy h1,
+.privacy h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  font-size: 28px;
+  font-weight: 700;
+}
+.privacy h1 {
+  margin-bottom: 40px;
+}
+.privacy h2 {
+  margin-bottom: 4px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.privacy h3 {
+  font-size: 11px;
+  color: #666666;
+}
+.privacy p {
+  font-family: 'Roboto', sans-serif;
+  color: #999999;
+  font-weight: 400;
+  font-size: 14px;
+  padding-top: 0;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
