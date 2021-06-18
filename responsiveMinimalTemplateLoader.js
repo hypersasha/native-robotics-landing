@@ -58,8 +58,6 @@ function instantiateUnity(url) {
         width: canvasSize.height * 1.67,// canvasSize.width,
         height: canvasSize.height,
         margin: 0,
-        onProgress: UnityProgress,
-        Module: {
-            onRuntimeInitialized: OnRuntimeIntialized
-        }});
+        onProgress: UnityProgress
+    });
 }
