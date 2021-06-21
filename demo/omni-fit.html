@@ -8,11 +8,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="stylesheet" href="../TemplateData/style.css">
-    <link rel="stylesheet" href="../responsiveMinimalTemplateStyles.css"/>
+    <link rel="stylesheet" href="../responsiveMinimalTemplateStyles.css?v=2"/>
     <script src="https://nativeroboticsstorage.blob.core.windows.net/builds/OmniPack2019/UnityLoader.js"></script>
     <script src="../TemplateData/UnityProgress.js"></script>
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "https://nativeroboticsstorage.blob.core.windows.net/builds/OmniPack2019/OmniPackWebGL.json", {onProgress: UnityProgress});
+        var unityInstance = UnityLoader.instantiate("gameContainer", "https://nativeroboticsstorage.blob.core.windows.net/builds/OmniPack2019/OmniPackWebGL.json", {onProgress: UnityProgress});
         var scaleToFit;
         try {
             scaleToFit = !!JSON.parse("%UNITY_CUSTOM_SCALE_TO_FIT%");
@@ -21,8 +21,8 @@
         }
 
         function onResize() {
-            var canvas = gameInstance.Module.canvas;
-            var container = gameInstance.container;
+            var canvas = unityInstance.Module.canvas;
+            var container = unityInstance.container;
             var w;
             var h;
 
@@ -93,7 +93,7 @@
             <object type="image/svg+xml" data="../logo-webgl.svg"></object>
         </div>
         <div class="title">OmniFit</div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)">
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)">
             <div class="fullscreen-icon">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M23.625 17.5V23.625H17.5" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round"
