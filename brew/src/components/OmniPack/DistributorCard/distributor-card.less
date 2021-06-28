@@ -1,0 +1,97 @@
+.distributor-card {
+    padding: 12px;
+    max-width: 260px;
+
+    &--container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        .label {
+            font-family: var(--roboto);
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 14px;
+            color: #8E8E93;
+        }
+
+        .dist-info {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            &--logo {
+                margin: 0;
+                height: 32px;
+                margin-bottom: 26px;
+
+                img {
+                    height: 32px;
+                    object-fit: contain;
+                }
+            }
+
+            .title-address {
+                h2 {
+                    margin: 0;
+                    padding: 0;
+                    font-family: var(--roboto);
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 14px;
+                    color: #000000;
+                }
+
+                p {
+                    margin: 10px 0 0 0;
+                    padding: 0;
+                    font-family: var(--roboto);
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 1.3em;
+                    color: #454648;
+                }
+            }
+
+            .website {
+                display: flex;
+                position: relative;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: row;
+                margin-top: 12px;
+
+                &:hover {
+                    span {
+                        color: var(--orange-hover);
+                        text-decoration: underline;
+                    }
+                }
+
+                a {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                }
+
+                span {
+                    padding: 0 10px 0 0;
+                    font-family: var(--roboto);
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 14px;
+                    color: #FF9500;
+                }
+            }
+        }
+    }
+}

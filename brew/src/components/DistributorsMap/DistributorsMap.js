@@ -106,6 +106,22 @@ export default function DistributorsMap() {
       coordinates: [39.536375, 58.756717]
     },
     {
+      name: "Technicon",
+      country: "Denmark",
+      city: "Slagelse",
+      address: "Slagelse, Sjællandsvej 19",
+      url: "https://technicon.dk/",
+      coordinates: [11.345100, 55.396734]
+    },
+    {
+      name: "PSTSRL",
+      country: "Italy",
+      city: "Torino",
+      address: "Str. Del Portone 131/A, Torino, Italy",
+      url: "https://pstsrl.eu/",
+      coordinates: [7.586773, 45.045089]
+    },
+    {
       name: "PNS",
       country: "Republic of Belarus",
       city: "Minsk",

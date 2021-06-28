@@ -33,6 +33,8 @@
 !/dist/Build/UnityLoader.js
 !/dist/responsiveMinimalTemplateLoader.js
 !/dist/responsiveMinimalTemplateStyles.css
+!/dist/demo
+!/dist/demo/**/*
 
 # ts build server
 /ibds/dist/**/*

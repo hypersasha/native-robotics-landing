@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.config');
+const path = require('path');
 
 module.exports = merge(common, {
     mode: 'development',
@@ -24,7 +25,6 @@ module.exports = merge(common, {
                     },
                     {
                         loader: 'css-loader',
-                        options: {}
                     }
                 ]
             },
@@ -36,7 +36,6 @@ module.exports = merge(common, {
                     },
                     {
                         loader: "css-loader",
-                        options: {}
                     },
                     {
                         loader: "less-loader"

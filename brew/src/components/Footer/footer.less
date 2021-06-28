@@ -1,22 +1,13 @@
+footer {
+    background: #323234;
+    padding: 40px 0;
 
-.footer {
-    background: #F5F5F5;
-    padding: 44px 0;
-
-    @media only screen
-    and (min-device-width: 320px)
-    and (max-device-width: 568px)
-    and (-webkit-min-device-pixel-ratio: 2) {
-        padding: 44px 24px;
-    }
-
-    &-container {
-        max-width: 988px;
-        min-height: 40px;
+    .footer-content {
+        max-width: 940px;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        padding: 0;
         justify-content: space-between;
 
         @media only screen
@@ -24,129 +15,111 @@
         and (max-device-width: 568px)
         and (-webkit-min-device-pixel-ratio: 2) {
             flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
-            justify-content: center;
         }
 
-        .footer-logo {
-            width: 180px;
-            height: 26px;
-
+        .left-side {
             @media only screen
             and (min-device-width: 320px)
             and (max-device-width: 568px)
             and (-webkit-min-device-pixel-ratio: 2) {
-                margin-bottom: 44px;
-            }
-        }
-
-        .social-icons {
-            display: flex;
-
-            @media only screen
-            and (min-device-width: 320px)
-            and (max-device-width: 568px)
-            and (-webkit-min-device-pixel-ratio: 2) {
-                margin-bottom: 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
-            .icon {
-                width: 32px;
-                height: 32px;
-                background-size: 32px 32px;
-                background-position: center;
-                padding: 10px;
-                border-radius: 10px;
-                background-repeat: no-repeat;
-                background-color: #fff;
-                cursor: pointer;
-                display: block;
-                position: relative;
+            .icon-links {
+                display: flex;
+
+                .link {
+                    width: 42px;
+                    height: 42px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    &:nth-child(even) {
+                        margin: 0 16px;
+                    }
+
+                    &:last-child {
+                        margin: 0 0 0 16px;
+                    }
+
+                    a {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
+
+                    &-icon {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    
+                    &:hover {
+                        background-color: rgba(255,255,255,0.1);
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .text-links {
+                display: flex;
+                flex-direction: row;
+                margin-top: 40px;
+                flex-wrap: wrap;
+
+                @media only screen
+                and (min-device-width: 320px)
+                and (max-device-width: 568px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                    margin-top: 30px;
+                }
+                
 
                 a {
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    right: 0;
-                    position: absolute;
-                }
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #c4c4c4;
+                    text-decoration: none;
 
-                &:hover {
-                    background-color: #ECECEC;
-                }
-
-                &.insta {
-                    background-image: url(./src/insta_icon.png);
-                }
-
-                &.linked {
-                    background-image: url(./src/linked_icon.png);
-                }
-
-                &.youtube {
-                    background-image: url(./src/youtube_icon.png);
-                }
-
-                &:nth-child(even) {
-                    margin: 0 12px;
-
-                    @media only screen
-                    and (min-device-width: 320px)
-                    and (max-device-width: 568px)
-                    and (-webkit-min-device-pixel-ratio: 2) {
+                    &:nth-child(even) {
                         margin: 0 24px;
+                    }
+
+                    &:hover {
+                        color: #898989;
                     }
                 }
             }
         }
-    }
 
-    &-sublinks {
-        max-width: 988px;
-        min-height: 40px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 12px;
+        .right-side {
+            align-self: flex-end;
 
-        @media only screen
-        and (min-device-width: 320px)
-        and (max-device-width: 568px)
-        and (-webkit-min-device-pixel-ratio: 2) {
-            flex-direction: column-reverse;
-        }
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                align-self: center;
+                margin-top: 30px;
+            }
 
-        p {
-            font-family: 'Roboto', sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 14px;
-            color: #969696;
-        }
-
-        .links {
-            display: flex;
-
-            a {
+            p {
                 font-family: 'Roboto', sans-serif;
                 font-style: normal;
                 font-weight: normal;
                 font-size: 12px;
                 line-height: 14px;
-                color: #585858;
-                text-decoration: none;
-                border-bottom: 1px solid transparent;
-
-                &:first-child {
-                    margin-right: 24px;
-                }
-            }
-
-            a:hover {
-                border-bottom: 1px solid #969696;
+                color: #777777;
+                margin: 0;
             }
         }
     }

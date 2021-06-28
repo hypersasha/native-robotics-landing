@@ -2,7 +2,7 @@
 .action-button {
   color: #ffffff;
   padding: 8px 16px;
-  background: #0071E3;
+  background: #ff9500;
   border-radius: 24px;
 
   font-family: 'Roboto', sans-serif;
@@ -16,6 +16,23 @@
 
   &:hover {
     cursor: pointer;
-    background: #1C8DFF;
+    opacity: 0.85;
+    background: #ff9500;
+
+    &.dark {
+      background: #000000;
+    }
+
+    &.fanuc {
+      background: #FAD000;
+    }
+  }
+
+  &.dark {
+    background: #000;
+  }
+
+  &.fanuc {
+    background: #FAD000;
   }
 }

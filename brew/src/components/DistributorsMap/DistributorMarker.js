@@ -61,7 +61,7 @@ const DistributorMarker = (props) => {
           />
           <path
             d="M29.5 14.5C29.5 22.1746 20.0369 33.4387 16.4003 37.484C15.6441 38.3252 14.3559 38.3252 13.5997 37.484C9.96313 33.4387 0.5 22.1746 0.5 14.5C0.5 6.49187 6.99187 0 15 0C23.0081 0 29.5 6.49187 29.5 14.5Z"
-            fill={props.isPicked ? "#0077ff" : "#040506"}
+            fill={props.isPicked ? "#ff9500" : "#040506"}
             className="marker-drop"
             transform={`scale(${1 / props.zoom})`}
           />

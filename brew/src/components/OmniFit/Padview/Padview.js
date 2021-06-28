@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './padview.less';
 
-import iPad from '../../../assets/imgs/ipad-pro-mock.png';
+import iPad from '../../../assets/imgs/omnifit/ipad-pro-mock.png';
 
 const Padview = props =>
     <div className="padview">
