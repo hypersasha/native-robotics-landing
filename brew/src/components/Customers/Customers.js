@@ -64,6 +64,10 @@ const logos = {
     techvitas: {
         width: 164,
         url: require('../../assets/imgs/logos/techvitas.png')
+    },
+    incite: {
+        width: 113,
+        url: require('../../assets/imgs/logos/InCiteRobotics.png')
     }
 }
 

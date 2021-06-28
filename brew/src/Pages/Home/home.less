@@ -245,6 +245,9 @@
             width: 100%;
             height: @product-container-height;
             z-index: 1;
+            display: flex;
+            justify-content: center;
+            background: #f4f4f4;
 
             .opack_preview_image {
                 display: none;
@@ -257,7 +260,7 @@
                 right: 0;
                 bottom: 0;
                 top: 0;
-                background: rgba(0,0,0,0.30);
+                background: rgba(0,0,0,0.15);
 
                 @media only screen
                 and (min-device-width: 320px)
@@ -314,6 +317,10 @@
                 and (-webkit-min-device-pixel-ratio: 2) {
                     height: @mobile-video-height;
                 }
+            }
+
+            video {
+                max-width: 1440px;
             }
         }
 
@@ -421,7 +428,7 @@
                     width: 440px;
                     height: 526px;
                     position: relative;
-                    background-image: url(../../assets/imgs/robot-steel.jpg);
+                    background-image: url(../../assets/imgs/doosan-home.jpg);
                     background-repeat: no-repeat;
                     background-size: contain;
                     z-index: 3;

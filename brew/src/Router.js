@@ -8,6 +8,7 @@ import Loader from './components/Loader/Loader';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Omnifit = lazy(() => import('./pages/OmniFit/Omnifit'));
+const Fanuc = lazy(() => import('./pages/OmniFit/Fanuc'));
 const OmniPack = lazy(() => import('./pages/OmniPack/OmniPack'));
 // const Blog = lazy(() => import('./Pages/Blog/Blog'));
 const Editor = lazy(() => import('./pages/Blog/Editor/Editor'));
@@ -26,6 +27,7 @@ class AppRouter extends Component {
                     <Switch>
                         <Route exact path={'/'} component={Home} />
                         <Route path={'/omnifit'} component={Omnifit} />
+                        <Route path={'/fanuc'} component={Fanuc} />
                         <Route path={'/omnipack'} component={OmniPackNew} />
                         <Route path={'/native-blog/editor'} component={Editor} />
                         <Route path={'/privacy'} component={Privacy} />

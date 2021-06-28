@@ -148,6 +148,14 @@ export const DISTRIBUTORS = Object.create({
                 coordinates: { lat: 55.39700829983938, lng: 11.345022541154226 },
                 logo: 'technicon.jpg',
                 robots: ['UR']
+            },
+            {
+                name: "InCite Robotics",
+                address: "Sivlandvænget 3, st, 5260 Odense, Denmark",
+                coordinates: { lat: 55.35524165882205, lng: 10.407503180587094 },
+                url: 'https://inciterobotics.com/',
+                logo: 'InCiteRobotics.png',
+                robots: ['UR']
             }
         ],
         enumerable: true

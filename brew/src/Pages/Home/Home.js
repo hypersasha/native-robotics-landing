@@ -5,8 +5,7 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 
 import './home.less';
 
-const opack_vid = require('../../assets/videos/omnipack-preview.mp4'); 
-const opack_vid_new = require('../../assets/videos/omnipack-intro_1080.mp4'); 
+const opack_vid_new = require('../../assets/videos/homepage_6.mp4'); 
 const omnifit_preview = require('../../assets/imgs/omnifit-preview.jpg');
 const omnipack_video_poster = require('../../assets/imgs/omnipack-poster.jpg');
 

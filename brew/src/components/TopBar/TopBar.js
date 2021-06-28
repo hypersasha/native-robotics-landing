@@ -95,6 +95,10 @@ export default function TopBar() {
             case '/omnifit':
                 document.title = 'OmniFit | Native Robotics'
             break;
+            case '/fanuc':
+                document.title = 'OmniFit | FANUC';
+                setIsHidden(true);
+                break;
             default:
                 document.title = 'Native Robotics';
         }
@@ -103,9 +107,11 @@ export default function TopBar() {
     }, [location]);
 
     useEffect(() => {
-        window.addEventListener('scroll', onPageScroll, {passive: true});
-        return () => {
-            window.removeEventListener('scroll', onPageScroll)
+        if (window.location.pathname !== '/fanuc') {
+            window.addEventListener('scroll', onPageScroll, {passive: true});
+            return () => {
+                window.removeEventListener('scroll', onPageScroll)
+            }
         }
     }, [prevScrollPos, isHidden, setIsHidden, setPrevScrollPos])
 

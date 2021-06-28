@@ -125,6 +125,8 @@
   }
 }
 
+
+
 .container {
   max-width: 988px;
   margin: 0 auto;
@@ -232,6 +234,74 @@ section {
   }
 }
 
+section.nr-fanuc {
+  width: auto;
+  height: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FAD000;
+  padding: 40px 0 0 0;
+
+  .nr-logo {
+    width: 199px;
+    height: 32px;
+    position: relative;
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:active {
+      margin-top:2px;
+    }
+  }
+
+  .fanuc-logo {
+    width: 176px;
+    height: 28px;
+    position: relative;
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:active {
+      margin-top:2px;
+    }
+  }
+
+  .nr-x-fan {
+    width: 24px;
+    height: 24px;
+    margin-left: 36px;
+    margin-right: 36px;
+    position: relative;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin: 24px 0;
+    }
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+}
+
 #ipad-ar-preview {
   width: 1061px;
   height: 554px;
@@ -239,6 +309,13 @@ section {
   background-size: 1061px 554px;
   margin-left: -39px;
   margin-top: 40px;
+
+  &.fanuc {
+    width: 1041px;
+    height: 769px;
+    background: url("../../assets//imgs//omnifit/ipad-fanuc.jpg");
+    background-size: 1041px 769px;
+  }
 
   img {
     display: none;
@@ -259,10 +336,19 @@ section {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
     background: transparent;
+    
     margin-left: 0;
     margin-top: 28px;
     height: auto;
     width: auto;
+
+    &.fanuc {
+      background: transparent;
+      margin-left: 0;
+      margin-top: 28px;
+      height: auto;
+      width: auto;
+    }
   }
 }
 
@@ -470,6 +556,10 @@ section {
     height: 238px;
     background-image: url("../../assets/imgs/omnifit/photo-letter.jpg");
     background-size: 378px 238px;
+
+    &.fanuc-catchy {
+      background-image: url("../../assets/imgs/omnifit/fanuc-catchy.jpg");
+    }
 
     @media only screen
     and (min-device-width: 320px)
