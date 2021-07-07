@@ -343,6 +343,11 @@ export default function OmniPackNew() {
                     </div>
                 </div>
             </section>
+            <section id="live-demo" className="omnipack-live">
+                <div className="frame-wrapper">
+                    <iframe src="https://native-robotics.com/demo/omni-fit.html" style={{border:0, borderColor: '#ffffff'}} scrolling="no" frameBorder="0" marginHeight="0px" marginWidth="0px" height="820px" width="100%" allowFullScreen></iframe>
+                </div>
+            </section>
             <section id="distributors" className="omnipack-distributors">
                 <div className="content">
                     <div className="intro-filters">

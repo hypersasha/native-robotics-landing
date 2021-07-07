@@ -9,13 +9,13 @@ import Loader from './components/Loader/Loader';
 const Home = lazy(() => import('./pages/Home/Home'));
 const Omnifit = lazy(() => import('./pages/OmniFit/Omnifit'));
 const Fanuc = lazy(() => import('./pages/OmniFit/Fanuc'));
-const OmniPack = lazy(() => import('./pages/OmniPack/OmniPack'));
 // const Blog = lazy(() => import('./Pages/Blog/Blog'));
 const Editor = lazy(() => import('./pages/Blog/Editor/Editor'));
 const Privacy = lazy(() => import('./pages/Privacy/Privacy'));
 const Footer = lazy(() => import('./components/Footer/NewFooter'));
 
 const OmniPackNew = lazy(() => import('./pages/OmniPack/OmniPackNew'));
+const OmniPackFrame = lazy(() => import('./pages/OmniPack/OmniPackFrame'));
 
 class AppRouter extends Component {
 
@@ -31,7 +31,7 @@ class AppRouter extends Component {
                         <Route path={'/omnipack'} component={OmniPackNew} />
                         <Route path={'/native-blog/editor'} component={Editor} />
                         <Route path={'/privacy'} component={Privacy} />
-                        <Route path={'/omnipack-new'} component={OmniPackNew} />
+                        <Route path={'/embed'} component={OmniPackFrame} />
                         <Route component={NotFound} />
                     </Switch>
                     <Footer />

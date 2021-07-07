@@ -1606,6 +1606,115 @@
     }
 }
 
+.omnipack-live {
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        display: none;
+    }
+
+    .frame-wrapper {
+        max-width: 1260px;
+        margin: 0 auto 96px;
+        background: #F5f5f5;
+        border-radius: 8px;
+        position: relative;
+        display: block;
+
+        .loading-frame {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 0;
+        }
+
+        iframe {
+            position: relative;
+            z-index: 1000;
+        }
+    }
+
+    .omnipack-intro-content {
+        margin-top: 40px;
+        margin-bottom: 120px;
+        
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            padding: 0 24px;
+            margin-bottom: 40px;
+        }
+
+        .omnipack-main-title {
+            margin: 0 0 28px;
+            background: linear-gradient(180deg, #303032 0%, #222224 100%);
+            background-position: center center;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 64px;
+            line-height: auto;
+            text-align: center;
+            letter-spacing: -0.02em;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                font-size: 36px;
+                line-height: 1.1em;
+                text-align: left;
+                margin: 0 0 20px;
+            }
+        }
+
+        .omnipack-main-description {
+            max-width: 780px;
+            margin: 0 auto 42px;
+
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 1.3em;
+            text-align: center;
+            letter-spacing: -0.01em;
+            font-feature-settings: 'liga' off;
+
+            color: #4C4C4E;
+
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                font-size: 21px;
+                line-height: 1.4em;
+                text-align: left;
+                margin: 0 auto 24px;
+            }
+        }
+    }
+
+
+
+}
+
 .omnipack-begin {
     padding: 100px 0;
 
