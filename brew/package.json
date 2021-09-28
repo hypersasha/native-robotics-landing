@@ -33,7 +33,7 @@
     "@editorjs/list": "^1.6.1",
     "@editorjs/simple-image": "^1.4.0",
     "@googlemaps/js-api-loader": "^1.11.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
