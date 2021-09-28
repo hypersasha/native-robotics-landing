@@ -7,6 +7,7 @@ import {MAP_BOUNDS} from '../../components/OmniPack/Map/mapbounds';
 import { Link } from 'react-router-dom';
 
 const opack_vid_intro = require('../../assets/videos/intro-940-trim.mp4');
+const mp_ur = require('../../assets/imgs/omnipack/trajectories.jpg');
 const motion_planning = require('../../assets/imgs/omnipack/mp_image.jpg')
 const opack_vid_intro_endframe = require('../../assets/imgs/omnipack/intro-end-frame.jpg');
 
@@ -168,7 +169,7 @@ export default function OmniPackNew() {
                         </div>
                     </div>
                     <div className="motion-planning-video">
-                        <img src={motion_planning} />
+                        <img src={mp_ur} />
                     </div>
                     <div className="compare-info-rows">
                         <div className="inforow-title">Motion planning algorithm<br />(On / Off)</div>
