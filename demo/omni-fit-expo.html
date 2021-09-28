@@ -9,10 +9,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="stylesheet" href="../TemplateData/style.css">
     <link rel="stylesheet" href="../responsiveMinimalTemplateStyles.css?v=2"/>
-    <script src="https://nativeroboticsstorage.blob.core.windows.net/builds/OmniFit/Build/UnityLoader.js"></script>
+    <script src="https://nativeroboticsstorage.blob.core.windows.net/builds/OmniFitExperimental/Build/UnityLoader.js"></script>
     <script src="../TemplateData/UnityProgress.js"></script>
     <script>
-        var unityInstance = UnityLoader.instantiate("gameContainer", "https://nativeroboticsstorage.blob.core.windows.net/builds/OmniFit/Build/OmniFit.json", {onProgress: UnityProgress});
+        var unityInstance = UnityLoader.instantiate("gameContainer", "https://nativeroboticsstorage.blob.core.windows.net/builds/OmniFitExperimental/Build/OmniFitExperimental.json", {onProgress: UnityProgress});
         var scaleToFit;
         try {
             scaleToFit = !!JSON.parse("%UNITY_CUSTOM_SCALE_TO_FIT%");
